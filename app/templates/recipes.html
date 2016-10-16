@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <link rel="stylesheet" href="/static/css/site.css">
+        <h2>Recipes</h2>
+        <a href={{ url_for('index') }}>Back to index</a>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type of Cuisine</th>
+                <th>Ingredients</th>
+                <th>Time</th>
+            </tr>
+<!--             {% for recipe in recipes %}
+                <tr>
+                    <td>{{ recipe.name }}</td>
+                    <td>{{ recipe.cuisine }}</td>
+                    <td>{{ recipe.ingredients }}</td>
+                    <td>{{ recipe.time }}</td>
+                </tr>
+            {% endfor %} -->
+            <tr>
+                <td>Chocolate Chip Cookies</td>
+                <td>Dessert</td>
+                <td>Flour, Chocolate Chips, Butter</td>
+                <td>3 days</td>
+            </tr>                
+        </table>
+    </body
+</html>
