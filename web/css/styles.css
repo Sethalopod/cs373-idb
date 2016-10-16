@@ -1,0 +1,6 @@
+.bg-image {
+    background-image: url('../images/veggies.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100px;
+}
