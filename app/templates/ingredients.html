@@ -1,23 +1,24 @@
-<html>
-    <body>
-        <link rel="stylesheet" href="/static/css/site.css">
-        <h2>Ingredients</h2>
-        <a href={{ url_for('index') }}>Back to index</a>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Cost</th>
-                <th>Origin</th>
-                <th>Common Cuisines</th>
-<!--             </tr>
-            {% for ingredient in ingredients %}
-                <tr>
-                    <td>{{ ingredient.name }}</td>
-                    <td>{{ ingredient.cost }}</td>
-                    <td>{{ ingredient.origin }}</td>
-                    <td>{{ ingedient.cuisine }}</td>
-                </tr>
-            {% endfor %} -->
-        </table>
-    </body
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/script.js"></script>
+  <script> 
+  $(function(){
+    $("#header").load("header"); 
+    // $("#footer").load("footer.html"); 
+  });
+  </script>
+  <title>Ingredients</title>
+</head>
+<body>
+<div id="header"></div>
+<!--Remaining section-->
+<!-- <div id="footer"></div></body> -->
 </html>
