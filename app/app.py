@@ -1,26 +1,14 @@
-from flask import Flask, render_template, url_for
-from flask_script import Manager, Shell
-
+from flask import Flask
+ 
 app = Flask(__name__)
-manager = Manager(app)
+ 
+@app.route("/")
+def hello():
+	return "Hello world!"
 
-
-@app.route('/')
-def index():
-        return render_template('index.html')
-
-
-def shell_context():
-	context = {
-		'app': app,
-		'db': db,
-		'Book': Book,
-		'Author': Author
-	}
-	return context
-
-
-manager.add_command('shell', Shell(make_context=shell_context))
-
+@app.route("/test")
+def test():
+        return "I'm a test page"
+ 
 if __name__ == "__main__":
-        manager.run()
+	app.run()
