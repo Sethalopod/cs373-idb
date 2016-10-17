@@ -8,3 +8,13 @@
 .splash-piller {
     font-size: 200px; 
 };
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile {
+	height: 300px;
+}
