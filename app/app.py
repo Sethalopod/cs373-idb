@@ -7,7 +7,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+	# Swtich to send_file for production
     # return send_file('templates/index.html')
+    # Prevent cachcing for developement testing
     return make_response(open('templates/index.html').read())
 
 # import os

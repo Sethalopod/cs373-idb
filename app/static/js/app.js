@@ -11,7 +11,11 @@ mainApp.config(['$routeProvider',
 		}).
 		when('/about', {
 			templateUrl: '../static/partials/about.html',
-			controller: 'AboutvendorsCtrl'
+			controller: 'AboutCtrl'
+		}).
+		when('/cuisines', {
+			templateUrl: '../static/partials/cuisines.html',
+			controller: 'CuisinesCtrl'
 		}).
 		otherwise({
 			redirectTo: '/'
