@@ -1,57 +1,55 @@
-<body>
-    <div id="header"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 col-xs-12">
-                <h2 class="text-center">Cuisines</h2>
-            </div>
+<div id="header"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <h2 class="text-center">Cuisines</h2>
         </div>
     </div>
-    <div class ="container">
-        <div class="row">
-            <div class="col-md-12">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <td width="20%">
-                                <a ng-click="sortType = 'title'; sortReverse = !sortReverse">Type</a>
-                                <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
-                                <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
-                            </td>
-                            <td width="20%">
-                                <a ng-click="sortType = 'continent'; sortReverse = !sortReverse">Continent</a>
-                                <span ng-show="sortType == 'continent' && !sortReverse" class="fa fa-caret-down"></span>
-                                <span ng-show="sortType == 'continent' && sortReverse" class="fa fa-caret-up"></span>
-                            </td>
-                            <td width="20%">
-                                <a ng-click="sortType = 'numberOfRecipes'; sortReverse = !sortReverse">Recipe Count</a>
-                                <span ng-show="sortType == 'numberOfRecipes' && !sortReverse" class="fa fa-caret-down"></span>
-                                <span ng-show="sortType == 'numberOfRecipes' && sortReverse" class="fa fa-caret-up"></span>
-                            </td>
+</div>
+<div class ="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <td width="20%">
+                            <a ng-click="sortType = 'title'; sortReverse = !sortReverse">Type</a>
+                            <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
+                        </td>
+                        <td width="20%">
+                            <a ng-click="sortType = 'continent'; sortReverse = !sortReverse">Continent</a>
+                            <span ng-show="sortType == 'continent' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'continent' && sortReverse" class="fa fa-caret-up"></span>
+                        </td>
+                        <td width="20%">
+                            <a ng-click="sortType = 'numberOfRecipes'; sortReverse = !sortReverse">Recipe Count</a>
+                            <span ng-show="sortType == 'numberOfRecipes' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'numberOfRecipes' && sortReverse" class="fa fa-caret-up"></span>
+                        </td>
 
-                            <td width="20%">
-                                <a ng-click="sortType = 'averageNumberOfIngredientsPerRecipe'; sortReverse = !sortReverse">Average Ingrident Count</a>
-                                <span ng-show="sortType == 'averageNumberOfIngredientsPerRecipe' && !sortReverse" class="fa fa-caret-down"></span>
-                                <span ng-show="sortType == 'averageNumberOfIngredientsPerRecipe' && sortReverse" class="fa fa-caret-up"></span>
-                            </td>
-                            <td width="20%">
-                                <a ng-click="sortType = 'averageCalories'; sortReverse = !sortReverse">Average Calorie Count</a>
-                                <span ng-show="sortType == 'averageCalories' && !sortReverse" class="fa fa-caret-down"></span>
-                                <span ng-show="sortType == 'averageCalories' && sortReverse" class="fa fa-caret-up"></span>
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="cuisine in cuisines | orderBy:sortType:sortReverse">
-                            <td><a ng-href="cuisines/{{cuisine.id}}">{{ cuisine.title }}</a></td>
-                            <td>{{ cuisine.continent }}</td>
-                            <td>{{ cuisine.numberOfRecipes }}</td>
-                            <td>{{ cuisine.averageNumberOfIngredientsPerRecipe }}</td>
-                            <td>{{ cuisine.averageCalories }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                        <td width="20%">
+                            <a ng-click="sortType = 'averageNumberOfIngredientsPerRecipe'; sortReverse = !sortReverse">Average Ingrident Count</a>
+                            <span ng-show="sortType == 'averageNumberOfIngredientsPerRecipe' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'averageNumberOfIngredientsPerRecipe' && sortReverse" class="fa fa-caret-up"></span>
+                        </td>
+                        <td width="20%">
+                            <a ng-click="sortType = 'averageCalories'; sortReverse = !sortReverse">Average Calorie Count</a>
+                            <span ng-show="sortType == 'averageCalories' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'averageCalories' && sortReverse" class="fa fa-caret-up"></span>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cuisine in cuisines | orderBy:sortType:sortReverse">
+                        <td><a ng-href="cuisines/{{cuisine.id}}">{{ cuisine.title }}</a></td>
+                        <td>{{ cuisine.continent }}</td>
+                        <td>{{ cuisine.numberOfRecipes }}</td>
+                        <td>{{ cuisine.averageNumberOfIngredientsPerRecipe }}</td>
+                        <td>{{ cuisine.averageCalories }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-</body>
+</div>
