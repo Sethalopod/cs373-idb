@@ -18,8 +18,8 @@ mainApp.config(['$routeProvider', '$locationProvider',
 			controller: 'CuisinesCtrl'
 		}).
 		when('/cuisines/:cuisineId', {
-			templateUrl: 'partials/phone-detail.html',
-			controller: CuisineDetailCtrl
+			templateUrl: '../static/partials/cuisineDetail.html',
+			controller: 'CuisineDetailCtrl'
 		}).
 		otherwise({ redirectTo: '/' });
 

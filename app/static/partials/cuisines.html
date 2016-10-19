@@ -43,7 +43,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="cuisine in cuisines | orderBy:sortType:sortReverse">
-                            <td><a href="cuisines/{{cuisine.id}}">{{ cuisine.title }}</a></td>
+                            <td><a ng-href="cuisines/{{cuisine.id}}">{{ cuisine.title }}</a></td>
                             <td>{{ cuisine.continent }}</td>
                             <td>{{ cuisine.numberOfRecipes }}</td>
                             <td>{{ cuisine.averageNumberOfIngredientsPerRecipe }}</td>
