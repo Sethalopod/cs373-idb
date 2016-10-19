@@ -10,23 +10,25 @@ app = Flask(__name__)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
-	# Swtich to send_file for production
+    # Swtich to send_file for production
     # return send_file('templates/index.html')
     # Prevent cachcing for developement testing
-    return make_response(open('templates/index.html').read())
+    script_dir = os.path.dirname(__file__)
+    rel_path = "templates/index.html"
+    return make_response(open(os.path.join(script_dir, rel_path)).read())
 
 # import os
 # os.path.dirname(os.path.abspath(__file__))
 
 # def shell_context():
-# 	context = {
-# 		'app': app,
-# 		'db': db,
-# 		'Recipes': Recipes,
-# 		'Ingredients': Ingredients,
-# 		'Cuisines': Cuisine
-# 	}
-# 	return context
+#      context = {
+#              'app': app,
+#              'db': db,
+#              'Recipes': Recipes,
+#              'Ingredients': Ingredients,
+#              'Cuisines': Cuisine
+#      }
+#      return context
 
 
 # manager.add_command('shell', Shell(make_context=shell_context))
