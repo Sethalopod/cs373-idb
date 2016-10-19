@@ -5,8 +5,10 @@ import os
 app = Flask(__name__)
 # manager = Manager(app)
 
-@app.route('/')
-def index():
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def index(path):
 	# Swtich to send_file for production
     # return send_file('templates/index.html')
     # Prevent cachcing for developement testing

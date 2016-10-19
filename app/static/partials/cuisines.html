@@ -19,7 +19,7 @@
                                 <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
                             </td>
                             <td width="20%">
-                                <a ng-click="sortType = 'continent; sortReverse = !sortReverse'">Contient</a>
+                                <a ng-click="sortType = 'continent'; sortReverse = !sortReverse">Continent</a>
                                 <span ng-show="sortType == 'continent' && !sortReverse" class="fa fa-caret-down"></span>
                                 <span ng-show="sortType == 'continent' && sortReverse" class="fa fa-caret-up"></span>
                             </td>
@@ -43,7 +43,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="cuisine in cuisines | orderBy:sortType:sortReverse">
-                            <td>{{ cuisine.title }}</td>
+                            <td><a href="cuisines/{{cuisine.id}}">{{ cuisine.title }}</a></td>
                             <td>{{ cuisine.continent }}</td>
                             <td>{{ cuisine.numberOfRecipes }}</td>
                             <td>{{ cuisine.averageNumberOfIngredientsPerRecipe }}</td>

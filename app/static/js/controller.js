@@ -10,3 +10,7 @@ mainApp.controller('CuisinesCtrl', function($scope) {
     { title: 'Vietnamese', numberOfRecipes: 62, averageNumberOfIngredientsPerRecipe: 9, continent:'Vietnam', averageCalories: 632},
     ];
 });
+
+mainApp.controller('CuisineDetailCtrl', ['FetchService', function($scope, $routeParams) {
+    $scope.cuisine = FetchService[$routeParams];
+}]);
