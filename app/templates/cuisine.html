@@ -1,76 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/static/css/styles.css">
-  <script src="/static/js/jquery.min.js"></script>
-  <script src="/static/js/bootstrap.min.js"></script>
-  <script src="/static/js/script.js"></script>
-  <script> 
-  $(function(){
-    $("#header").load("header"); 
-    // $("#footer").load("footer.html"); 
-  });
-  </script>
-  <title>BoilerPl8 - Cuisines</title>
-</head>
-
-<body>
-  <div id="header"></div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12 col-xs-12">
-        <h2 class="text-center">Cuisines</h2>
+{% extends "base.html" %}
+{% block content %}
+  <body>
+    <div id="header"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-xs-12">
+          <h2 class="text-center">Cuisines</h2>
+        </div>
       </div>
     </div>
-  </div>
-  <div class ="container">
-    <div class="row">
-      <div class="col-md-12">
-      <table class="table table-striped">
-          <tr>
-              <th>Type</th>
-              <th>Total Recipes</th>
-              <th>Average Total Ingredients</th>
-              <th>Origin</th>
-              <th>Average Calories</th>
-          </tr>
-          <tr>
-              <td>I'm</td>
-              <td>the</td>
-              <td>best</td>
-              <td>front-end</td>
-              <td>developer</td>
-          </tr>
-          <tr>
-              <td>I'm</td>
-              <td>the</td>
-              <td>best</td>
-              <td>front-end</td>
-              <td>developer</td>
-          </tr>
-          <tr>
-              <td>I'm</td>
-              <td>the</td>
-              <td>best</td>
-              <td>front-end</td>
-              <td>developer</td>
-          </tr>
-          <tr>
-              <td>I'm</td>
-              <td>the</td>
-              <td>best</td>
-              <td>front-end</td>
-              <td>developer</td>
-          </tr>
-      </table>
+    <div class ="container">
+      <div class="row">
+        <div class="col-md-12">
+        <table class="table table-striped">
+            <tr>
+                <th>Type</th>
+                <th>Total Recipes</th>
+                <th>Average Total Ingredients</th>
+                <th>Origin</th>
+                <th>Average Calories</th>
+            </tr>
+            <tr>
+                <td>I'm</td>
+                <td>the</td>
+                <td>best</td>
+                <td>front-end</td>
+                <td>developer</td>
+            </tr>
+            <tr>
+                <td>I'm</td>
+                <td>the</td>
+                <td>best</td>
+                <td>front-end</td>
+                <td>developer</td>
+            </tr>
+            <tr>
+                <td>I'm</td>
+                <td>the</td>
+                <td>best</td>
+                <td>front-end</td>
+                <td>developer</td>
+            </tr>
+            <tr>
+                <td>I'm</td>
+                <td>the</td>
+                <td>best</td>
+                <td>front-end</td>
+                <td>developer</td>
+            </tr>
+        </table>
+      </div>
     </div>
-  </div>
-</body>
-
-<!--Remaining section-->
-<!-- <div id="footer"></div></body> -->
-</html>
+  </body>
+{% endblock %}
