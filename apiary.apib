@@ -1,80 +1,112 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://api.boilerpl8.me/
 
 # boilerpl8
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and learn about the ingredients in your food.
 
-## Questions Collection [/questions]
+## Cuisines Collection [/cuisines]
 
-### List All Questions [GET]
+### List Cuisines [GET]
 
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "numCuisines": 4,
+                "cuisines": [
                     {
-                        "choice": "Swift",
-                        "votes": 2048
+                        "id": "1",
+                        "title": "American"
                     }, {
-                        "choice": "Python",
-                        "votes": 1024
+                        "id": "2",
+                        "title": "Mexican"
                     }, {
-                        "choice": "Objective-C",
-                        "votes": 512
+                        "id": "3",
+                        "title": "Chinese"
                     }, {
-                        "choice": "Ruby",
-                        "votes": 256
+                        "id": "4",
+                        "title": "Indian"
                     }
                 ]
             }
         ]
 
-### Create a New Question [POST]
+## Recipes in Cuisine Collection [/cuisinesRecipes/{cuisine_id}]
+### Get list of recipes for a cuisine [GET]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
++ Parameters
+    + cuisine_id (number) - ID of the cuisine 
 
-+ Request (application/json)
 
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
++ Response 200 (application/json)
 
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
+        [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "numRecipes": 2,
+                "recipes": [
                     {
-                        "choice": "Swift",
-                        "votes": 0
+                        "id": "1",
+                        "title": "Grilled Cheese"
                     }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
+                        "id": "2",
+                        "title": "Tomato Soup"
                     }
                 ]
             }
+        ]
+        
+## Recipe Information Collection [/recipes/{recipe_id}]
+### Get information for a recipe [GET]
+
++ Parameters
+    + recipe_id (number) - ID of the recipe 
+
+
++ Response 200 (application/json)
+
+        [
+            {
+                "title": "GrilledCheese",
+                "readyInMinutes": 10,
+                "servings": 2,
+                "calories": 300,
+                "steps": "Heat pan on medium heat. Put cheese between two slices of bread. Cook both sides of the sandwich."
+            }
+        ]        
+        
+## Cuisine Information Collection [/cuisine/{cuisine_id}]
+### Get information for a cuisine [GET]
+
++ Parameters
+    + cuisine_id (number) - ID of the cuisine 
+
++ Response 200 (application/json)
+
+        [
+            {
+                "title": "American",
+                "numberOfRecipes": 1,
+                "averageNumberOfIngredientsPerRecipe": 3,
+                "continent": "North America",
+                "averageCalories": 300
+            }
+        ]
+        
+## Ingredient Information Collection [/ingredient/{ingredient_id}]
+### Get information for an ingredient [GET]
+
++ Parameters
+    + ingredient_id (number) - ID of the ingredient 
+
++ Response 200 (application/json)
+
+        [
+            {
+                "title": "Bread",
+                "serving_size": "2 slices",
+                "total_weight": "1 lb",
+                "brand": "Nature's Own",
+                "category": "bread"
+            }
+        ]
