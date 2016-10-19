@@ -24,14 +24,23 @@
 }
 
 .category {
-	font-size: 20px;
+	font-size: 16px;
 }
 
 .info {
 	font-size: 16px;
-	display:inline;
 }
 
 .inline {
 	display:inline;
+}
+
+.member {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 50px;
+}
+
+.overflow {
+  overflow:scroll;
 }
