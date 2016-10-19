@@ -5,7 +5,8 @@ import os
 app = Flask(__name__)
 # manager = Manager(app)
 
-
+# http://flask.pocoo.org/snippets/57/
+# Catch all path for now
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
