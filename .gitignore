@@ -90,3 +90,4 @@ ENV/
 
 #Because vim
 *.swp
+data/
