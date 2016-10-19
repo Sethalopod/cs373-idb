@@ -1,33 +1,17 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, make_response, url_for, send_file
 #from flask_script import Manager, Shell
+import os
 
 app = Flask(__name__)
 # manager = Manager(app)
 
-@app.route('/recipes')
-def recipes():
-	return render_template('recipes.html')
-
-@app.route('/ingredients')
-def ingredients():
-	return render_template('ingredients.html')
-
-@app.route('/cuisine')
-def cuisine():
-	return render_template('cuisine.html')
-
-@app.route('/about')
-def about():
-	return render_template('about.html')
-
-@app.route('/header')
-def header():
-    return render_template('header.html')
-
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # return send_file('templates/index.html')
+    return make_response(open('templates/index.html').read())
 
+# import os
+# os.path.dirname(os.path.abspath(__file__))
 
 # def shell_context():
 # 	context = {
