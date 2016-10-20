@@ -50,6 +50,14 @@ mainApp.controller('AboutCtrl',
         $scope.anthony = members[2];
         $scope.jessica = members[3];
         $scope.zach = members[4];
+	$scope.tools = [
+		{ name: 'AngularJS', link: 'https://angularjs.org/'},
+		{ name: 'BootstrapJS', link: 'http://getbootstrap.com/'},
+		{ name: 'Flask', link: 'http://flask.pocoo.org/'},
+		{ name: 'Apiary', link: 'https://apiary.io/'},
+                { name: 'SQLAlchemy', link: 'http://www.sqlalchemy.org/'},
+		{ name: 'yUML', link: 'http://yuml.me/'}
+	];
         console.log("Member Factory fetch end");
     }]
 ).directive('memberDetail', function() {
