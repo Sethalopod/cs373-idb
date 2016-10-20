@@ -6,16 +6,12 @@ mainApp.config(['$routeProvider', '$locationProvider',
 	function($routeProvider, $locationProvider) {
 		$routeProvider.
 		when('/', {
-			templateUrl: '../static/partials/home.html',
+			templateUrl: '../static/partials/landing.html',
 			// controller: 'HomeCtrl'
 		}).
 		when('/about', {
 			templateUrl: '../static/partials/about.html',
 		  controller: 'AboutCtrl'
-		}).
-		when('/landing', {
-			templateUrl: '../static/partials/landing.html',
-			// controller: 'AboutCtrl'
 		}).
 		when('/cuisines', {
 			templateUrl: '../static/partials/cuisines.html',
