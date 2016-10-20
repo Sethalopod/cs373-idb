@@ -58,6 +58,14 @@ mainApp.controller('AboutCtrl',
                 { name: 'SQLAlchemy', link: 'http://www.sqlalchemy.org/'},
 		{ name: 'yUML', link: 'http://yuml.me/'}
 	];
+	$scope.dataUsed = [
+		{name: 'Fus', link: '/about'},
+		{name: 'Roh', link: '/about'},
+		{name: 'Dah', link: '/about'},
+		{name: 'Fus', link: '/about'},
+		{name: 'Roh', link: '/about'},
+		{name: 'Dah', link: '/about'}
+	]
         console.log("Member Factory fetch end");
     }]
 ).directive('memberDetail', function() {
