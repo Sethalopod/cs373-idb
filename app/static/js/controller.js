@@ -37,7 +37,7 @@ mainApp.controller('IngredientsCtrl',
 mainApp.controller('IngredientDetailCtrl',
     ['$scope', '$routeParams', 'IngredientFetchFactory',
     function($scope, $routeParams, IngredientFetchFactory) {
-        $scope.recipe = IngredientFetchFactory.fetchAt($routeParams['ingredientId']);
+        $scope.ingredient = IngredientFetchFactory.fetchAt($routeParams['ingredientId']);
     }]);
 
 // Dependencies must be in the same order as the function paramters...
