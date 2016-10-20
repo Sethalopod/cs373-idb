@@ -53,11 +53,11 @@ mainApp.factory('MemberFactory', function() {
 			id: 3, 
 			image: '/static/images/jessica.jpeg',
 			name:'Jessica Lindee', 
-			bio:'hi. 2spooky4me',
-			responsibilities:'wut', 
-			commits: 12, 
-			issues:3, 
-			tests:2
+			bio:'Howdy! I\’m in my fourth year of college and my second year of studying computer science at the University of Texas at Austin. It took me a while to find the computer science path, but I\’m glad that I did! I like to sleep, play board games, watch Netflix, and camp out in the computer lab.',
+			responsibilities:'Frontend', 
+			commits: 14, 
+			issues:4, 
+			tests:0
 		},
 		{
 			id: 4, 
