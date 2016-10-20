@@ -1,14 +1,13 @@
 <div class ="container">
 	<div class="row">
 		<div class="col-md-6">
-			<img ng-src="{recipe.url}}" style="width:100%"/>
+			<img ng-src="{{recipe.url}}" style="width:100%"/>
 		</div>
 		<div class="col-md-6">
-			<h1>{recipe.title}}</h1>
+			<h1>{{recipe.title}}</h1>
 			<div>Ready in (Minutes): {{recipe.readyInMinutes}}</div>
-			<div>Number of calories: {{recipe.numberOfCalories}}</div>
-			<div>Number of steps: {{recipe.steps}}</div>
-			<div>Category: {{recipe.category}}</div>
+			<div>Number of calories: {{recipe.calories}}</div>
+			<div>Steps: {{recipe.steps}}</div>
 		</div>
 	</div>
 </div>

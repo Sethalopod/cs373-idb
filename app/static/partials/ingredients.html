@@ -43,7 +43,7 @@
                 <tbody>
                     <tr ng-repeat="ingredient in ingredients | orderBy:sortType:sortReverse">
                         <td><a ng-href="ingredients/{{ingredient.id}}">{{ ingredient.title }}</a></td>
-                        <td>{{ ingredient.serving_size }}</td>
+                        <td>{{ ingredient.servingSize }}</td>
                         <td>{{ ingredient.totalWeight }}</td>
                         <td>{{ ingredient.brand }}</td>
                         <td>{{ ingredient.category }}</td>
