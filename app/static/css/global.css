@@ -48,3 +48,41 @@
 .propic {
   max-width: 400px;
 }
+.divcolor1{
+  background-color:#e1c18f
+}
+.divcolor2{
+  background-color:#7c7254
+}
+.divcolor3{
+  background-color:#031d42
+}
+.divcolor4{
+  background-color:#690202
+}
+.divcolor5{
+  background-color:#dbd9b7
+}
+.textcolor1{
+  color:#e1c18f
+}
+.textcolor2{
+  color:#7c7254
+}
+.textcolor3{
+  color:#031d42
+}
+.textcolor4{
+  color:#690202
+}
+.textcolor5{
+  color:#dbd9b7
+}
+
+.roomy {
+  padding: 10px;
+}
+.antisocial {
+  margin-top:20px;
+  margin-bottom:20px;
+}
