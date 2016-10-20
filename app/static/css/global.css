@@ -44,3 +44,7 @@
 .overflow {
   overflow:scroll;
 }
+
+.propic {
+  max-width: 400px;
+}

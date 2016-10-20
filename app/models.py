@@ -66,3 +66,15 @@ class Cuisine(Base):
 	def __repr__(self):
 		return "<Cuisine(title='%s', numberOfRecipes='%i', averageNumberOfIngredientsPerRecipe='%f', continent='%s', averageCalories='%f')>" % (
 			self.title, self.numberOfRecipes, self.averageNumberOfIngredientsPerRecipe, self.continent, self.averageCalories) 
+
+class Member(Base):
+  __tablename__ = 'member'
+  id = Column(Integer, primary_key=True)
+  name = Column(String)
+  responsibilities = Column(String)
+  commits = Column(Integer)
+  issues = Column(Integer)
+  tests = Column(Integer)
+  
+  def __repr__(self):
+    return "<Member(name='%s', responsibilities='%s', commits='%i', issues='%i', tests='%i')>" % (self.name, self.responsibilites, self.commits, self.issues, self.tests)

@@ -11,7 +11,7 @@ mainApp.config(['$routeProvider', '$locationProvider',
 		}).
 		when('/about', {
 			templateUrl: '../static/partials/about.html',
-			// controller: 'AboutCtrl'
+		  controller: 'AboutCtrl'
 		}).
 		when('/landing', {
 			templateUrl: '../static/partials/landing.html',

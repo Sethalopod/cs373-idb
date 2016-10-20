@@ -1,0 +1,49 @@
+<!-- Picture Row -->
+<div class="row">
+  <div class="col-md-12 col-xs-12">
+    <img ng-src="{{ info.image }}" class="img-circle center-block profile propic">
+  </div>
+</div>
+<!-- Name Row -->
+<div class-"row">
+  <div class="col-md-12 col-xs-12"> 
+    <h2 class="text-center"><b>{{ info.name }}</b></h2>
+  </div>
+</div>         
+<!--Bio Row -->
+<div class="row">
+<!-- bio col -->
+  <div class="col-md-offset-0 col-md-12 col-xs-offset-1 col-xs-10">
+    <p class="info text-center">{{ info.bio }}</p>
+  </div>
+</div>
+
+<!-- Coontributions Row -->
+<div class="row">
+  <!-- Commits Col -->
+  <div class="col-md-4 col-xs-4">
+    <div>
+      <p class="category text-center"><b>Issues Submitted</b><br/><span class="info inline">{{ info.issues }}</span></p>
+    </div>
+  </div>
+  <!-- Issues Col -->
+  <div class="col-md-4 col-xs-4">
+    <div>
+      <p class="category text-center"><b>Commits Made</b><br/><span class="info inline">{{ info.commits }}</span></p>
+    </div>
+  </div>
+  <!-- Units Tests Col -->
+  <div class="col-md-4 col-xs-4">
+    <div>
+      <p class="category text-center"><b>Unit Tests Created</b><br/><span class="info inline">{{ info.tests }}</span></p>
+    </div>
+  </div>
+</div>
+<!-- Major Responsibilities row -->
+<div class="row">
+  <div class="col-md-12 col-xs-12">
+    <div>
+      <p class="category text-center"><b>Major Responsibilities</b><br/><span class="info inline">{{ info.responsibilities }}</span></p>
+    </div>
+  </div>
+</div>   
