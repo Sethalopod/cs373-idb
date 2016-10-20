@@ -91,3 +91,4 @@ ENV/
 #Because vim
 *.swp
 data/
+/data/*.py
