@@ -1,3 +1,4 @@
+#!/bin/bash
 FILES :=                              \
 	.gitignore                        \
 	.travis.yml                       \
@@ -33,12 +34,4 @@ html:
 log:
 	git log > IDB1.log
 
-venv:
-	virtualenv -p python3 venv
-	source ./venv/bin/activate
-
-req: requirements.txt
-	python3 -m pip install -r requirements.txt
-
-
-test: venv req html check
+test: html check
