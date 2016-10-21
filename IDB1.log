@@ -1,3 +1,135 @@
+commit 2677a078565ebb2007540fae44bcb2336be2aa61
+Merge: e48cd4c 447f979
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 20:47:10 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Sethalopod/cs373-idb into dev
+
+commit e48cd4c05c769c2d9df06a0b0b48a71dc48edf71
+Merge: a92421d be90123
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 20:44:23 2016 -0500
+
+    Merge branch 'pretty' of https://github.com/Sethalopod/cs373-idb into pretty
+
+commit a92421d8d4fefeb302b576e8734f17da1116944b
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 20:44:05 2016 -0500
+
+    update commit count
+
+commit 447f979ec3ae25fd025d42bdfa5f1d3b54e74f9e
+Merge: a7342a3 464d978
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Oct 20 20:43:52 2016 -0500
+
+    Merge branch 'makefile' into dev
+
+commit 464d9787232f2920fc397abd31e44b980aa9e4c9
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Oct 20 20:39:56 2016 -0500
+
+    whooo screw venv
+
+commit be9012358b0b1c40a5c2cf8285adbdd10c8ec3ec
+Merge: 27044bb bb30d2b
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Thu Oct 20 20:34:34 2016 -0500
+
+    Merge branch 'pretty-anthony' into pretty
+
+commit bb30d2b416a04d88d1b268d158783701ec070caa
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Thu Oct 20 20:32:07 2016 -0500
+
+    Pretty navigation (I tried)
+
+commit 27044bb1382a7a0e484084faf3892e319b5c8f1b
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 20:30:59 2016 -0500
+
+    Update issue count for each person
+
+commit f3e395416bb03ddabc7bc308c01a2fa963003aed
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 20:24:35 2016 -0500
+
+    Update Alan's info on about page. Add info about scraping
+
+commit 1f319d21a6499a096577e448089245101154f1dc
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 20:07:41 2016 -0500
+
+    Add more links to about page. update some info in about page (issues)
+
+commit 62cdf1e826af0d5d8ee06b055515a5b0ea47618d
+Merge: e85403d 6ac290f
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Oct 20 19:54:11 2016 -0500
+
+    Merge branch 'zach-info' into pretty
+
+commit 6ac290f72c691699a0ba8d07e3042fd13204b7f4
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Oct 20 19:53:12 2016 -0500
+
+    zachary's info
+
+commit e85403d454728c1612a48e4fa7fa7ff117f6e464
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 19:52:02 2016 -0500
+
+    Add data used to about page
+
+commit 95a8551e31b330ddca1d1d26e81864f85f62982e
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Oct 20 19:48:50 2016 -0500
+
+    changed files
+
+commit 69fc5ba4fc575819f63a3b9d8b648c71c39439b9
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 19:44:59 2016 -0500
+
+    Fix margin under navbar. Add img to homepage. Fix img sizes on ingredients.
+
+commit 47ae0f0c80fe55753799a739cfc6451f5e03d225
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Oct 20 19:35:19 2016 -0500
+
+    added log file
+
+commit 0671ef7b233014611337f1818fa407fdc4b50f50
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Oct 20 19:29:08 2016 -0500
+
+    fixed makefile
+
+commit a7342a3dd67693c0e185568dbc854c3eb267f365
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Thu Oct 20 19:03:03 2016 -0500
+
+    Remove people information from db
+
+commit a369b554c65b33a654722c5e7c3098f7f8528238
+Merge: fa3ea30 7e090e8
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Thu Oct 20 18:57:38 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Sethalopod/cs373-idb into dev
+
+commit fa3ea30ba8a52918a6210d9846c3144455e7e5dc
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Thu Oct 20 18:55:43 2016 -0500
+
+    Add splash page
+
+commit ed0d9a687d7c5d47aa72eb9bf661be2b67d81294
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 16:48:17 2016 -0500
+
+    update about info for Jessica
+
 commit a0eb5d8bb54541381f5bf9538791bfffc088bd8c
 Author: Zachary Gilkerson <zgilkerson@utexas.edu>
 Date:   Thu Oct 20 16:43:07 2016 -0500
