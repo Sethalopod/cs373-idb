@@ -9,7 +9,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/milligan/cs373-idb/app/models.py">/v/filer4b/v38q001/milligan/cs373-idb/app/models.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/ztg224/cs373/cs373-idb/app/models.py">/v/filer4b/v38q001/ztg224/cs373/cs373-idb/app/models.py</a></font></td></tr></table>
     <p></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -24,6 +24,7 @@
 <dl>
 <dt><font face="helvetica, arial"><a href="models.html#Cuisine">Cuisine</a>
 </font></dt><dt><font face="helvetica, arial"><a href="models.html#Ingredient">Ingredient</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Member">Member</a>
 </font></dt><dt><font face="helvetica, arial"><a href="models.html#Recipe">Recipe</a>
 </font></dt></dl>
 </dd>
@@ -71,7 +72,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5c1ebdcf50; Cuisine&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b384dd47fd0; Cuisine&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('cuisine', MetaData(bind=None), Column('id...alories', Float(), table=&lt;cuisine&gt;), schema=None)</dl>
 
@@ -134,11 +135,70 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5c1ec4dd90; Ingredient&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b384dd3ae10; Ingredient&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('ingredient', MetaData(bind=None), Column(...URL', String(), table=&lt;ingredient&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'ingredient'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Member">class <strong>Member</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Member">Member</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Member-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Member-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>commits</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>issues</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>responsibilities</strong></dt>
+</dl>
+<dl><dt><strong>tests</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b384dd5b050; Member&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('member', MetaData(bind=None), Column('id'...'tests', Integer(), table=&lt;member&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'member'</dl>
 
 <hr>
 Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
@@ -201,7 +261,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5c1ec345d0; Recipe&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b384dd21650; Recipe&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('recipe', MetaData(bind=None), Column('id'...nKey('cuisine.id'), table=&lt;recipe&gt;), schema=None)</dl>
 
