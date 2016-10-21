@@ -25,7 +25,7 @@ mainApp.factory('MemberFactory', function() {
 			image: '/static/images/seth.jpeg', 
 			bio:'Hey everyone! My name is Seth and I’m a senior studying computer science at the University of Texas at Austin. Some of my hobbies include disc golf, playing board games, and listening to music.',
 			responsibilities:'Backend', 
-			commits: 12, 
+			commits: 18, 
 			issues:4, 
 			tests:9
 		},
@@ -35,7 +35,7 @@ mainApp.factory('MemberFactory', function() {
 			image: '/static/images/alan.jpg',
 			bio:'My name is Alan. I make data pretty and accessible for their respective audiences. When I\'m not developing, I am drawing and doing photography.',
 			responsibilities:'Full Stack', 
-			commits: 12, 
+			commits: 17, 
 			issues:2, 
 			tests:0
 		},
@@ -45,7 +45,7 @@ mainApp.factory('MemberFactory', function() {
 			image: '/static/images/anthony.jpeg',
 			bio:'My name is Anthony Gallop (That\'s -op, not -up. I\'m suing the Gallup Poll for pain and suffering). My hobbies include playing video games and making bad chat bots. ',
 			responsibilities:'Frontend', 
-			commits: 12, 
+			commits: 14, 
 			issues:1, 
 			tests:0
 		},
@@ -55,7 +55,7 @@ mainApp.factory('MemberFactory', function() {
 			name:'Jessica Lindee', 
 			bio:'Howdy! I\’m in my fourth year of college and my second year of studying computer science at the University of Texas at Austin. It took me a while to find the computer science path, but I\’m glad that I did! I like to sleep, play board games, watch Netflix, and camp out in the computer lab.',
 			responsibilities:'Frontend', 
-			commits: 14, 
+			commits: 22, 
 			issues:4, 
 			tests:0
 		},
@@ -65,7 +65,7 @@ mainApp.factory('MemberFactory', function() {
 			name:'Zach Gilkerson', 
 			bio:'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
 			responsibilities:'Full Stack', 
-			commits: 12, 
+			commits: 20, 
 			issues:9, 
 			tests:0
 		}
