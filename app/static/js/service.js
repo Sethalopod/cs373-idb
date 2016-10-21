@@ -63,7 +63,7 @@ mainApp.factory('MemberFactory', function() {
 			id: 4, 
 			image:'/static/images/zachary.jpg',
 			name:'Zach Gilkerson', 
-			bio:'yooo',
+			bio:'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
 			responsibilities:'1', 
 			commits: 12, 
 			issues:3, 
