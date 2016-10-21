@@ -82,7 +82,20 @@
 .roomy {
   padding: 10px;
 }
+
 .antisocial {
   margin-top:20px;
   margin-bottom:20px;
+}
+
+.hero-unit {
+    background-image:url('../images/splash.jpeg');
+    background-size:cover;
+    background-color: seashell;
+    width: 100%;
+    height: 100vh;
+}
+
+.navbar {
+    margin-bottom: 0;
 }
