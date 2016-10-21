@@ -113,37 +113,6 @@ class TestModels (TestCase):
 		result = session.query(Ingredient).one()
 		self.assertEqual(result.recipesUsedIn[0].title, recipe.title)
 
-  def test_member_1(self):
-    Session = sessionmaker()
-    session = Session()
-
-    member = Member(name = "Fares Fraij", responsibilities="Being the best professor in the department", commits=9001, issues=0, tests=3)
-
-    session.add(member)
-    result = session.query(Member).one()
-    self.assertEqual(result.name, "Fares Fraij")
-
-  def test_member_2(self):
-    Session = sessionmaker()
-    session = Session()
-
-    member = Member(name = "Fares Fraij", responsibilities="Being the best professor in the department", commits=9001, issues=0, tests=3)
-
-    session.add(member)
-    result = session.query(Member).one()
-    self.assertEqual(result.commits, "9001")
-
-  def test_member_3self):
-    Session = sessionmaker()
-    session = Session()
-
-    member = Member(name = "Fares Fraij", responsibilities="Being the best professor in the department", commits=9001, issues=0, tests=3)
-
-    session.add(member)
-    result = session.query(Member).one()
-    self.assertEqual(result.responsibilities, "Being the best professor in the department")
-
-
    
 if __name__ == "__main__" :
 	main()
