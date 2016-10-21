@@ -33,4 +33,12 @@ html:
 log:
 	git log > IDB1.log
 
-test: check
+venv:
+	virtualenv -p python3 venv
+	source ./venv/bin/activate
+
+req: requirements.txt
+	python3 -m pip install -r requirements.txt
+
+
+test: venv req html check
