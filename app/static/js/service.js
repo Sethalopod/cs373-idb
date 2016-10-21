@@ -26,8 +26,8 @@ mainApp.factory('MemberFactory', function() {
 			bio:'Hey everyone! My name is Seth and I’m a senior studying computer science at the University of Texas at Austin. Some of my hobbies include disc golf, playing board games, and listening to music.',
 			responsibilities:'Backend', 
 			commits: 12, 
-			issues:3, 
-			tests:2
+			issues:4, 
+			tests:9
 		},
 		{
 			id: 1, 
@@ -36,8 +36,8 @@ mainApp.factory('MemberFactory', function() {
 			bio:'My name is Alan. I make data pretty and accessible for their respective audiences. When I\'m not developing, I am drawing and doing photography.',
 			responsibilities:'Full Stack', 
 			commits: 12, 
-			issues:3, 
-			tests:2
+			issues:2, 
+			tests:0
 		},
 		{
 			id: 2, 
