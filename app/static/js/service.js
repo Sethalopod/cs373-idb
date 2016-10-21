@@ -33,7 +33,7 @@ mainApp.factory('MemberFactory', function() {
 			id: 1, 
 			name:'Alan Ma', 
 			image: '/static/images/alan.jpg',
-			bio:'hi howdy hello i don\'t share feelings',
+			bio:'My name is Alan. I make data pretty and accessible for their respective audiences. When I\'m not developing, I am drawing and doing photography.',
 			responsibilities:'Full Stack', 
 			commits: 12, 
 			issues:3, 
