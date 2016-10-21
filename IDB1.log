@@ -1,0 +1,460 @@
+commit a0eb5d8bb54541381f5bf9538791bfffc088bd8c
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Oct 20 16:43:07 2016 -0500
+
+    makefile is failing for unknown reasons
+
+commit 7e090e83f68411e582df882952e5a96707567e8c
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Oct 20 15:52:08 2016 -0500
+
+    hiding make test for now since they don't need to pass
+
+commit dd2b4bfd6c40aed0be52354adec8e0dc4f16c509
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Thu Oct 20 14:29:01 2016 -0500
+
+    style refactoring
+
+commit 5ff6fba16e55f36cf54864baedc56cab4b64e2c3
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Thu Oct 20 06:10:45 2016 -0500
+
+    Cozy About page
+
+commit 3359fc1153c3e336b977cac60bb9080c150fa180
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Thu Oct 20 05:13:32 2016 -0500
+
+    Joke about Angular here
+
+commit c7591e31563733b43a77ecd1bd6c97a5a13aa432
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Thu Oct 20 04:57:11 2016 -0500
+
+    Tools for tools
+
+commit 9dba13746f29c3d5ceb4ecf00f62d37ae914efdd
+Merge: 7d201fd 76f3c12
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Thu Oct 20 03:08:03 2016 -0500
+
+    Merge branch 'web'
+    
+    Merging w/ web
+
+commit 76f3c12399075b90363e6b662a82374041413b9a
+Merge: e82f9ac 258890b
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Thu Oct 20 03:06:41 2016 -0500
+
+    Merge remote-tracking branch 'origin/dev' into web
+
+commit e82f9acb59d9930426d87630642f553146f2ffa8
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Thu Oct 20 01:53:31 2016 -0500
+
+    Getting rid of hard coding is hard
+
+commit 7d201fdcb9cde1145c4d877e984f5825ae12d90f
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Oct 19 22:59:47 2016 -0500
+
+    Add static data and controllers
+
+commit 8944f4f16162be70150b06092b702847c43c25f7
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Oct 19 22:59:24 2016 -0500
+
+    Updated tables and info pages for recipes and ingredients
+
+commit 21934abdb062efcea4ca7922b653ba922f3b36ba
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Oct 19 18:28:42 2016 -0500
+
+    Fix spelling typo
+
+commit 055adb89f090f7d94e5804e3c9154b25d201d80d
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Oct 19 18:24:10 2016 -0500
+
+    Add data and templates for recipes and ingredients
+
+commit b377db9242280634a14b5852d70818a080007eda
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Wed Oct 19 18:01:28 2016 -0500
+
+    Change style of member info in about page
+
+commit 258890b14c1d19dd8d6713b562cbab605e27151b
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Oct 19 17:35:09 2016 -0500
+
+    Update gitignore
+
+commit 102a9deb484d91c7f226133b60a269735f68837d
+Merge: 9123a9d 8a1b6b9
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Wed Oct 19 17:29:05 2016 -0500
+
+    merged dev in
+
+commit 9123a9d7db1d3e9038926cf46bc16de83bc5bf2e
+Merge: 48429a5 79196fb
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Wed Oct 19 17:26:45 2016 -0500
+
+    Merge branch 'web' of https://github.com/Sethalopod/cs373-idb into web
+
+commit 48429a5aa6cbd330881a13cf8aa5b0ead4547301
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Wed Oct 19 17:26:39 2016 -0500
+
+    Try to update formating of individual members
+
+commit 79196fbe335216bdcbabeb23b8f88ad509f341be
+Merge: f2826ea d7033b2
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Wed Oct 19 17:25:24 2016 -0500
+
+    Merge branch 'web' of https://github.com/Sethalopod/cs373-idb into web
+
+commit f2826ea202823b64724fad0e6f79357f2dd3debd
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Wed Oct 19 17:25:22 2016 -0500
+
+    added travis
+
+commit d7033b2d55f011451b5347b4740149753be567a0
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Oct 19 17:24:57 2016 -0500
+
+    Add templates for recipes and ingredients
+
+commit 9a485fa0a58b26f363686d26de0299acc7d8e3d6
+Merge: 90c5ec7 50323c6
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Wed Oct 19 17:21:03 2016 -0500
+
+    Merge branch 'master' of https://github.com/Sethalopod/cs373-idb into web
+
+commit 90c5ec7a8ddbd7ac092c54a2cfce0d9333f4fd51
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Wed Oct 19 17:03:12 2016 -0500
+
+    added Zachary
+
+commit 50323c687d2192e041367e9a2cceb29d0bc5fb5a
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Wed Oct 19 16:49:15 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit bce03c661c974cba67ad311c66c4463a0cd8fafc
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Wed Oct 19 14:26:13 2016 -0500
+
+    possible fix to pathing problem
+
+commit a25faebdf618b60b8269a5ce12ce3b3703b2970b
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 09:45:06 2016 -0500
+
+    removed two rowsrequirement specified only three
+
+commit e5bbddbedda31d0fe3b676ec16de73f32ab6e0c0
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 09:40:54 2016 -0500
+
+    forgot to add landing page
+
+commit 08e0f456943452349ab1ab68ecead845d89cf3f9
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 09:40:37 2016 -0500
+
+    bad splash page because no time spook
+
+commit ba8b47c6f2fcb8cc363eb2d12a497216219d126d
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 09:11:20 2016 -0500
+
+    nicer cusine detail format
+
+commit abb3e5fd6380f94f0a0024fa851fe1ec617e53a9
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 09:05:09 2016 -0500
+
+    added image urls
+
+commit 05b79e102032962e8c85f132ab45a821d86ad474
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 08:53:22 2016 -0500
+
+    Created service for cuisine details page
+
+commit 3caddb6ca71a9d79adafcb0edf847a92d5bc6a77
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 07:52:22 2016 -0500
+
+    Catch all url so any routes to index
+
+commit d651bbb93a2707802b70aab8d7eae3eb1a35b07f
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 07:51:43 2016 -0500
+
+    Made service to return n dummy cache data
+
+commit 27788f652495a021b04c23f3c8f5fc4c3ebe7f30
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 07:16:42 2016 -0500
+
+    added font awesome
+
+commit 2d0ffbd99bbdcf4033ed790bb84431ce7f615b54
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 07:16:09 2016 -0500
+
+    cuisine table is sortable
+
+commit b58e184894451b81dc179c221364b3e6a6f7ef61
+Merge: fabe352 8150a93
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 06:02:33 2016 -0500
+
+    fix merge
+
+commit fabe352dc0237b00b370dcff18bc7e44f8fc4cd3
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 06:00:09 2016 -0500
+
+    move away from server-side templates to client-side templates
+
+commit 8150a93792f97806ab830da6dd4d3dccc216f9c3
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Wed Oct 19 03:29:07 2016 -0500
+
+    WE gon home
+
+commit 231e727efe42dcdeadd0f8e36649bfc3d3b5f59b
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Wed Oct 19 03:07:16 2016 -0500
+
+    Add updated styles file
+
+commit 71efa873cffac797eab84c0ce0f12735c5be7fe3
+Merge: a850027 fe87668
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Wed Oct 19 03:06:29 2016 -0500
+
+    fix merge conflict
+
+commit a850027508a9b106719ffa6ea4782288ee0c4f30
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Wed Oct 19 03:03:09 2016 -0500
+
+    Change the format style in about.html
+
+commit fe87668b1ad9b357300b80f406b9485351f52d97
+Merge: 55944a9 3d3fa32
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 01:35:14 2016 -0500
+
+    merge issue
+
+commit 55944a972c1b57885a12414ae266df838d1c8355
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 19 01:18:58 2016 -0500
+
+    templated pages
+
+commit 3d3fa32a394b28b56581262691648e7d38e7f5da
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Wed Oct 19 00:28:25 2016 -0500
+
+    change formatting. add tools/data columns. add Anthony Jessica pics
+
+commit e3b5b137a448c9523c2ba9dcb892264cb68ce11d
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Tue Oct 18 23:28:10 2016 -0500
+
+    Spooky scary about page
+
+commit 8a1b6b9a536a48ac2c6fbe7151b70f999e6c37fc
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Tue Oct 18 22:01:24 2016 -0500
+
+    Add documentation for models
+
+commit 69d31550ae3ebe38b34ac8a43e4e8e008b768aca
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Tue Oct 18 11:34:18 2016 -0500
+
+    Update .gitignore
+
+commit f63ddc3d435e0c1e5ec393812ea89f9752e7ac27
+Merge: e1869e9 b84ce8b
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Tue Oct 18 11:17:53 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Sethalopod/cs373-idb into dev
+
+commit e1869e9aa0a01a2c327630e6274992090b877f0e
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Tue Oct 18 11:16:40 2016 -0500
+
+    Add tests for database models
+
+commit 790967155f3e528669625ed717f8fc5072cf59ad
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Tue Oct 18 11:16:19 2016 -0500
+
+    Add database models built in sqlAlchemy
+
+commit 545c1bf507ceb9b7fb01d22ec9af29850e16a570
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Tue Oct 18 02:48:52 2016 -0500
+
+    Put in test info for about page. Needs some work
+
+commit 2c648b0f6ecc11aceaf3c0e90bd1d6bcd57fa9b4
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Tue Oct 18 00:36:29 2016 -0500
+
+    Build structure for about page (more test apples)
+
+commit efbc5bc998960a6d01c8d8535f6064ff222f858a
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Mon Oct 17 17:40:22 2016 -0500
+
+    Starting layout of the about page. Includes test apple.
+
+commit f5daa7441b953bf1da0c803a737028c477cc35f4
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Mon Oct 17 16:48:48 2016 -0500
+
+    Fending off hackers
+
+commit 760669fed90c039481cb7d9807551623943b00ae
+Merge: 4f1f157 c0f9ef2
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Mon Oct 17 16:31:05 2016 -0500
+
+    Merge branch 'web' of https://github.com/Sethalopod/cs373-idb into web
+    
+    Because we must!
+
+commit 4f1f157d6de84bc44b8340096e929afb677bbf44
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Mon Oct 17 16:30:36 2016 -0500
+
+    Table pages
+
+commit c0f9ef211cfd43a552775bdd5fb388c555750232
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Mon Oct 17 16:18:57 2016 -0500
+
+    :spook:
+
+commit 2392a6ab6b9fd9a127fd4a9d3f789709fc09619a
+Merge: 1a094e3 91972ef
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Mon Oct 17 16:12:57 2016 -0500
+
+    Start ingredients table
+
+commit 1a094e33e5cd2ba4a2c01b2d2c932a751ad381b1
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Mon Oct 17 16:10:33 2016 -0500
+
+    Start table for ingredients
+
+commit 91972efb5d33b92ef7fd456bc1f1856cf346807d
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Mon Oct 17 15:46:35 2016 -0500
+
+    created script /shrug
+
+commit fd47a38076002d91568d763fd89e166598380f0c
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Mon Oct 17 15:18:31 2016 -0500
+
+    oops body
+
+commit 787fc8e43cdd98f74d913550b4699379733420d2
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Mon Oct 17 15:09:12 2016 -0500
+
+    created the nav bar header file and modified other files to refer to it
+
+commit b84ce8b1734dfd5a117234299f08c1be29235789
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Mon Oct 17 14:27:15 2016 -0500
+
+    added travis
+
+commit 2b4c0dc217b4cc649900cf59d5c35f4b5c25d1c0
+Merge: bd8fc9f 1afddd7
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Mon Oct 17 14:20:28 2016 -0500
+
+    pulled master into web
+
+commit 1afddd76af8c76929bf3b5f724a96f1606ac716d
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Mon Oct 17 01:30:42 2016 +0000
+
+    add requirements for local testing
+
+commit 4efd11c5e007b4fddd5f2bb2638b1b61f6d979c2
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Mon Oct 17 01:25:12 2016 +0000
+
+    setup apache and flask
+
+commit bd8fc9fd72a18c26ad2a29297bd253df1c3bee97
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Sun Oct 16 17:54:03 2016 -0500
+
+    WEB DOWN
+
+commit 74b5840c332a092bd607bbdb8cf9b4556eec71ec
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Sun Oct 16 17:33:53 2016 -0500
+
+    add app folder
+
+commit 011db2f5bf08479115979c889154f6238e3d7624
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Sun Oct 16 16:57:44 2016 -0500
+
+    Thes boots are made for walking
+
+commit c1bc934f6ea320ea34c280daec35feea9d869db0
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Sun Oct 16 16:11:24 2016 -0500
+
+    Bootstrap strapped in
+
+commit add8d69616314170ce5804815fd08e4fc5386fb3
+Author: Alan <alanma0907@utexas.edu>
+Date:   Sun Oct 16 19:39:43 2016 +0000
+
+    forgot to add
+
+commit ffcd4fc2ce3281a28e8572c72536d55cf8b11a19
+Author: Seth Milligan <Sethalopod@users.noreply.github.com>
+Date:   Sun Oct 16 14:21:15 2016 -0500
+
+    Add UML diagram of our model
+
+commit 764a85375d608b163b89c8abf52c41e5d7c08b2c
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Sun Oct 16 13:47:34 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit ea5263bc5fc93eef685ca51f75b0e83232a550d2
+Author: Seth Milligan <Sethalopod@users.noreply.github.com>
+Date:   Sun Oct 16 13:46:28 2016 -0500
+
+    Add .gitignore
