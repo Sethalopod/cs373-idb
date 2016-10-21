@@ -59,12 +59,8 @@ mainApp.controller('AboutCtrl',
 		{ name: 'yUML', link: 'http://yuml.me/'}
 	];
 	$scope.dataUsed = [
-		{name: 'Fus', link: '/about'},
-		{name: 'Roh', link: '/about'},
-		{name: 'Dah', link: '/about'},
-		{name: 'Fus', link: '/about'},
-		{name: 'Roh', link: '/about'},
-		{name: 'Dah', link: '/about'}
+		{name: 'FoodFacts', link: 'https://api.foodfacts.com/'},
+		{name: 'Spoonacular', link: 'https://market.mashape.com/spoonacular/recipe-food-nutrition'}
 	]
         console.log("Member Factory fetch end");
     }]
