@@ -46,8 +46,8 @@ mainApp.factory('MemberFactory', function() {
 			bio:'My name is Anthony Gallop (That\'s -op, not -up. I\'m suing the Gallup Poll for pain and suffering). My hobbies include playing video games and making bad chat bots. ',
 			responsibilities:'Frontend', 
 			commits: 12, 
-			issues:3, 
-			tests:2
+			issues:1, 
+			tests:0
 		},
 		{
 			id: 3, 
@@ -64,10 +64,10 @@ mainApp.factory('MemberFactory', function() {
 			image:'/static/images/zachary.jpg',
 			name:'Zach Gilkerson', 
 			bio:'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
-			responsibilities:'1', 
+			responsibilities:'Full Stack', 
 			commits: 12, 
-			issues:3, 
-			tests:2
+			issues:9, 
+			tests:0
 		}
 	];
     return {

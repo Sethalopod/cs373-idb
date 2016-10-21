@@ -60,7 +60,10 @@ mainApp.controller('AboutCtrl',
 	];
 	$scope.dataUsed = [
 		{name: 'FoodFacts', link: 'https://api.foodfacts.com/'},
-		{name: 'Spoonacular', link: 'https://market.mashape.com/spoonacular/recipe-food-nutrition'}
+		{name: 'Spoonacular', link: 'https://market.mashape.com/spoonacular/recipe-food-nutrition'},
+        {name: 'Github Issue Tracker', link: 'https://github.com/Sethalopod/cs373-idb/issues'},
+        {name: 'Repository', link: 'https://github.com/Sethalopod/cs373-idb'},
+        {name: 'Wiki', link: 'https://github.com/Sethalopod/cs373-idb/wiki'}
 	]
         console.log("Member Factory fetch end");
     }]
