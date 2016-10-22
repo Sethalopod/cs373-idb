@@ -54,7 +54,17 @@ mainApp.factory('GithubFetchFactory', function($http) {
   return $http.get('https://api.github.com/repos/Sethalopod/cs373-idb/contributors');
 });
 
+mainApp.factory('IssueFetchFactory', function($http) { 
+  return $http.get('https://api.github.com/repos/Sethalopod/cs373-idb/issues?per_page=500&state=all');
+});
+
 mainApp.factory('MetadataFetchFactory', function() {
+  var siteCache = [
+    { name: 'ggmate',                   link: 'http://ggmate.me/'},
+    { name: 'Greek Mythology',          link: 'http://greekmythology.me/'},
+    { name: 'Party People',             link: 'http://partypeople.me/'},
+    { name: 'Video Game Character DB',  link: 'http://vgidb.me'},
+  ];
   var apiCache = [
     { name: 'FoodFacts',            link: 'https://api.foodfacts.com/'},
     { name: 'Spoonacular',          link: 'https://market.mashape.com/spoonacular/recipe-food-nutrition'},
@@ -125,6 +135,9 @@ mainApp.factory('MetadataFetchFactory', function() {
   return {
     fetchAPI: function () {
       return apiCache;
+    },
+    fetchSite: function () {
+      return siteCache;
     },
     fetchProject: function () {
       return projectCache;

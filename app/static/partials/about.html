@@ -37,7 +37,7 @@
       </div>
       <div class="row text-center">
         <p><strong>Commit Count:</strong> {{github[member.login].contributions}}</p>
-        <p><strong>Issue Count:</strong> {{member.issues}}</p>
+        <p><strong>Issue Count:</strong> {{github[member.login].issues}}</p>
         <p><strong>Unit Tests Count:</strong> {{member.tests}}</p>
         <p><strong>Respobsible for:</strong> {{member.responsibilities}}</p>
       </div>
@@ -47,25 +47,31 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4 text-center">
+    <div class="col-md-3 text-center">
       <h2>Statistics</h2>
       <p><strong>Total Commit Count:</strong> {{stats.commits}}</p>
       <p><strong>Toal Issue Count:</strong> {{stats.issues}}</p>
       <p><strong>Total Unit Tests:</strong> {{stats.tests}}</p>
-      <div ng-repeat="source in project">
+      <div ng-repeat="source in projects">
         <a ng-href="{{source.link}}"><p>{{source.name}}</p></a>
       </div>
     </div>
-    <div class="col-md-4 text-center">
+    <div class="col-md-3 text-center">
       <h2>Tools</h2>
       <div ng-repeat="tool in tools">
         <a ng-href="{{tool.link}}"><p>{{tool.name}}</p></a>
       </div>
     </div>
-    <div class="col-md-4 text-center">
+    <div class="col-md-3 text-center">
       <h2>Data</h2>
       <div ng-repeat="data in dataUsed">
         <a ng-href="{{data.link}}"><p>{{data.name}}</p></a>
+      </div>
+    </div>
+    <div class="col-md-3 text-center">
+      <h2>Other Databases</h2>
+      <div ng-repeat="site in sites">
+        <a ng-href="{{site.link}}"><p>{{site.name}}</p></a>
       </div>
     </div>
   </div>
