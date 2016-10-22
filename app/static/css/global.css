@@ -3,6 +3,11 @@ a, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
+.col-md-five {
+  width: 20%;
+  float: left;
+}
+
 .bg-image {
     background-image: url('../images/veggies.jpg');
     background-position: center;
