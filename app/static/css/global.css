@@ -12,12 +12,9 @@ a, a:visited, a:hover, a:active {
   padding-left: 15px;
 }
 
-.bg-image {
-    background-image: url('../images/veggies.jpg');
-    background-position: center;
-    background-size: cover;
-    height: 100px;
-};
+.navbar-brand {
+  padding: 5px 15px;
+}
 
 .splash-piller {
     font-size: 200px; 
