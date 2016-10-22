@@ -50,7 +50,7 @@ mainApp.factory('RecipeFetchFactory', function() {
   };
 });
 
-theApp.factory('GithubFetchFactory', function($http) { 
+mainApp.factory('GithubFetchFactory', function($http) { 
     return $http.get('https://api.github.com/repos/Sethalopod/cs373-idb/contributors');
 });
 
@@ -59,8 +59,7 @@ mainApp.factory('MemberFetchFactory', function() {
     {
       name:'Seth Milligan',
       login: 'Sethalopod',
-      image: '/static/images/seth.jpeg',
-      bio:'Hey everyone! My name is Seth and I’m a senior studying computer science at the University of Texas at Austin. Some of my hobbies include disc golf, playing board games, and listening to music.',
+      description: 'Hey everyone! My name is Seth and I’m a senior studying computer science at the University of Texas at Austin. Some of my hobbies include disc golf, playing board games, and listening to music.',
       responsibilities:'Backend',
       issues: 2, 
       tests: 0
@@ -68,47 +67,32 @@ mainApp.factory('MemberFetchFactory', function() {
     {
       name: 'Alan Ma', 
       login: 'wolfier',
-      image: '/static/images/alan.jpeg',
-      bio: 'My name is Alan. I make data pretty and accessible for their respective audiences. When I\'m not developing, I am drawing and doing photography.',
+      description: 'My name is Alan. I make data pretty and accessible for their respective audiences. When I\'m not developing, I am drawing and doing photography.',
       responsibilities: 'Full Stack', 
+      instagram_url: 'https://www.instagram.com/packagedwolf/',
       issues: 2, 
       tests: 0
     },
     {
       name:'Anthony Gallop', 
       login: 'agallop',
-      image: '/static/images/anthony.jpeg',
-      bio: 'My name is Anthony Gallop (That\'s -op, not -up. I\'m suing the Gallup Poll for pain and suffering). My hobbies include playing video games and making bad chat bots. ',
+      description: 'My name is Anthony Gallop (That\'s -op, not -up. I\'m suing the Gallup Poll for pain and suffering). My hobbies include playing video games and making bad chat bots. ',
       responsibilities: 'Frontend', 
       issues: 1, 
       tests: 0
     },
     {
-      id: 3, 
-      image: '/static/images/jessica.jpeg',
       name: 'Jessica Lindee', 
       login: 'jesslindee', 
-      bio: 'Howdy! I\’m in my fourth year of college and my second year of studying computer science at the University of Texas at Austin. It took me a while to find the computer science path, but I\’m glad that I did! I like to sleep, play board games, watch Netflix, and camp out in the computer lab.',
+      description: 'Howdy! I\’m in my fourth year of college and my second year of studying computer science at the University of Texas at Austin. It took me a while to find the computer science path, but I\’m glad that I did! I like to sleep, play board games, watch Netflix, and camp out in the computer lab.',
       responsibilities:'Frontend', 
       issues: 4, 
       tests: 0
     },
     {
-      id: 4, 
-      image: '/static/images/zachary.jpg',
       name: 'Zach Gilkerson', 
       login: 'zgilkerson',
-      bio: 'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
-      responsibilities: 'Full Stack', 
-      issues: 9, 
-      tests: 0
-    },
-    {
-      id: 4, 
-      image: '/static/images/zachary.jpg',
-      name: 'Zach Gilkerson', 
-      login: "zgilkerson",
-      bio: 'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
+      description: 'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
       responsibilities: 'Full Stack', 
       issues: 9, 
       tests: 0

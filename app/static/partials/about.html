@@ -5,55 +5,38 @@
     </div>
   </div>
 </div>
-
-<div class="container-fluid divcolor1">
- <!-- Seth & Alan row -->
-  <div class="row">
-    <!-- Seth -->
-    <div class = "col-md-offset-2 col-xs-offset-0 col-md-4 col-xs-12 member">
-      <div ng-controller="AboutCtrl">
-        <member-detail info="seth"></member-detail>
+<!-- https://api.github.com/repos/Sethalopod/cs373-idb/issues/events  -->
+<div class="container-fluid">
+  <div class="row" >
+    <div class="col-md-2" ng-repeat="member in members">
+      <div class="row">
+        <img ng-src="{{github[member.login].avatar_url}}" style="width:100%"/>
       </div>
-    </div>
-    <!-- Alan -->
-    <div class = "col-md-4 col-xs-12 member">
-      <div ng-controller="AboutCtrl">
-        <member-detail info="alan"></member-detail>
+      <div class="row">
+        <h2 class="text-center">{{member.name}}</h2>
       </div>
-    </div> 
-  </div>
- 
-  <!-- Anthony and Jessica row -->
-  <div class="row">
-    <!-- Anthony -->
-    <div class = "col-md-offset-2 col-xs-offset-0 col-md-4 col-xs-12 member">
-      <div ng-controller="AboutCtrl">
-        <member-detail info="anthony"></member-detail>
+      <div class="row text-center">
+        <a ng-href="{{github[member.login].url}}"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+        <i ng-show="member.instagram_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+        <i ng-show="member.twitter_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
       </div>
-    </div>
-    <!-- Jessica -->
-    <div class = "col-md-4 col-xs-12 member">
-      <div ng-controller="AboutCtrl">
-        <member-detail info="jessica"></member-detail>
+      <div class="row text-center">
+        <p><strong>Commit Count:</strong> {{github[member.login].contributions}}</p>
+        <p><strong>Issue Count:</strong> {{member.issues}}</p>
+        <p><strong>Unit Tests Count:</strong> {{member.tests}}</p>
+        <p><strong>Respobsible for:</strong> {{member.responsibilities}}</p>
       </div>
+      <div class="row">
+        <p class="text-center">{{member.description}}</p>
+      </div>
+      
     </div>
   </div>
-
-  <!-- Zachs row -->
-  <div class="row">
-    <!-- Zach-->
-    <div class = "col-md-offset-4 col-md-4 col-xs-offset-0 col-xs-12 member">
-      <div ng-controller="AboutCtrl">
-        <member-detail info="zach"></member-detail>
-      </div>
-    </div> 
-  </div> 
 </div>
 
-<div class="container-fluid divcolor5 roomy">
+<!-- <div class="container-fluid divcolor5 roomy">
   <div class="row">
     <div class="col-md-offset-2 col-md-4 col-xs-6">
-      <!-- Tools -->
       <br>
       <h2 class="text-center textcolor4">Tools</h2>
       <div ng-repeat="tool in tools">
@@ -61,7 +44,6 @@
       </div>
     </div>
     <div class="col-md-4 col-xs-6">
-      <!-- Data -->
       <br>
       <h2 class="text-center textcolor4">Other</h2>
       <div ng-repeat="data in dataUsed">
@@ -79,5 +61,5 @@
       <p class="text-center textcolor2">The data was obtained through FoodFacts's and Spoonacular's APIs. With GET requests we got data formatted in JSON which we recorded and placed in an Angular factory.</p> 
     </div>
   </div>
-</div>
+</div> -->
 <!-- end of container -->

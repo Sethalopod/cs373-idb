@@ -41,13 +41,21 @@ mainApp.controller('IngredientDetailCtrl',
     }]);
 
 mainApp.controller('AboutCtrl',
-    ['$scope', 'MemberFetchFactory', 'ToolFetchFactory', 'DataUsedFetchFactory', 'GithubFetchFactory'
+    ['$scope', 'MemberFetchFactory', 'ToolFetchFactory', 'DataUsedFetchFactory', 'GithubFetchFactory',
     function($scope, MemberFetchFactory, ToolFetchFactory, DataUsedFetchFactory, GithubFetchFactory) {
         $scope.members      = MemberFetchFactory.fetch();
         $scope.tools        = ToolFetchFactory.fetch();
         $scope.dataUsed     = DataUsedFetchFactory.fetch();
-        GithubFetchFactory.success(function(data) { 
-            $scope.github   = data.contentItem[0];
+        GithubFetchFactory.success(function(data) {
+            refineData      = {};
+
+            for(var i = 0; i < data.length; i++) {
+                refineData[data[i].login] = {}
+                refineData[data[i].login].avatar_url = data[i].avatar_url
+                refineData[data[i].login].url = data[i].url
+                refineData[data[i].login].contributions = data[i].contributions
+            }
+            $scope.github   = refineData;
         });
 
     }]);
