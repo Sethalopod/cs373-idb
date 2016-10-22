@@ -41,21 +41,30 @@ mainApp.controller('IngredientDetailCtrl',
     }]);
 
 mainApp.controller('AboutCtrl',
-    ['$scope', 'MemberFetchFactory', 'ToolFetchFactory', 'DataUsedFetchFactory', 'GithubFetchFactory',
-    function($scope, MemberFetchFactory, ToolFetchFactory, DataUsedFetchFactory, GithubFetchFactory) {
-        $scope.members      = MemberFetchFactory.fetch();
-        $scope.tools        = ToolFetchFactory.fetch();
-        $scope.dataUsed     = DataUsedFetchFactory.fetch();
-        GithubFetchFactory.success(function(data) {
-            refineData      = {};
+    ['$scope', 'GithubFetchFactory', 'MetadataFetchFactory',
+    function($scope, GithubFetchFactory, MetadataFetchFactory) {
+        stats               = {issues:0, tests:0, commits:0}
+        $scope.members      = MetadataFetchFactory.fetchMember();
+        for(var i = 0; i < $scope.members.length; i++) {
+            stats.issues    += $scope.members[i].issues
+            stats.tests     += $scope.members[i].tests
+        }
+        $scope.tools        = MetadataFetchFactory.fetchTool();
+        $scope.dataUsed     = MetadataFetchFactory.fetchAPI();
+        $scope.project      = MetadataFetchFactory.fetchProject();
 
-            for(var i = 0; i < data.length; i++) {
-                refineData[data[i].login] = {}
-                refineData[data[i].login].avatar_url = data[i].avatar_url
-                refineData[data[i].login].url = data[i].url
-                refineData[data[i].login].contributions = data[i].contributions
-            }
-            $scope.github   = refineData;
+        GithubFetchFactory.success(function(data) {
+        refineData          = {};
+        totalCommit         = 0;
+        for(var i = 0; i < data.length; i++) {
+            refineData[data[i].login] = {}
+            refineData[data[i].login].avatar_url = data[i].avatar_url
+            refineData[data[i].login].html_url = data[i].url
+            refineData[data[i].login].contributions = data[i].contributions
+            stats.commits   += data[i].contributions
+        }
+        $scope.stats        = stats;
+        $scope.github       = refineData;
         });
 
     }]);

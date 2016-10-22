@@ -1,13 +1,10 @@
-<div class="container-fluid divcolor4">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-12 col-xs-12">
-      <h2 class="text-center textcolor1">About Us</h2>
+      <h2 class="text-center">About Us</h2>
     </div>
   </div>
-</div>
-<!-- https://api.github.com/repos/Sethalopod/cs373-idb/issues/events  -->
-<div class="container-fluid">
-  <div class="row" >
+  <div class="row">
     <div class="col-md-2" ng-repeat="member in members">
       <div class="row">
         <img ng-src="{{github[member.login].avatar_url}}" style="width:100%"/>
@@ -29,37 +26,34 @@
       <div class="row">
         <p class="text-center">{{member.description}}</p>
       </div>
-      
     </div>
   </div>
-</div>
-
-<!-- <div class="container-fluid divcolor5 roomy">
   <div class="row">
-    <div class="col-md-offset-2 col-md-4 col-xs-6">
-      <br>
-      <h2 class="text-center textcolor4">Tools</h2>
+    <div class="col-md-4 text-center">
+      <h2>Statistics</h2>
+      <p><strong>Total Commit Count:</strong> {{stats.commits}}</p>
+      <p><strong>Toal Issue Count:</strong> {{stats.issues}}</p>
+      <p><strong>Total Unit Tests:</strong> {{stats.tests}}</p>
+      <div ng-repeat="source in project">
+        <a ng-href="{{source.link}}"><p>{{source.name}}</p></a>
+      </div>
+    </div>
+    <div class="col-md-4 text-center">
+      <h2>Tools</h2>
       <div ng-repeat="tool in tools">
-        <a ng-href="{{tool.link}}"><h3 class="text-center textcolor2">{{tool.name}}</h3></a>
+        <a ng-href="{{tool.link}}"><p>{{tool.name}}</p></a>
       </div>
     </div>
-    <div class="col-md-4 col-xs-6">
-      <br>
-      <h2 class="text-center textcolor4">Other</h2>
+    <div class="col-md-4 text-center">
+      <h2>Data</h2>
       <div ng-repeat="data in dataUsed">
-        <a ng-href="{{data.link}}"><h3 class="text-center textcolor2">{{data.name}}</h3></a>
+        <a ng-href="{{data.link}}"><p>{{data.name}}</p></a>
       </div>
+    </div>
+  </div>
+  <div class="row text-center">
+      <h2 class="text-center">Scraping the Data</h2>
+      <p>The data was obtained through FoodFacts's and Spoonacular's APIs. With GET requests we got data formatted in JSON which we recorded and placed in an Angular factory.</p> 
     </div>
   </div>
 </div>
-
-<div class="container-fluid divcolor5 roomy">
-  <div class="row">
-    <div class="col-md-12 col-xs-12">
-      <h2 class="text-center textcolor4">Scraping the Data</h2>
-      <br>
-      <p class="text-center textcolor2">The data was obtained through FoodFacts's and Spoonacular's APIs. With GET requests we got data formatted in JSON which we recorded and placed in an Angular factory.</p> 
-    </div>
-  </div>
-</div> -->
-<!-- end of container -->
