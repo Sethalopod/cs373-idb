@@ -50,58 +50,69 @@ mainApp.factory('RecipeFetchFactory', function() {
   };
 });
 
+theApp.factory('GithubFetchFactory', function($http) { 
+    return $http.get('https://api.github.com/repos/Sethalopod/cs373-idb/contributors');
+});
+
 mainApp.factory('MemberFetchFactory', function() {
   var objectCache = [
     {
-      id: 0, 
       name:'Seth Milligan',
-      image: '/static/images/seth.jpeg', 
+      login: 'Sethalopod',
+      image: '/static/images/seth.jpeg',
       bio:'Hey everyone! My name is Seth and I’m a senior studying computer science at the University of Texas at Austin. Some of my hobbies include disc golf, playing board games, and listening to music.',
-      responsibilities:'Backend', 
-      commits: 18, 
-      issues:4, 
-      tests:9
+      responsibilities:'Backend',
+      issues: 2, 
+      tests: 0
     },
     {
-      id: 1, 
-      name:'Alan Ma', 
-      image: '/static/images/alan.jpg',
-      bio:'My name is Alan. I make data pretty and accessible for their respective audiences. When I\'m not developing, I am drawing and doing photography.',
-      responsibilities:'Full Stack', 
-      commits: 17, 
-      issues:2, 
-      tests:0
+      name: 'Alan Ma', 
+      login: 'wolfier',
+      image: '/static/images/alan.jpeg',
+      bio: 'My name is Alan. I make data pretty and accessible for their respective audiences. When I\'m not developing, I am drawing and doing photography.',
+      responsibilities: 'Full Stack', 
+      issues: 2, 
+      tests: 0
     },
     {
-      id: 2, 
       name:'Anthony Gallop', 
+      login: 'agallop',
       image: '/static/images/anthony.jpeg',
-      bio:'My name is Anthony Gallop (That\'s -op, not -up. I\'m suing the Gallup Poll for pain and suffering). My hobbies include playing video games and making bad chat bots. ',
-      responsibilities:'Frontend', 
-      commits: 14, 
-      issues:1, 
-      tests:0
+      bio: 'My name is Anthony Gallop (That\'s -op, not -up. I\'m suing the Gallup Poll for pain and suffering). My hobbies include playing video games and making bad chat bots. ',
+      responsibilities: 'Frontend', 
+      issues: 1, 
+      tests: 0
     },
     {
       id: 3, 
       image: '/static/images/jessica.jpeg',
-      name:'Jessica Lindee', 
-      bio:'Howdy! I\’m in my fourth year of college and my second year of studying computer science at the University of Texas at Austin. It took me a while to find the computer science path, but I\’m glad that I did! I like to sleep, play board games, watch Netflix, and camp out in the computer lab.',
+      name: 'Jessica Lindee', 
+      login: 'jesslindee', 
+      bio: 'Howdy! I\’m in my fourth year of college and my second year of studying computer science at the University of Texas at Austin. It took me a while to find the computer science path, but I\’m glad that I did! I like to sleep, play board games, watch Netflix, and camp out in the computer lab.',
       responsibilities:'Frontend', 
-      commits: 22, 
-      issues:4, 
-      tests:0
+      issues: 4, 
+      tests: 0
     },
     {
       id: 4, 
-      image:'/static/images/zachary.jpg',
-      name:'Zach Gilkerson', 
-      bio:'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
-      responsibilities:'Full Stack', 
-      commits: 20, 
-      issues:9, 
-      tests:0
-    }
+      image: '/static/images/zachary.jpg',
+      name: 'Zach Gilkerson', 
+      login: 'zgilkerson',
+      bio: 'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
+      responsibilities: 'Full Stack', 
+      issues: 9, 
+      tests: 0
+    },
+    {
+      id: 4, 
+      image: '/static/images/zachary.jpg',
+      name: 'Zach Gilkerson', 
+      login: "zgilkerson",
+      bio: 'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
+      responsibilities: 'Full Stack', 
+      issues: 9, 
+      tests: 0
+    },
   ];
     return {
       fetch: function () {
