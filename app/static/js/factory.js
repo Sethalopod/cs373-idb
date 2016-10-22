@@ -77,20 +77,24 @@ mainApp.factory('MetadataFetchFactory', function() {
   ];
   var memberCache = [
   {
-    name: 'Alan Ma', 
-    login: 'wolfier',
-    description: 'My name is Alan. I make data pretty and accessible for their respective audiences. When I\'m not developing, I am drawing and doing photography.',
-    responsibilities: 'Full Stack', 
-    instagram_url: 'https://www.instagram.com/packagedwolf/',
-    issues: 2, 
-    tests: 0
-  },
-  {
     name:'Anthony Gallop', 
     login: 'agallop',
     description: 'My name is Anthony Gallop (That\'s -op, not -up. I\'m suing the Gallup Poll for pain and suffering). My hobbies include playing video games and making bad chat bots. ',
     responsibilities: 'Frontend', 
     issues: 1, 
+    tests: 0
+  },
+  {
+    name: 'Alan Ma', 
+    login: 'wolfier',
+    description: 'My name is Alan. I make data pretty and accessible for their respective audiences. When I\'m not developing, I am drawing and doing photography.',
+    responsibilities: 'Full Stack', 
+    instagram_url: 'https://www.instagram.com/packagedwolf/',
+    twitter_url: 'https://twitter.com/packagedwolf',
+    linkedin_url: 'https://linkedin.com/in/alanmaut',
+    pintrest_url: 'https://www.pinterest.com/alanwolfie/',
+    reddit_url: 'https://www.reddit.com/user/wrywolf',
+    issues: 2, 
     tests: 0
   },
   {

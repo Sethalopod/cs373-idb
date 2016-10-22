@@ -13,9 +13,27 @@
         <h2 class="text-center">{{member.name}}</h2>
       </div>
       <div class="row text-center">
-        <a ng-href="{{github[member.login].url}}"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
-        <i ng-show="member.instagram_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-        <i ng-show="member.twitter_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+        <a ng-href="{{github[member.login].url}}">
+          <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        </a>
+        <a ng-href="{{member.instagram_url}}">
+          <i ng-show="member.instagram_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+        </a>
+        <a ng-href="{{member.twitter_url}}">
+          <i ng-show="member.twitter_url != null" class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+        </a>
+        <a ng-href="{{member.linkedin_url}}">
+          <i ng-show="member.linkedin_url != null" class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+        </a>
+        <a ng-href="{{member.pintrest_url}}">
+          <i ng-show="member.pintrest_url != null" class="fa fa-pintrest fa-2x" aria-hidden="true"></i>
+        </a>
+        <a ng-href="{{member.twitch_url}}">
+          <i ng-show="member.twitch_url != null" class="fa fa-twitch fa-2x" aria-hidden="true"></i>
+        </a>
+        <a ng-href="{{member.reddit_url}}">
+          <i ng-show="member.reddit_url != null" class="fa fa-reddit-alien fa-2x" aria-hidden="true"></i>
+        </a>
       </div>
       <div class="row text-center">
         <p><strong>Commit Count:</strong> {{github[member.login].contributions}}</p>

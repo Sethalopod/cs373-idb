@@ -59,7 +59,7 @@ mainApp.controller('AboutCtrl',
         for(var i = 0; i < data.length; i++) {
             refineData[data[i].login] = {}
             refineData[data[i].login].avatar_url = data[i].avatar_url
-            refineData[data[i].login].html_url = data[i].url
+            refineData[data[i].login].url = data[i].html_url
             refineData[data[i].login].contributions = data[i].contributions
             stats.commits   += data[i].contributions
         }
