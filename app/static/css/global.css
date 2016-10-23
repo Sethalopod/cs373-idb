@@ -3,21 +3,98 @@ a, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
-.col-md-five {
-  width: 20%;
-  float: left;
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+body {
+  background: #1d1e1e;
+  color: #fcfcfc;
+}
+
+.col-center {
+  float: none;
+  margin: 0 auto;
+}
+
+/*Bootstrap customization*/
+@media (min-width: 768px){
+  .col-md-5 {
+    width: 20%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .nav>li>a {
+    color: white;
+    padding: 30 15px
+  }
+}
+
+.navbar {
+  z-index: 999;
+  margin: 0;
+  border: 0;
+  padding: 25px;
 }
 
 .navbar-brand {
-  padding: 5px 15px;
+  padding: 12px 30px;
+  height: 100%
 }
 
+.navbar-brand img {
+  width: 60px;
+}
+
+.navbar-right {
+  margin-right: 0;
+}
+
+.nav>li>a {
+  color: white;
+  /*padding: 30px 15px*/
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: inherit;
+}
+
+.navbar-transparent {
+ background-color: transparent;
+ background: transparent;
+ border-color: transparent;
+}
+
+.navbar-transparent li { color: #000 } 
+
+.navbar-toggle {
+  margin: 0;
+  border: 0;
+  padding: 20px 15px;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: white;
+}
+/*END Bootstrap customization*/
+
+/*Splash CSS*/
+.hero-splash {
+  background-image: linear-gradient( rgba(30, 33, 37, 0.1), rgba(30, 33, 37, 0.4) ), url(../images/splash.jpeg);
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed; 
+  background-color: #202020;
+  color: #fff;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0; 
+  left: 0;
+}
+/*END Splash*/
+
 .splash-piller {
-    font-size: 200px; 
+  font-size: 200px; 
 };
 
 .center-block {
@@ -27,24 +104,24 @@ a, a:visited, a:hover, a:active {
 }
 
 .profile {
-	max-width: 75%;
-  height: auto;
+ max-width: 75%;
+ height: auto;
 }
 
 .logo {
-	max-height: 10%;
+ max-height: 10%;
 }
 
 .category {
-	font-size: 16px;
+ font-size: 16px;
 }
 
 .info {
-	font-size: 16px;
+ font-size: 16px;
 }
 
 .inline {
-	display:inline;
+ display:inline;
 }
 
 .member {
@@ -98,16 +175,4 @@ a, a:visited, a:hover, a:active {
 .antisocial {
   margin-top:20px;
   margin-bottom:20px;
-}
-
-.hero-unit {
-    background-image:url('../images/splash.jpeg');
-    background-size:cover;
-    background-color: seashell;
-    width: 100%;
-    height: 100vh;
-}
-
-.navbar {
-    margin-bottom: 0;
 }
