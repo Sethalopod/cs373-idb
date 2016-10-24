@@ -51,11 +51,36 @@ body {
 
 .nav>li>a {
   color: white;
+  text-transform: uppercase;
   /*padding: 30px 15px*/
 }
 
 .nav>li>a:focus, .nav>li>a:hover {
   background-color: inherit;
+}
+
+
+/*expand from middle effect*/
+.nav>li>a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    background: #06fbb4;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+/* width + 2 * left = 100 */
+.nav>li>a:hover:after {
+  width: 80%;
+  left: 10%;
 }
 
 .navbar-transparent {
