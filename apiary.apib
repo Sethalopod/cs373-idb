@@ -55,6 +55,28 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
                 ]
             }
         ]
+     
+## Recipe Collection [/recipes]
+### List Recipes [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "numRecipes": 4,
+                "pages": 100,
+                "currentPage": 1,
+                "recipes": [
+                    {
+                        "id": "1",
+                        "title": "Grilled Cheese"
+                    }, {
+                        "id": "2",
+                        "title": "Tomato Soup"
+                    }
+                ]
+            }
+        ]
         
 ## Recipe Information Collection [/recipes/{recipe_id}]
 ### Get information for a recipe [GET]
@@ -108,5 +130,27 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
                 "total_weight": "1 lb",
                 "brand": "Nature's Own",
                 "category": "bread"
+            }
+        ]
+        
+## Ingredient Collection [/ingredients]
+### List Ingredients [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "numIngredients": 4,
+                "pages": 100,
+                "currentPage": 1,
+                "ingredients": [
+                    {
+                        "id": "1",
+                        "title": "Bread"
+                    }, {
+                        "id": "2",
+                        "title": "Eggs"
+                    }
+                ]
             }
         ]
