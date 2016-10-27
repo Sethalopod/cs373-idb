@@ -100,6 +100,12 @@ body {
 }
 /*END Bootstrap customization*/
 
+/*Table CSS*/
+.table-striped>tbody>tr:nth-of-type(odd) {
+  color: black;
+}
+/*END Table*/
+
 /*About CSS*/
 .main-title {
   margin-bottom: 30px;
