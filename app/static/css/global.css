@@ -20,16 +20,15 @@ body {
     float: left;
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 0 30px;
   }
   
   .nav>li>a {
     color: white;
     padding: 30 15px
   }
-/*expand from middle effect*/
-.nav>li>a:after {
+  /*expand from middle effect*/
+  .nav>li>a:after {
     content: '';
     position: absolute;
     width: 0%;
@@ -43,13 +42,13 @@ body {
     -ms-transition: all 300ms ease;
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
-}
+  }
 
-/* width + 2 * left = 100 */
-.nav>li>a:hover:after {
-  width: 80%;
-  left: 10%;
-}
+  /* width + 2 * left = 100 */
+  .nav>li>a:hover:after {
+    width: 80%;
+    left: 10%;
+  }
 }
 
 .navbar {
@@ -82,9 +81,6 @@ body {
   background-color: inherit;
 }
 
-
-
-
 .navbar-transparent {
  background-color: transparent;
  background: transparent;
@@ -103,6 +99,20 @@ body {
   background-color: white;
 }
 /*END Bootstrap customization*/
+
+/*About CSS*/
+.main-title {
+  margin-bottom: 30px;
+}
+
+.horizontal-divider {
+    border-top: 1px solid black;
+    background-color: white;
+    margin: 40px 45%;
+    width: 10%;
+    height: 3px;
+}
+/*END About*/
 
 /*Splash CSS*/
 .hero-splash {
