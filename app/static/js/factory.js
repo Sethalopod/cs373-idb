@@ -62,6 +62,7 @@ mainApp.factory('MetadataFetchFactory', function() {
     { name: 'Greek Mythology',          link: 'http://greekmythology.me/'},
     { name: 'Party People',             link: 'http://partypeople.me/'},
     { name: 'Video Game Character DB',  link: 'http://vgidb.me'},
+    { name: 'LitDB',                    link: 'litdb.me'},
   ];
   var apiCache = [
     { name: 'FoodFacts',            link: 'https://api.foodfacts.com/'},
