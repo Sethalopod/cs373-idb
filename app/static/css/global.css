@@ -20,12 +20,34 @@ body {
     float: left;
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 0 30px;
   }
+  
   .nav>li>a {
     color: white;
     padding: 30 15px
+  }
+  /*expand from middle effect*/
+  .nav>li>a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    background: #06fbb4;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+  }
+
+  /* width + 2 * left = 100 */
+  .nav>li>a:hover:after {
+    width: 80%;
+    left: 10%;
   }
 }
 
@@ -59,30 +81,6 @@ body {
   background-color: inherit;
 }
 
-
-/*expand from middle effect*/
-.nav>li>a:after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: 5px;
-    left: 50%;
-    background: #06fbb4;
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -webkit-transition: all 300ms ease;
-    transition: all 300ms ease;
-}
-
-/* width + 2 * left = 100 */
-.nav>li>a:hover:after {
-  width: 80%;
-  left: 10%;
-}
-
 .navbar-transparent {
  background-color: transparent;
  background: transparent;
@@ -101,6 +99,26 @@ body {
   background-color: white;
 }
 /*END Bootstrap customization*/
+
+/*Table CSS*/
+.table-striped>tbody>tr:nth-of-type(odd) {
+  color: black;
+}
+/*END Table*/
+
+/*About CSS*/
+.main-title {
+  margin-bottom: 30px;
+}
+
+.horizontal-divider {
+    border-top: 1px solid black;
+    background-color: white;
+    margin: 40px 45%;
+    width: 10%;
+    height: 3px;
+}
+/*END About*/
 
 /*Splash CSS*/
 .hero-splash {

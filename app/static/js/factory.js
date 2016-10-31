@@ -49,7 +49,7 @@ mainApp.factory('RecipeFetchFactory', function() {
 });
 
 mainApp.factory('GithubFetchFactory', function($http) { 
-  return $http.get('https://api.github.com/repos/Sethalopod/cs373-idb/contributors');
+  return $http.get('https://api.github.com/repos/Sethalopod/cs373-idb/stats/contributors');
 });
 
 mainApp.factory('IssueFetchFactory', function($http) { 
@@ -62,6 +62,7 @@ mainApp.factory('MetadataFetchFactory', function() {
     { name: 'Greek Mythology',          link: 'http://greekmythology.me/'},
     { name: 'Party People',             link: 'http://partypeople.me/'},
     { name: 'Video Game Character DB',  link: 'http://vgidb.me'},
+    { name: 'LitDB',                    link: 'litdb.me'},
   ];
   var apiCache = [
     { name: 'FoodFacts',            link: 'https://api.foodfacts.com/'},
@@ -85,24 +86,20 @@ mainApp.factory('MetadataFetchFactory', function() {
   ];
   var memberCache = [
   {
-    name:'Anthony Gallop', 
-    login: 'agallop',
-    description: 'My name is Anthony Gallop (That\'s -op, not -up. I\'m suing the Gallup Poll for pain and suffering). My hobbies include playing video games and making bad chat bots. ',
-    responsibilities: 'Frontend', 
-    issues: 1, 
-    tests: 0
-  },
-  {
     name: 'Alan Ma', 
     login: 'wolfier',
     description: 'My name is Alan. I make data pretty and accessible for their respective audiences. When I\'m not developing, I am drawing and doing photography.',
     responsibilities: 'Full Stack', 
     instagram_url: 'https://www.instagram.com/packagedwolf/',
-    twitter_url: 'https://twitter.com/packagedwolf',
     linkedin_url: 'https://linkedin.com/in/alanmaut',
     pintrest_url: 'https://www.pinterest.com/alanwolfie/',
-    reddit_url: 'https://www.reddit.com/user/wrywolf',
-    issues: 2, 
+    tests: 0
+  },
+  {
+    name:'Anthony Gallop', 
+    login: 'agallop',
+    description: 'My name is Anthony Gallop (That\'s -op, not -up. I\'m suing the Gallup Poll for pain and suffering). My hobbies include playing video games and making bad chat bots. ',
+    responsibilities: 'Frontend', 
     tests: 0
   },
   {
@@ -110,7 +107,6 @@ mainApp.factory('MetadataFetchFactory', function() {
     login: 'jesslindee', 
     description: 'Howdy! I\’m in my fourth year of college and my second year of studying computer science at the University of Texas at Austin. It took me a while to find the computer science path, but I\’m glad that I did! I like to sleep, play board games, watch Netflix, and camp out in the computer lab.',
     responsibilities:'Frontend', 
-    issues: 4, 
     tests: 0
   },
   {
@@ -118,15 +114,13 @@ mainApp.factory('MetadataFetchFactory', function() {
     login: 'Sethalopod',
     description: 'Hey everyone! My name is Seth and I’m a senior studying computer science at the University of Texas at Austin. Some of my hobbies include disc golf, playing board games, and listening to music.',
     responsibilities:'Backend',
-    issues: 2, 
     tests: 0
   },
   {
-    name: 'Zach Gilkerson', 
+    name: 'Zachary Gilkerson', 
     login: 'zgilkerson',
     description: 'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
     responsibilities: 'Full Stack', 
-    issues: 9, 
     tests: 0
   },
   ];
