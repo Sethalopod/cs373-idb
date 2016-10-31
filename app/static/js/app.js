@@ -1,7 +1,8 @@
 var mainApp = angular.module('mainApp', [
 	'ngRoute',
+	'angularUtils.directives.dirPagination',
 	]);
-
+	
 mainApp.config(['$routeProvider', '$locationProvider',
 	function($routeProvider, $locationProvider) {
 		$routeProvider.
