@@ -58,7 +58,7 @@ mainApp.controller('AboutCtrl',
                 stats.commits   += data[i].toal;
             }
         });
-                console.log(refineData)
+        // console.log(refineData)
 
         IssueFetchFactory.success(function(data) {
             for(var i = 0; i < data.length; i++) {

@@ -32,9 +32,16 @@ html:
 	python3 -m pydoc -w app/models.py
 
 log:
-	git log > IDB1.log
+	git log > IDB2.log
 
-requirement:
-	python3 -m pip freeze > requirments.txt
+freeze:
+	python3 -m pip freeze > requirements.txt
+
+requirements:
+	python3 -m pip install --upgrade pip
+	python3 -m pip install -r requirements.txt
+
+server:
+	python3 app/app.py
 
 test: html check
