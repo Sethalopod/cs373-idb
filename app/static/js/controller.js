@@ -55,7 +55,7 @@ mainApp.controller('AboutCtrl',
                 refineData[author.login].url           = author.html_url;
                 refineData[author.login].contributions = data[i].total;
                 refineData[author.login].issues        = 0;
-                stats.commits   += data[i].toal;
+                stats.commits   += data[i].total;
             }
         });
         // console.log(refineData)
