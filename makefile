@@ -29,9 +29,12 @@ check:
     echo "success";
 
 html:
-	python -m pydoc -w app/models.py
+	python3 -m pydoc -w app/models.py
 
 log:
 	git log > IDB1.log
+
+requirement:
+	python3 -m pip freeze > requirments.txt
 
 test: html check
