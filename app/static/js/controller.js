@@ -49,14 +49,16 @@ mainApp.controller('AboutCtrl',
 
         GithubFetchFactory.success(function(data) {
             for(var i = 0; i < data.length; i++) {
-                refineData[data[i].login] = {};
-                refineData[data[i].login].avatar_url    = data[i].avatar_url;
-                refineData[data[i].login].url           = data[i].html_url;
-                refineData[data[i].login].contributions = data[i].contributions;
-                refineData[data[i].login].issues        = 0;
-                stats.commits   += data[i].contributions;
+                author = data[i]['author']
+                refineData[author.login] = {};
+                refineData[author.login].avatar_url    = author.avatar_url;
+                refineData[author.login].url           = author.html_url;
+                refineData[author.login].contributions = data[i].total;
+                refineData[author.login].issues        = 0;
+                stats.commits   += data[i].toal;
             }
         });
+                console.log(refineData)
 
         IssueFetchFactory.success(function(data) {
             for(var i = 0; i < data.length; i++) {
