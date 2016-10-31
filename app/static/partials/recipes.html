@@ -41,7 +41,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="recipe in recipes | orderBy:sortType:sortReverse">
+                    <tr dir-paginate="recipe in recipes | orderBy:sortType:sortReverse|itemsPerPage:2">
                         <td><a ng-href="recipes/{{recipe.id}}">{{ recipe.title }}</a></td>
                         <td>{{ recipe.readyInMinutes }}</td>
                         <td>{{ recipe.servings }}</td>
@@ -51,5 +51,12 @@
                 </tbody>
             </table>
         </div>
+    </div>
+    <div class="row text-center">
+        <dir-pagination-controls
+          max-size="2"
+          direction-links="true"
+          boundary-links="true" >
+        </dir-pagination-controls>
     </div>
 </div>
