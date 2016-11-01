@@ -1,5 +1,4 @@
 from flask import Flask, render_template, make_response, url_for, send_file, jsonify
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from models import Recipe, Ingredient, Cuisine
