@@ -6,7 +6,15 @@
         </div>
     </div>
 </div>
-<div class ="container" style="overflow:auto">
+
+<div class ="container" style="overflow: auto">
+    <form class="form-inline">
+        <div class="form-group">
+            <label> Search: </label>
+            <input ng-model="search" class="form-control"> 
+        </div>
+    </form>
+    <div class="bottomSpacing"/>
     <div class="row">
         <div class="col-md-12">
             <table class="table table-bordered table-striped">
@@ -41,7 +49,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr dir-paginate="recipe in recipes | orderBy:sortType:sortReverse|itemsPerPage:2">
+                    <tr dir-paginate="recipe in recipes | orderBy:sortType:sortReverse|filter:search|itemsPerPage:20">
                         <td><a ng-href="recipes/{{recipe.id}}">{{ recipe.title }}</a></td>
                         <td>{{ recipe.readyInMinutes }}</td>
                         <td>{{ recipe.servings }}</td>
@@ -54,7 +62,7 @@
     </div>
     <div class="row text-center">
         <dir-pagination-controls
-          max-size="2"
+          max-size="8"
           direction-links="true"
           boundary-links="true" >
         </dir-pagination-controls>
