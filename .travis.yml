@@ -12,6 +12,7 @@ install:
     - pip install numpy
     - pip install pylint
     - pip install requests
+    - pip install sqlalchemy
 
 before_script:
     - alias python3.5='python'

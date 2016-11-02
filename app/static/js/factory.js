@@ -114,7 +114,7 @@ mainApp.factory('MetadataFetchFactory', function() {
     login: 'Sethalopod',
     description: 'Hey everyone! My name is Seth and I’m a senior studying computer science at the University of Texas at Austin. Some of my hobbies include disc golf, playing board games, and listening to music.',
     responsibilities:'Backend',
-    tests: 0
+    tests: 9
   },
   {
     name: 'Zachary Gilkerson', 
