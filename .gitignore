@@ -3,6 +3,7 @@
 
 # Configs
 config.py
+app.wsgi
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
