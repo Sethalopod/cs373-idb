@@ -136,16 +136,35 @@ body {
 }
 
 .carousel .active {
-opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 .carousel .left {
-opacity: 1 !important;
--webkit-transition: opacity 0.5s  !important;
--moz-transition: opacity 0.5s  !important;
--ms-transition: opacity 0.5s  !important;
--o-transition: opacity 0.5s  !important;
-transition: opacity 0.5s  !important;
+  opacity: 1 !important;
+  -webkit-transition: opacity 0.5s  !important;
+  -moz-transition: opacity 0.5s  !important;
+  -ms-transition: opacity 0.5s  !important;
+  -o-transition: opacity 0.5s  !important;
+  transition: opacity 0.5s  !important;
+}
+
+.splash-jumbotron {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+.splash-btn {
+  opacity: 1;
+  background-color: #000000;
+}
+.splash-logo {
+  margin: auto
+  max-width: 75%;
+  min-width: 50%; 
+}
+
+.splash-caption {
+  color: #ffffff;
+  margin-left: 5px;
 }
 /*END Splash*/
 
