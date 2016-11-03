@@ -18,7 +18,7 @@ def index(path):
 
 @app.route('/test')
 def test():
-    import subprocess, tempfile
+    import subprocess
 
     script_dir = os.path.dirname(__file__)
     rel_path = "tests.py"

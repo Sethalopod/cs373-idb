@@ -4,14 +4,6 @@ from unittest import main, TestCase
 
 class TestModels (TestCase):
 
-	def test_one_1(self):
-		self.assertEqual("abc", "abc")
-
-	def test_one_2(self):
-		self.assertEqual("abc", "abc")
-
-	def test_one_3(self):
-		self.assertEqual("abc", "ac")
 	# def test_recipe_1(self):
 	# 	Session = sessionmaker()
 	# 	session = Session()
