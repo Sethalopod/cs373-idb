@@ -1,9 +1,8 @@
 from flask import Flask, render_template, make_response, url_for, send_file
-#from flask_script import Manager, Shell
+
 import os
 
 app = Flask(__name__)
-# manager = Manager(app)
 
 # http://flask.pocoo.org/snippets/57/
 # Catch all path for now
@@ -17,21 +16,19 @@ def index(path):
     rel_path = "templates/index.html"
     return make_response(open(os.path.join(script_dir, rel_path)).read())
 
-# import os
-# os.path.dirname(os.path.abspath(__file__))
+@app.route('/test')
+def test():
+    import subprocess, tempfile
 
-# def shell_context():
-#      context = {
-#              'app': app,
-#              'db': db,
-#              'Recipes': Recipes,
-#              'Ingredients': Ingredients,
-#              'Cuisines': Cuisine
-#      }
-#      return context
+    script_dir = os.path.dirname(__file__)
+    rel_path = "tests.py"
+    try:
+    	process = subprocess.check_output(["python", os.path.join(script_dir, rel_path)],
+    		stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as e:
+    	process = e.output
 
-
-# manager.add_command('shell', Shell(make_context=shell_context))
+    return process.decode("utf-8") 
 
 if __name__ == "__main__":
         app.run()
