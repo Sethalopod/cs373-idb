@@ -52,8 +52,8 @@
                         <td><a ng-href="cuisines/{{cuisine.id}}">{{ cuisine.title }}</a></td>
                         <td>{{ cuisine.continent }}</td>
                         <td>{{ cuisine.numberOfRecipes }}</td>
-                        <td>{{ cuisine.averageNumberOfIngredientsPerRecipe }}</td>
-                        <td>{{ cuisine.averageCalories }}</td>
+                        <td>{{ cuisine.averageNumberOfIngredientsPerRecipe | number:2 }}</td>
+                        <td>{{ cuisine.averageCalories | number:2}}</td>
                     </tr>
                 </tbody>
             </table>

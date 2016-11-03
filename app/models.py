@@ -17,6 +17,7 @@ class Recipe(Base):
 	readyInMinutes = Column(Integer)
 	servings = Column(Integer)
 	calories = Column(Integer)
+	numberOfSteps = Column(Integer)
 	steps = Column(String)
 	imageURL = Column(String)
 
