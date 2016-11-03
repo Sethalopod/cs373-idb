@@ -8,7 +8,6 @@ import os
 
 app = Flask(__name__)
 
-# manager = Manager(app)
 
 # Link to the database
 engine = create_engine("database info")
@@ -17,7 +16,7 @@ Session = sessionmaker(bind = engine)
 # http://flask.pocoo.org/snippets/57/
 # Catch all path for now
 @app.route('/', defaults={'path': ''})
-# @app.route('/<path:path>')
+@app.route('/<path:path>')
 def index(path):
     # Swtich to send_file for production
     # return send_file('templates/index.html')
@@ -26,21 +25,6 @@ def index(path):
     rel_path = "templates/index.html"
     return make_response(open(os.path.join(script_dir, rel_path)).read())
 
-# import os
-# os.path.dirname(os.path.abspath(__file__))
-
-# def shell_context():
-#      context = {
-#              'app': app,
-#              'db': db,
-#              'Recipes': Recipes,
-#              'Ingredients': Ingredients,
-#              'Cuisines': Cuisine
-#      }
-#      return context
-
-
-# manager.add_command('shell', Shell(make_context=shell_context))
 
 @app.route('/api/cuisines', methods=['GET'])
 @app.route('/api/cuisines/', methods=['GET'])
@@ -63,6 +47,26 @@ def get_cuisine(cuisine_id):
     cuisine.pop('_sa_instance_state', None)
     return jsonify(cuisine)
 
+@app.route('/api/recipes', methods=['GET'])
+@app.route('/api/recipes/', methods=['GET'])
+def get_recipes():
+    session = Session()
+    recipes = []
+    for recipe in session.query(Recipe).all():
+        recipe_dict = recipe.__dict__.copy() # get dict
+        recipe_dict.pop('_sa_instance_state', None) # remove unwanted column
+        recipes.append(recipe_dict) #add to list of dicts/jsons
+    return jsonify(recipes = recipes)
+
+
+@app.route('/api/recipes/<int:recipe_id>', methods=['GET'])
+@app.route('/api/recipes/<int:recipe_id>/', methods=['GET'])
+def get_recipe(recipe_id):
+    session = Session()
+    recipe = session.query(Recipe).filter(Recipe.id == recipe_id).one()
+    recipe = recipe.__dict__.copy()
+    recipe.pop('_sa_instance_state', None)
+    return jsonify(recipe)
 
 @app.route('/api/ingredients', methods=['GET'])
 @app.route('/api/ingredients/', methods=['GET'])
@@ -86,26 +90,6 @@ def get_ingredient(ingredient_id):
     return jsonify(ingredient)
 
 
-@app.route('/api/recipes', methods=['GET'])
-@app.route('/api/recipes/', methods=['GET'])
-def get_recipes():
-    session = Session()
-    recipes = []
-    for recipe in session.query(Recipe).all():
-        recipe_dict = recipe.__dict__.copy() # get dict
-        recipe_dict.pop('_sa_instance_state', None) # remove unwanted column
-        recipes.append(ingredient_dict) #add to list of dicts/jsons
-    return jsonify(recipes = recipes)
-
-
-@app.route('/api/recipes/<int:recipe_id>', methods=['GET'])
-@app.route('/api/recipes/<int:recipe_id>/', methods=['GET'])
-def get_recipe(recipe_id):
-    session = Session()
-    recipe = session.query(Recipe).filter(Recipe.id == recipe_id).one()
-    recipe = recipe.__dict__.copy()
-    recipe.pop('_sa_instance_state', None)
-    return jsonify(recipe)
 
 # turning results into JSONs: http://stackoverflow.com/questions/26792663/how-can-i-return-a-list-of-results-as-json
 
