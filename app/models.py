@@ -1,13 +1,8 @@
-from sqlalchemy import Table, Column, Float, Integer, String, Boolean, ForeignKey
+from sqlalchemy import Table, Column, Float, Integer, String, Boolean, ForeignKey, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
 Base = declarative_base()
-
-association_table = Table('association', Base.metadata, 
-	Column('recipe_id', Integer, ForeignKey('recipe.id')),
-	Column('ingredient_id', Integer, ForeignKey('ingredient.id'))
-)
 
 class Recipe(Base):
 	__tablename__ = 'recipe'
@@ -18,17 +13,38 @@ class Recipe(Base):
 	servings = Column(Integer)
 	calories = Column(Integer)
 	steps = Column(String)
+	numberOfSteps = Column(Integer)
 	imageURL = Column(String)
 
 	# Relationships for recipes
 	cuisine_id = Column(Integer, ForeignKey('cuisine.id'))
 	cuisine = relationship("Cuisine", back_populates="recipes")
-	ingredients = relationship("Ingredient", secondary=association_table, back_populates="recipesUsedIn")
+	ingredientInfos = relationship("IngredientInfo", back_populates="recipe")
 	
 	# Override __repr__ to display object properly
 	def __repr__(self):
-		return "<Recipe(title='%s', readyInMinutes='%i', servings='%i', calories='%i', steps='%s')>" % (
-			self.title, self.readyInMinutes, self.servings, self.calories, self.steps) 
+		return "<Recipe(title='%s', readyInMinutes='%i', servings='%i', calories='%i', steps='%s', numberOfSteps='%i')>" % (
+			self.title, self.readyInMinutes, self.servings, self.calories, self.steps, self.numberOfSteps) 
+
+
+class IngredientInfo(Base):
+	__tablename__ = 'ingredientInfo'
+	id = Column(Integer, primary_key=True)
+
+	name = Column(String)
+	fullName = Column(String)
+	recipe_id = Column(Integer, ForeignKey('recipe.id'))
+	ingredient_id = Column(Integer, ForeignKey('ingredient.id'))
+
+	# Relationships for ingredients
+	recipe = relationship("Recipe", back_populates="ingredientInfos")
+	ingredient = relationship("Ingredient", back_populates="ingredientInfos")
+
+	# Override __repr__ to display object properly
+	def __repr__(self):
+		return "<IngredientInfo(name='%s', fullName='%s')>" % (
+			self.name, self.fullName) 
+
 
 class Ingredient(Base):
 	__tablename__ = 'ingredient'
@@ -42,7 +58,7 @@ class Ingredient(Base):
 	imageURL = Column(String)
 
 	# Relationships for ingredients
-	recipesUsedIn = relationship("Recipe", secondary=association_table, back_populates="ingredients") 
+	ingredientInfos = relationship("IngredientInfo", back_populates="ingredient") 
 
 	# Override __repr__ to display object properly
 	def __repr__(self):
@@ -58,6 +74,7 @@ class Cuisine(Base):
 	averageNumberOfIngredientsPerRecipe = Column(Float) 
 	continent = Column(String)
 	averageCalories = Column(Float)
+	imageUrl = Column(String)
 
 	# Relationships for Cuisine
 	recipes = relationship("Recipe", back_populates="cuisine")
@@ -66,3 +83,7 @@ class Cuisine(Base):
 	def __repr__(self):
 		return "<Cuisine(title='%s', numberOfRecipes='%i', averageNumberOfIngredientsPerRecipe='%f', continent='%s', averageCalories='%f')>" % (
 			self.title, self.numberOfRecipes, self.averageNumberOfIngredientsPerRecipe, self.continent, self.averageCalories)
+
+if __name__ == '__main__':
+	engine =  create_engine("") 
+	Base.metadata.create_all(engine)
