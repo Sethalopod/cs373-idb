@@ -51,7 +51,7 @@ def get_cuisines():
         cuisine_dict =cuisine.__dict__.copy() # get dict
         cuisine_dict.pop('_sa_instance_state', None) # remove unwanted column
         cuisines.append(cuisine_dict) #add to list of dicts
-    return jsonify(cuisines = ingredients)
+    return jsonify(cuisines = cuisines)
 
 
 @app.route('/api/cuisines/<int:cuisine_id>', methods=['GET'])
@@ -61,7 +61,7 @@ def get_cuisine(cuisine_id):
     cuisine = session.query(Cuisine).filter(Cuisine.id == cuisine_id).one()
     cuisine = cuisine.__dict__.copy()
     cuisine.pop('_sa_instance_state', None)
-    return jsonify(ingredient)
+    return jsonify(cuisine)
 
 
 @app.route('/api/ingredients', methods=['GET'])
