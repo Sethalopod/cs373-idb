@@ -3,15 +3,13 @@ from flask import Flask, render_template, make_response, url_for, send_file, jso
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from models import Recipe, Ingredient, Cuisine
-
-#from flask_script import Manager, Shell
+from config import db
 import os
 
 app = Flask(__name__)
 
-
 # Link to the database
-engine = create_engine("database info")
+engine = create_engine("postgresql://" + db['USER'] + ":" + db['PASSWORD'] + "@" + db['IP'] + "/" + db['DATABASE'])
 Session = sessionmaker(bind = engine)
 
 # http://flask.pocoo.org/snippets/57/
@@ -20,7 +18,6 @@ Session = sessionmaker(bind = engine)
 @app.route('/<path:path>')
 def index(path):
     # Swtich to send_file for production
-    # return send_file('templates/index.html')
     # Prevent cachcing for developement testing
     script_dir = os.path.dirname(__file__)
     rel_path = "templates/index.html"

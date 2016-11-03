@@ -112,6 +112,5 @@ class TestModels (TestCase):
 	# 	result = session.query(Ingredient).one()
 	# 	self.assertEqual(result.recipesUsedIn[0].title, recipe.title)
 
-   
-if __name__ == "__main__" :
+if __name__ == "__main__":
 	main()
