@@ -1,15 +1,23 @@
 mainApp.controller('CuisinesCtrl',
-    ['$scope', 'CuisineFetchFactory', 
+    ['$scope', 'CuisineFetchFactory',
     function($scope, CuisineFetchFactory) {
         $scope.sortType     = 'title';
         $scope.sortReverse  = false; 
-        $scope.cuisines     = CuisineFetchFactory.fetch()
+
+        CuisineFetchFactory.fetch().success(function(data) {
+            $scope.cuisines = data["cuisines"]
+        });
     }]);
 
 mainApp.controller('CuisineDetailCtrl',
     ['$scope', '$routeParams', 'CuisineFetchFactory',
     function($scope, $routeParams, CuisineFetchFactory) {
-        $scope.cuisine      = CuisineFetchFactory.fetchAt($routeParams['cuisineId']);
+        $scope.sortType     = 'title';
+        $scope.sortReverse  = false; 
+
+        CuisineFetchFactory.fetchAt($routeParams['cuisineId']).success(function(data) {
+            $scope.cuisine = data
+        });
     }]);
 
 mainApp.controller('RecipesCtrl',
@@ -17,13 +25,22 @@ mainApp.controller('RecipesCtrl',
     function($scope, RecipeFetchFactory) {
         $scope.sortType     = 'title';
         $scope.sortReverse  = false; 
-        $scope.recipes      = RecipeFetchFactory.fetch()
+        
+        RecipeFetchFactory.fetch().success(function(data) {
+            console.log(data)
+            $scope.recipes = data["recipes"]
+        });
     }]);
 
 mainApp.controller('RecipeDetailCtrl',
     ['$scope', '$routeParams', 'RecipeFetchFactory',
     function($scope, $routeParams, RecipeFetchFactory) {
-        $scope.recipe       = RecipeFetchFactory.fetchAt($routeParams['recipeId']);
+        $scope.sortType     = 'title';
+        $scope.sortReverse  = false; 
+
+        RecipeFetchFactory.fetchAt($routeParams['recipeId']).success(function(data) {
+            $scope.recipe = data
+        });
     }]);
 
 mainApp.controller('IngredientsCtrl',
@@ -31,13 +48,21 @@ mainApp.controller('IngredientsCtrl',
     function($scope, IngredientFetchFactory) {
         $scope.sortType     = 'title';
         $scope.sortReverse  = false; 
-        $scope.ingredients  = IngredientFetchFactory.fetch()
+        
+        IngredientFetchFactory.fetch().success(function(data) {
+            $scope.ingredients = data["ingredients"]
+        });
     }]);
 
 mainApp.controller('IngredientDetailCtrl',
     ['$scope', '$routeParams', 'IngredientFetchFactory',
     function($scope, $routeParams, IngredientFetchFactory) {
-        $scope.ingredient   = IngredientFetchFactory.fetchAt($routeParams['ingredientId']);
+        $scope.sortType     = 'title';
+        $scope.sortReverse  = false; 
+
+        IngredientFetchFactory.fetchAt($routeParams['ingredientId']).success(function(data) {
+            $scope.ingredient = data
+        });
     }]);
 
 mainApp.controller('AboutCtrl',
