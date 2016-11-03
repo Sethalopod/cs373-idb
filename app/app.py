@@ -48,7 +48,7 @@ def get_cuisines():
     session = Session()
     cuisines = []    
     for cuisine in session.query(Cuisine).all():
-        cuisine_dict =cuisine.__dict__copy() # get dict
+        cuisine_dict =cuisine.__dict__.copy() # get dict
         cuisine_dict.pop('_sa_instance_state', None) # remove unwanted column
         cuisines.append(cuisine_dict) #add to list of dicts
     return jsonify(cuisines = ingredients)
