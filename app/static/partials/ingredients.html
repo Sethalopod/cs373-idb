@@ -19,39 +19,43 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <td width="20%">
-                            <a ng-click="sortType = 'title'; sortReverse = !sortReverse">Title</a>
+                        <td width="20%" ng-click="sortType = 'title'; sortReverse = !sortReverse; currentPage = 1">
+                            Title
                             <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
                             <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
                         </td>
-                        <td width="20%">
-                            <a ng-click="sortType = 'servingSize'; sortReverse = !sortReverse">Serving Size</a>
-                            <span ng-show="sortType == 'servingSize' && !sortReverse" class="fa fa-caret-down"></span>
-                            <span ng-show="sortType == 'servingSize' && sortReverse" class="fa fa-caret-up"></span>
+                        <td width="20%" ng-click="sortType = 'serving_size'; sortReverse = !sortReverse; currentPage = 1">
+                            Serving Size
+                            <span ng-show="sortType == 'serving_size' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'serving_size' && sortReverse" class="fa fa-caret-up"></span>
                         </td>
-                        <td width="20%">
-                            <a ng-click="sortType = 'totalWeight'; sortReverse = !sortReverse">Total Weight</a>
-                            <span ng-show="sortType == 'totalWeight' && !sortReverse" class="fa fa-caret-down"></span>
-                            <span ng-show="sortType == 'totalWeight' && sortReverse" class="fa fa-caret-up"></span>
+                        <td width="20%" ng-click="sortType = 'total_weight'; sortReverse = !sortReverse; currentPage = 1">
+                            Total Weight
+                            <span ng-show="sortType == 'total_weight' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'total_weight' && sortReverse" class="fa fa-caret-up"></span>
                         </td>
 
-                        <td width="20%">
-                            <a ng-click="sortType = 'brand'; sortReverse = !sortReverse">Brand</a>
+                        <td width="20%" ng-click="sortType = 'brand'; sortReverse = !sortReverse; currentPage = 1">
+                            Brand
                             <span ng-show="sortType == 'brand' && !sortReverse" class="fa fa-caret-down"></span>
                             <span ng-show="sortType == 'brand' && sortReverse" class="fa fa-caret-up"></span>
                         </td>
-                        <td width="20%">
-                            <a ng-click="sortType = 'category'; sortReverse = !sortReverse">Category</a>
+                        <td width="20%" ng-click="sortType = 'category'; sortReverse = !sortReverse; currentPage = 1">
+                            Category
                             <span ng-show="sortType == 'category' && !sortReverse" class="fa fa-caret-down"></span>
                             <span ng-show="sortType == 'category' && sortReverse" class="fa fa-caret-up"></span>
                         </td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr dir-paginate="ingredient in ingredients | orderBy:sortType:sortReverse|filter:search|itemsPerPage:20">
+                    <tr dir-paginate="ingredient in ingredients
+                        | orderBy: sortType:sortReverse
+                        | filter: search
+                        | itemsPerPage: 20"
+                        current-page="currentPage">
                         <td><a ng-href="ingredients/{{ingredient.id}}">{{ ingredient.title }}</a></td>
-                        <td>{{ ingredient.servingSize }}</td>
-                        <td>{{ ingredient.totalWeight }}</td>
+                        <td>{{ ingredient.serving_size }}</td>
+                        <td>{{ ingredient.total_weight }}</td>
                         <td>{{ ingredient.brand }}</td>
                         <td>{{ ingredient.category }}</td>
                     </tr>

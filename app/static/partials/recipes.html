@@ -20,36 +20,40 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <td width="20%">
-                            <a ng-click="sortType = 'title'; sortReverse = !sortReverse">Title</a>
+                        <td width="20%" ng-click="sortType = 'title'; sortReverse = !sortReverse; currentPage = 1">
+                            Title
                             <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
                             <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
                         </td>
-                        <td width="20%">
-                            <a ng-click="sortType = 'readyInMinutes'; sortReverse = !sortReverse">Ready In: (Minutes)</a>
+                        <td width="20%" ng-click="sortType = 'readyInMinutes'; sortReverse = !sortReverse; currentPage = 1">
+                            Ready In: (Minutes)
                             <span ng-show="sortType == 'readyInMinutes' && !sortReverse" class="fa fa-caret-down"></span>
                             <span ng-show="sortType == 'readyInMinutes' && sortReverse" class="fa fa-caret-up"></span>
                         </td>
-                        <td width="20%">
-                            <a ng-click="sortType = 'servings'; sortReverse = !sortReverse">Servings</a>
+                        <td width="20%" ng-click="sortType = 'servings'; sortReverse = !sortReverse; currentPage = 1">
+                            Servings
                             <span ng-show="sortType == 'servings' && !sortReverse" class="fa fa-caret-down"></span>
                             <span ng-show="sortType == 'servings' && sortReverse" class="fa fa-caret-up"></span>
                         </td>
 
-                        <td width="20%">
-                            <a ng-click="sortType = 'calories'; sortReverse = !sortReverse">Calories</a>
+                        <td width="20%" ng-click="sortType = 'calories'; sortReverse = !sortReverse; currentPage = 1">
+                            Calories
                             <span ng-show="sortType == 'calories' && !sortReverse" class="fa fa-caret-down"></span>
                             <span ng-show="sortType == 'calories' && sortReverse" class="fa fa-caret-up"></span>
                         </td>
-                        <td width="20%">
-                            <a ng-click="sortType = 'numberOfSteps'; sortReverse = !sortReverse">Number of Steps</a>
+                        <td width="20%" ng-click="sortType = 'numberOfSteps'; sortReverse = !sortReverse; currentPage = 1">
+                            Number of Steps
                             <span ng-show="sortType == 'numberOfSteps' && !sortReverse" class="fa fa-caret-down"></span>
                             <span ng-show="sortType == 'numberOfSteps' && sortReverse" class="fa fa-caret-up"></span>
                         </td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr dir-paginate="recipe in recipes | orderBy:sortType:sortReverse|filter:search|itemsPerPage:20">
+                    <tr dir-paginate="recipe in recipes
+                    | orderBy: sortType:sortReverse 
+                    | filter: search
+                    | itemsPerPage: 20"
+                    current-page="currentPage" >
                         <td><a ng-href="recipes/{{recipe.id}}">{{ recipe.title }}</a></td>
                         <td>{{ recipe.readyInMinutes }}</td>
                         <td>{{ recipe.servings }}</td>

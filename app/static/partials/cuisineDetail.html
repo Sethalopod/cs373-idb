@@ -1,14 +1,20 @@
 <div class ="container">
 	<div class="row">
 		<div class="col-md-6">
-			<img ng-src="{{cuisine.url}}" style="width:100%"/>
+			<img ng-src="{{cuisine.imageURL}}" onerror="this.src='http://www.destenaire.com/noaccess/wp-content/uploads/2014/10/8-Oddest-Food-Items-Featured-Image1.png'" style="width:100%"/>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<h1>{{cuisine.title}}</h1>
 			<div>Number of Recipes: {{cuisine.numberOfRecipes}}</div>
-			<div>Average Number of Ingredients Per Recipe: {{cuisine.averageNumberOfIngredientsPerRecipe}}</div>
+			<div>Average Number of Ingredients Per Recipe: {{cuisine.averageNumberOfIngredientsPerRecipe | number:2}}</div>
 			<div>Continent: {{cuisine.continent}}</div>
-			<div>Average Calories Per Recipe: {{cuisine.averageCalories}}</div>
+			<div>Average Calories Per Recipe: {{cuisine.averageCalories | number:2}}</div>
+		</div>
+		<div class="col-md-2">
+			<h1>Recipes</h1>
+			<div ng-repeat="recipe in recipes">
+				<a ng-href="/recipes/{{recipe.id}}"><span>{{ recipe.title }}</span></a>
+			</div>
 		</div>
 	</div>
 </div>

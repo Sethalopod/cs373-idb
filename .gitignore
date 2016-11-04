@@ -1,6 +1,10 @@
 # Mac files
 .DS_Store
 
+# Configs
+config.py
+app.wsgi
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

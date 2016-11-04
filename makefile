@@ -44,4 +44,11 @@ requirements:
 server:
 	python3 app/app.py
 
+restart:
+	service apache2 reload
+	service apache2 restart
+
+error:
+	tail -100 /var/log/apache2/error.log 
+	
 test: html check

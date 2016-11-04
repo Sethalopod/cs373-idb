@@ -1,13 +1,21 @@
 <div class ="container">
 	<div class="row">
 		<div class="col-md-6">
-			<img ng-src="{{recipe.url}}" style="width:100%"/>
+			<img ng-src="{{recipe.imageURL}}" onerror="this.src='http://www.destenaire.com/noaccess/wp-content/uploads/2014/10/8-Oddest-Food-Items-Featured-Image1.png'" style="width:100%"/>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<h1>{{recipe.title}}</h1>
 			<div>Ready in (Minutes): {{recipe.readyInMinutes}}</div>
 			<div>Number of calories: {{recipe.calories}}</div>
 			<div>Steps: {{recipe.steps}}</div>
+		</div>
+		<div class="col-md-2">
+			<a ng-href="/cuisines/{{cuisine.id}}"><h1>{{cuisine.title}} Cusine</h1></a>
+			
+			<h1>Ingredients</h1>
+			<div ng-repeat="ingredient in ingredients">
+				<a ng-href="/ingredients/{{ingredient.id}}"><span>{{ ingredient.title }}</span></a>
+			</div>
 		</div>
 	</div>
 </div>
