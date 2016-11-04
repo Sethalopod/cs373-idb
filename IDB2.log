@@ -1,3 +1,474 @@
+commit bdbc573579155e57ab3c35a9fdd2237c16e0d34b
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 21:45:04 2016 -0500
+
+    put test on about
+
+commit 82905cfc78091585aeb77f259d830487d16c751e
+Merge: f5b68ab 1dfb1df
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 21:12:44 2016 -0500
+
+    Merge branch 'dev'
+
+commit 1dfb1df2459b45c94df28df20e5a3221aa6912cd
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Thu Nov 3 21:11:31 2016 -0500
+
+    Update tests
+
+commit f5b68ab36ab478a692c0e29d737b3e158c534565
+Author: Jessica Lindee <jesslindee@utexas.edu>
+Date:   Thu Nov 3 21:10:36 2016 -0500
+
+    Update links in API Description file from Apiary.io
+
+commit f0c55463e938ac93e933ca38d67df5e3b9e0c665
+Author: Jessica Lindee <jesslindee@utexas.edu>
+Date:   Thu Nov 3 20:55:54 2016 -0500
+
+    Transferring Updated API Description file from Apiary.io
+
+commit 2145f2d2eb2bd7e5e7d84417c6fc5aef0721ad32
+Merge: 901d873 504c5eb
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 20:28:53 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Sethalopod/cs373-idb into dev
+
+commit 901d873400ad38f480ea4e1ee4bcc2d04cc9c0b7
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 20:28:41 2016 -0500
+
+    linking pillars
+
+commit 504c5ebb5680e86415c2c024e796875c2c26d0e1
+Author: Seth Milligan <Sethalopod@users.noreply.github.com>
+Date:   Thu Nov 3 17:34:41 2016 -0500
+
+    Update UML diagram
+
+commit a01fdbca9dd83bb679476cfc99060f3a96ce41a7
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 16:07:17 2016 -0500
+
+    update requirements
+
+commit 4f7714f64890abadc94ac868e17fa9ee2e8002dd
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 16:02:08 2016 -0500
+
+    update detail pictures with default
+
+commit 85bb9f9b40b7599beb49b3e8d0ce53d0c5dfda04
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 14:48:44 2016 -0500
+
+    remove unused detail
+
+commit 1ef3abffa26a64074deaad57a44898247ef82b1f
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 14:46:03 2016 -0500
+
+    all data populate fine
+
+commit a5092aa3a4db05f45e5a3bedfdd104c72b49f657
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 14:20:11 2016 -0500
+
+    switch to config
+
+commit c9c1479f5e96435da99a0e202855568a0669384e
+Merge: 2819ca6 e13f512
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 13:20:18 2016 -0500
+
+    Merge branch 'feature/newModels' of https://github.com/Sethalopod/cs373-idb into feature/newModels
+
+commit 2819ca6dd5804348b79e1a67e1221b07f360fabb
+Merge: 2884901 bdfb6fe
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 13:01:17 2016 -0500
+
+    fix merges
+
+commit 288490138fad498cbd7c760dd205bb8b3fe41055
+Merge: a9e1f88 e35a3a7
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 12:54:59 2016 -0500
+
+    Merge branch 'feature/unittest' into dev
+
+commit e35a3a7bc0b361184b8946874da5d76f6d8a2ac1
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 3 12:50:24 2016 -0500
+
+    uncomment test to pass travis
+
+commit bdfb6fe721bf47017c27d6fd5b6c72a5d10376b6
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Nov 3 12:31:52 2016 -0500
+
+    Begin to populate tables using our API
+
+commit 7452b93e44b44091b78011c58608ee5338181a21
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Nov 3 12:30:50 2016 -0500
+
+    Fix recipe call
+
+commit e13f5123ad5ecd9ee9765983bdc7ea755b26b1e7
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Thu Nov 3 04:58:10 2016 -0500
+
+    Update models
+
+commit bb51e621156f704bc36712e5139a23fc1302322c
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Nov 3 01:04:28 2016 -0500
+
+    Fix cuisine querying to properly make json
+
+commit 4d5eb2d4da3381c31d97a715d368cf0452ba03c1
+Author: Jessica Lindee <jesslindee@utexas.edu>
+Date:   Thu Nov 3 00:21:46 2016 -0500
+
+    fix dict copy in get_cuisines
+
+commit afed582ba6e7b9bdf97f87e473f4f32003902eb5
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Nov 2 20:38:46 2016 -0500
+
+    created unittest route
+
+commit a9e1f88d6ab5bb3cd85856583b82e50568fb92f6
+Merge: 4e7fae5 1104dda
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Wed Nov 2 17:42:58 2016 -0500
+
+    Splash page merge
+
+commit 1104dda4d9a0c587df43fdab4e26a3ba9bd35272
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Wed Nov 2 17:13:56 2016 -0500
+
+    Landing Jumbotron
+
+commit dd9d79ef50c7c6ca2767ec3b140766c646f55d26
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Wed Nov 2 14:42:30 2016 -0500
+
+    Splash carousel background
+
+commit 4e7fae5765eac9b7160bd0a12704811412ce3126
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Nov 2 11:43:31 2016 -0500
+
+    unstage wsgi
+
+commit cfec7fa42f45c2cff49112729a78007a435a3843
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Nov 2 10:08:49 2016 -0500
+
+    remove mac files
+
+commit de7ef3a6696f01f1936ace1d7abed32646f82528
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Tue Nov 1 20:16:26 2016 -0500
+
+    update makefile for server side checks
+
+commit 7d0704b0163cad4241484789572f0165ce63652c
+Merge: 0416d53 5fa3e7f
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Tue Nov 1 19:12:07 2016 -0500
+
+    Merge branch 'dev'
+
+commit 5fa3e7fec00857fd6ad03e9d267efe7e588243e3
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Tue Nov 1 19:08:21 2016 -0500
+
+    Update makefile and travis config to fix travis
+
+commit 0e32eb5286a00dcb14a5f47aa03d8226916e0229
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Tue Nov 1 19:02:37 2016 -0500
+
+    Update unit test created count
+
+commit fad2cb3f5f9b13e2dff473802adb499ab026f3e0
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Tue Nov 1 18:51:07 2016 -0500
+
+    Add search feature to dataTables and allow more rows per table before pagination
+
+commit 8386716c57c8a377219c8ae3daf9bf1bb1938027
+Author: Jessica Lindee <jesslindee@utexas.edu>
+Date:   Tue Nov 1 13:37:29 2016 -0500
+
+    remove flask_sqlalchemy import
+
+commit b226d9e5d8f5a7bd4ec6d9a15ac3c84c84fbb194
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Tue Nov 1 13:32:25 2016 -0500
+
+    Start the api.  Works with ingredients/ingredient
+
+commit 0416d530c4f3bcad444da9e7f76ee81236a7dd76
+Merge: 70e3981 f98c5f9
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Tue Nov 1 12:39:52 2016 -0500
+
+    Merge branch 'dev'
+
+commit f98c5f96d2b65dc8d534595bd8aef574e07bfce7
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Mon Oct 31 21:33:48 2016 -0500
+
+    add google analytics
+
+commit 70e39818c5f102c9d0df28dd40b6ce18275398e7
+Merge: 8f34a7f 49ff5fd
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Mon Oct 31 18:30:21 2016 -0500
+
+    Merge branch 'dev'
+
+commit 49ff5fd8b86526fa9a72bfd2a49fe64fad4801dd
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Mon Oct 31 18:29:46 2016 -0500
+
+    fix misspelling
+
+commit 9eadfc057ffa610e43080e6b1d2de1d68bef4179
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Mon Oct 31 17:43:31 2016 -0500
+
+    update make and new log
+
+commit 8467186145cac301bdd95637f9ae9e3c1fb6bd97
+Merge: 6185787 fdf62cf
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Mon Oct 31 17:41:58 2016 -0500
+
+    Merge branch 'dev' of https://github.com/Sethalopod/cs373-idb into dev
+
+commit 8f34a7f2323c79f3156e330f3774fdb3e0feb741
+Merge: a151e1b fdf62cf
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Mon Oct 31 17:41:45 2016 -0500
+
+    Merge remote-tracking branch 'refs/remotes/origin/dev'
+
+commit fdf62cfc9b5e50aa575e791eebc21d022fc275cb
+Merge: b8772af a6623e4
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Mon Oct 31 17:40:47 2016 -0500
+
+    Merge remote-tracking branch 'refs/remotes/origin/bug/scrollbars' into dev
+
+commit a6623e45d561bf011a1e29767115719e69102465
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Mon Oct 31 17:39:29 2016 -0500
+
+    Update overflow style to remove scrollbars on desktop
+
+commit 61857875565737f460201e20c5525e7441793284
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Mon Oct 31 17:11:38 2016 -0500
+
+    add new requirement target
+
+commit b8772afaf21fb1b03b96238f676161668043d95b
+Merge: a151e1b b94675a
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Mon Oct 31 17:03:54 2016 -0500
+
+    Merge branch 'feature/alan' into dev
+
+commit b94675a5c79e10b02b2480d5db45b5e3c5c5c9fb
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Mon Oct 31 17:02:15 2016 -0500
+
+    add classmate's db
+
+commit a151e1b7d1e7b4d94b2316d74e17c635653ad861
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Mon Oct 31 14:21:53 2016 -0500
+
+    Add pagination to all data tables
+
+commit a92a9882185c3b127dd45631077ffbe78da5b880
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Mon Oct 31 01:22:47 2016 -0500
+
+    Add pagination logic to cuisine page
+
+commit 2e7054248c733a085ca14df5c1eb764d6368adce
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Mon Oct 31 01:03:11 2016 -0500
+
+    Include dependecy in app.js
+
+commit b734b5d01cfcb64a77ab21c92bd34d1e6ddf5f20
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Mon Oct 31 01:02:58 2016 -0500
+
+    Include dirPagination module in index
+
+commit e8ab65e88d7e4f85f9fb8226ae1ee6322705c144
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Mon Oct 31 01:02:44 2016 -0500
+
+    Add dirPagination module
+
+commit b0bf076681a831cef7338e160af2076de7bbe814
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 26 19:47:05 2016 -0500
+
+    adenhanced zebra tables
+
+commit 6dd0b59bc4eb7dc67d65103c247343ef4d2c1358
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 26 19:44:41 2016 -0500
+
+    add divider between team m and stats
+
+commit 39401db2a1996fe356332b5a837ae8d8ba24063f
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Oct 26 19:24:42 2016 -0500
+
+    fix github issues counts
+
+commit 10fde72b1e7a367e1246f59f14c5abc393ff84d2
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Wed Oct 26 15:16:50 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 11b56ab5f4de709cac79b8a27e2ffce37026920f
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Sun Oct 23 21:55:39 2016 -0500
+
+    fix animation for mobile
+
+commit 17278215e8d8f97da3ff8d80dc68f73a0b92cc3a
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Sun Oct 23 21:41:08 2016 -0500
+
+    expand from middle hover
+
+commit 5e08d2fa3481d2aa6edc441dbccdf9b2afdd561f
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Sun Oct 23 18:49:20 2016 -0500
+
+    add favicon and other logo types
+
+commit 0d52bfb26ea97681cd9367fe16749b44b636b661
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Sun Oct 23 18:48:37 2016 -0500
+
+    revamp navbar
+
+commit 4a5a0281e865a61b4649af0a41e995be8def4e26
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Sat Oct 22 00:24:27 2016 -0500
+
+    added logo images and to nav
+
+commit c1601f97a7e5cb9e009fbd7a739a3fc8f3a59575
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Sat Oct 22 00:14:13 2016 -0500
+
+    automate issue counting
+
+commit d410fa487f086f57b48e0484baf00a0542f79a6a
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Fri Oct 21 23:45:38 2016 -0500
+
+    deleted unnecessary image files
+
+commit d5434be6d563f9c0c4058b2b6a9e0bc95181e6c3
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Fri Oct 21 23:40:04 2016 -0500
+
+    fix five item row overlap
+
+commit 2cc80487b210959b5bbaa76a90394a7820d7f144
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Fri Oct 21 23:37:30 2016 -0500
+
+    add five item rows
+
+commit d487d9e4485fbe6cf2aa77c3507ce8d0c942eb6c
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Fri Oct 21 23:32:36 2016 -0500
+
+    readd fix more linkables
+
+commit 8c5c1231870badf05b99ca2d3827d378006bc3e5
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Fri Oct 21 23:17:28 2016 -0500
+
+    reformatted about page but no style
+
+commit 12211aa8cdafdcbadc4d5e7ac8ccaf57da84b670
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Fri Oct 21 22:25:06 2016 -0500
+
+    adnew contributor format
+
+commit 01541415a500a5e0d72529246c3607cc451638ae
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Fri Oct 21 21:09:39 2016 -0500
+
+    add github factory for commits and photos
+
+commit e9872a9d5eae6a26c6c09b9e427a7f8de70298e9
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Fri Oct 21 19:58:29 2016 -0500
+
+    fixed bad controller to conform to files
+
+commit a08191cb06cc1dcc76c01e20e2e91eaf66251105
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Fri Oct 21 18:53:17 2016 -0500
+
+    rename service to factory
+
+commit 675d4a141538b6b2f40d8f9a3102a705152a283a
+Merge: 926e8e9 e1da136
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Thu Oct 20 21:19:11 2016 -0500
+
+    Merge branch 'dev'
+
+commit 926e8e9ea93d8f6d866bdf6391aa31025482a9e9
+Merge: f01203e 0abe7a0
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 21:17:31 2016 -0500
+
+    Merge branch 'master' of https://github.com/Sethalopod/cs373-idb
+
+commit f01203e05321cc74dbbaed1f9904a4e2c3b0b015
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Oct 20 21:17:21 2016 -0500
+
+    fix mobile
+
+commit e1da1369198427ed02c31c0c4d1d3c5c7f227b14
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Thu Oct 20 21:08:58 2016 -0500
+
+    Fix sorting on tables
+
+commit 0abe7a0e58f35c0e14a73a6fcdb905677fabca4c
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Thu Oct 20 20:53:17 2016 -0500
+
+    Add git log
+
 commit 2677a078565ebb2007540fae44bcb2336be2aa61
 Merge: e48cd4c 447f979
 Author: Jessica Lindee <jlindee@cs.utexas.edu>
