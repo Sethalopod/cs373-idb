@@ -5,7 +5,7 @@ HOST: http://boilerpl8.me/
 
 Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and learn about the ingredients in your food.
 
-## Cuisines Collection [/api/cuisines]
+## Cuisines Collection [/api/cuisines/]
 
 ### List Cuisines [GET]
 
@@ -32,7 +32,7 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
             ]
         }
         
-## Cuisine Information Collection [/api/cuisines/{cuisine_id}]
+## Cuisine Information Collection [/api/cuisines/{cuisine_id}/]
 ### Get information for a cuisine [GET] 
 
 + Parameters
@@ -49,7 +49,7 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
             "title": "American"
         }
         
-## Cuisine with Recipe Collection [/api/cuisines/{cuisine_id}/recipes]
+## Cuisine with Recipe Collection [/api/cuisines/{cuisine_id}/recipes/]
 ### Get information for a cuisine with list of related recipes [GET]
 
 + Parameters
@@ -87,7 +87,7 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
     
 
      
-## Recipe Collection [/api/recipes]
+## Recipe Collection [/api/recipes/]
 ### List Recipes [GET]
 
 + Response 200 (application/json)
@@ -112,7 +112,7 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
         }
 
         
-## Recipe Information Collection [/api/recipes/{recipe_id}]
+## Recipe Information Collection [/api/recipes/{recipe_id}/]
 ### Get information for a recipe [GET]
 
 + Parameters
@@ -129,7 +129,7 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
             "steps": "Heat pan on medium heat. Put cheese between two slices of bread. Cook both sides of the sandwich."
         }
 
-## Recipe with Ingredients and Cuisine Collection [/api/recipes/{recipe_id}/ingredients]
+## Recipe with Ingredients and Cuisine Collection [/api/recipes/{recipe_id}/ingredients/]
 ### Get information for a recipe, including a list of ingredients and type of cuisine [GET]
 
 
@@ -173,7 +173,7 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
                 }
         }
         
-## Ingredient Collection [/api/ingredients]
+## Ingredient Collection [/api/ingredients/]
 ### List Ingredients [GET]
 
 + Response 200 (application/json)
@@ -204,7 +204,7 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
         
 
         
-## Ingredient Information Collection [/api/ingredients/{ingredient_id}]
+## Ingredient Information Collection [/api/ingredients/{ingredient_id}/]
 ### Get information for an ingredient [GET]
 
 + Parameters
