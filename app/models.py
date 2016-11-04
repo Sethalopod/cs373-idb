@@ -14,7 +14,6 @@ class Recipe(Base):
 	calories = Column(Integer)
 	numberOfSteps = Column(Integer)
 	steps = Column(String)
-	numberOfSteps = Column(Integer)
 	imageURL = Column(String)
 
 	# Relationships for recipes

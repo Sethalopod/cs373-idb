@@ -16,8 +16,9 @@ mainApp.controller('CuisineDetailCtrl',
         $scope.sortType     = 'title';
         $scope.sortReverse  = false; 
 
-        CuisineFetchFactory.fetchAt($routeParams['cuisineId']).success(function(data) {
-            $scope.cuisine = data
+        CuisineFetchFactory.fetchRecipes($routeParams['cuisineId']).success(function(data) {
+            $scope.cuisine = data["cuisine"]
+            $scope.recipes = data["recipes"]
         });
     }]);
 
@@ -39,8 +40,10 @@ mainApp.controller('RecipeDetailCtrl',
         $scope.sortType     = 'title';
         $scope.sortReverse  = false; 
 
-        RecipeFetchFactory.fetchAt($routeParams['recipeId']).success(function(data) {
-            $scope.recipe = data
+        RecipeFetchFactory.fetchIngredients($routeParams['recipeId']).success(function(data) {
+            $scope.recipe = data["recipe"]
+            $scope.ingredients = data["ingredients"]
+            $scope.cuisine = data["cuisine"]
         });
     }]);
 

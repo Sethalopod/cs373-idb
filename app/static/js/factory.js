@@ -5,7 +5,10 @@ mainApp.factory('CuisineFetchFactory', function($http) {
     },
     fetchAt: function (x) {
       return $http.get('/api/cuisines/' + x);
-    }
+    },
+    fetchRecipes: function (x) {
+      return $http.get('/api/cuisine/' + x + '/recipes/');
+    },
   };
 });
 
@@ -16,7 +19,10 @@ mainApp.factory('RecipeFetchFactory', function($http) {
     },
     fetchAt: function (x) {
       return $http.get('/api/recipes/' + x);
-    }
+    },
+    fetchIngredients: function (x) {
+      return $http.get('/api/recipe/' + x + '/ingredients/');
+    },
   };
 });
 
@@ -27,7 +33,7 @@ mainApp.factory('IngredientFetchFactory', function($http) {
     },
     fetchAt: function (x) {
       return $http.get('/api/ingredients/' + x);
-    }
+    },
   };
 });
 

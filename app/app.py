@@ -23,8 +23,6 @@ def index(path):
     rel_path = "templates/index.html"
     return make_response(open(os.path.join(script_dir, rel_path)).read())
 
-
-@app.route('/api/cuisines', methods=['GET'])
 @app.route('/api/cuisines/', methods=['GET'])
 def get_cuisines():
     session = Session()
@@ -35,8 +33,6 @@ def get_cuisines():
         cuisines.append(cuisine_dict) #add to list of dicts
     return jsonify(cuisines = cuisines)
 
-
-@app.route('/api/cuisines/<int:cuisine_id>', methods=['GET'])
 @app.route('/api/cuisines/<int:cuisine_id>/', methods=['GET'])
 def get_cuisine(cuisine_id):
     session = Session()
@@ -45,7 +41,6 @@ def get_cuisine(cuisine_id):
     cuisine.pop('_sa_instance_state', None)
     return jsonify(cuisine)
 
-@app.route('/api/recipes', methods=['GET'])
 @app.route('/api/recipes/', methods=['GET'])
 def get_recipes():
     session = Session()
@@ -56,8 +51,6 @@ def get_recipes():
         recipes.append(recipe_dict) #add to list of dicts/jsons
     return jsonify(recipes = recipes)
 
-
-@app.route('/api/recipes/<int:recipe_id>', methods=['GET'])
 @app.route('/api/recipes/<int:recipe_id>/', methods=['GET'])
 def get_recipe(recipe_id):
     session = Session()
@@ -66,7 +59,6 @@ def get_recipe(recipe_id):
     recipe.pop('_sa_instance_state', None)
     return jsonify(recipe)
 
-@app.route('/api/ingredients', methods=['GET'])
 @app.route('/api/ingredients/', methods=['GET'])
 def get_ingredients():
     session = Session()
@@ -77,8 +69,6 @@ def get_ingredients():
         ingredients.append(ingredient_dict) #add to list of dicts/jsons
     return jsonify(ingredients = ingredients)
 
-
-@app.route('/api/ingredients/<int:ingredient_id>', methods=['GET'])
 @app.route('/api/ingredients/<int:ingredient_id>/', methods=['GET'])
 def get_ingredient(ingredient_id):
     session = Session()
@@ -86,6 +76,51 @@ def get_ingredient(ingredient_id):
     ingredient = ingredient.__dict__.copy()
     ingredient.pop('_sa_instance_state', None)
     return jsonify(ingredient)
+
+# @app.route('/api/ingredient/<int:ingredient_id>/recipes', methods=['GET'])
+# def get_ingredient(ingredient_id):
+#     session = Session()
+#     ingredient = session.query(Ingredient).filter(Ingredient.id == ingredient_id).one()
+#     ingredient = ingredient.__dict__.copy()
+#     ingredient.pop('_sa_instance_state', None)
+#     return jsonify(ingredient)
+
+@app.route('/api/recipe/<int:recipe_id>/ingredients/', methods=['GET'])
+def getRecipeIngredients(recipe_id):
+	session = Session()
+	recipe = session.query(Recipe).filter(Recipe.id == recipe_id).one()
+	recipe_dict = recipe.__dict__.copy()
+	recipe_dict.pop('_sa_instance_state', None)
+
+	cuisine = recipe.cuisine
+	cuisine = cuisine.__dict__.copy()
+	cuisine.pop('_sa_instance_state', None)
+
+	ingredients = []
+	for ingredientInfo in recipe.ingredientInfos:
+		ingredient = ingredientInfo.ingredient
+		if ingredient == None:
+			continue
+		ingredient_dict = ingredient.__dict__.copy() # get dict
+		ingredient_dict.pop('_sa_instance_state', None) # remove unwanted column
+		ingredients.append(ingredient_dict) #add to list of dicts/jsons
+
+	return jsonify(ingredients = ingredients, recipe = recipe_dict, cuisine = cuisine)
+
+@app.route('/api/cuisine/<int:cuisine_id>/recipes/', methods=['GET'])
+def getCuisineRecipes(cuisine_id):
+	session = Session()
+	cuisine = session.query(Cuisine).filter(Cuisine.id == cuisine_id).one()
+	cuisine_dict = cuisine.__dict__.copy()
+	cuisine_dict.pop('_sa_instance_state', None)
+
+	recipes = []
+	for recipe in cuisine.recipes:
+		recipe = recipe.__dict__.copy() # get dict
+		recipe.pop('_sa_instance_state', None) # remove unwanted column
+		recipes.append(recipe) #add to list of dicts/jsons
+
+	return jsonify(recipes = recipes, cuisine = cuisine_dict)
 
 @app.route('/test')
 def test():
