@@ -122,7 +122,7 @@ def getCuisineRecipes(cuisine_id):
 
 	return jsonify(recipes = recipes, cuisine = cuisine_dict)
 
-@app.route('/test')
+@app.route('/test/')
 def test():
     import subprocess
 
