@@ -34,6 +34,9 @@ mainApp.factory('IngredientFetchFactory', function($http) {
     fetchAt: function (x) {
       return $http.get('/api/ingredients/' + x);
     },
+    fetchRecipes: function (x) {
+      return $http.get('/api/ingredients/' + x + '/recipes/');
+    },
   };
 });
 

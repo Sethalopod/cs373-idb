@@ -2,7 +2,7 @@
 from flask import Flask, render_template, make_response, url_for, send_file, jsonify
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from models import Recipe, Ingredient, Cuisine
+from models import Recipe, Ingredient, Cuisine, IngredientInfo
 from config import db
 import os
 
@@ -77,13 +77,23 @@ def get_ingredient(ingredient_id):
     ingredient.pop('_sa_instance_state', None)
     return jsonify(ingredient)
 
-# @app.route('/api/ingredient/<int:ingredient_id>/recipes', methods=['GET'])
-# def get_ingredient(ingredient_id):
-#     session = Session()
-#     ingredient = session.query(Ingredient).filter(Ingredient.id == ingredient_id).one()
-#     ingredient = ingredient.__dict__.copy()
-#     ingredient.pop('_sa_instance_state', None)
-#     return jsonify(ingredient)
+@app.route('/api/ingredients/<int:ingredient_id>/recipes/', methods=['GET'])
+def get_recipes_for_ingredient(ingredient_id):
+    session = Session()
+
+    ingredient = session.query(Ingredient).filter(Ingredient.id == ingredient_id).one()
+    ingredient = ingredient.__dict__.copy()
+    ingredient.pop('_sa_instance_state', None)
+
+    ingredients = session.query(IngredientInfo).filter(IngredientInfo.ingredient_id == ingredient_id).all()
+    ings = []
+
+    for ing in ingredients:
+        recipeInfo = {}
+        recipeInfo["name"] = ing.recipe.title
+        recipeInfo["id"] = ing.recipe_id
+        ings.append(recipeInfo)
+    return jsonify(ingredient=ingredient, recipes = ings)
 
 @app.route('/api/recipe/<int:recipe_id>/ingredients/', methods=['GET'])
 def getRecipeIngredients(recipe_id):

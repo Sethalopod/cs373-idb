@@ -65,8 +65,9 @@ mainApp.controller('IngredientDetailCtrl',
         $scope.sortType     = 'title';
         $scope.sortReverse  = false; 
 
-        IngredientFetchFactory.fetchAt($routeParams['ingredientId']).success(function(data) {
-            $scope.ingredient = data
+        IngredientFetchFactory.fetchRecipes($routeParams['ingredientId']).success(function(data) {
+            $scope.ingredient = data["ingredient"]
+            $scope.recipes = data["recipes"]
         });
     }]);
 
