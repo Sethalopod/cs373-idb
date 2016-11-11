@@ -107,6 +107,27 @@ def getRecipeIngredients(recipe_id):
 
 	return jsonify(ingredients = ingredients, recipe = recipe_dict, cuisine = cuisine)
 
+
+@app.route('/api/recipe/<int:recipe_id>/ingredientInfo/', methods=['GET'])
+def getRecipeIngredientsInfo(recipe_id):
+    session = Session()
+    recipe = session.query(Recipe).filter(Recipe.id == recipe_id).one()
+    recipe_dict = recipe.__dict__.copy()
+    recipe_dict.pop('_sa_instance_state', None)
+
+    cuisine = recipe.cuisine
+    cuisine = cuisine.__dict__.copy()
+    cuisine.pop('_sa_instance_state', None)
+
+    ingredients = []
+    for ingredientInfo in recipe.ingredientInfos:
+        ingredient_dict = ingredientInfo.__dict__.copy() # get dict
+        ingredient_dict.pop('_sa_instance_state', None) # remove unwanted column
+        ingredients.append(ingredient_dict) #add to list of dicts/jsons
+        
+    return jsonify(ingredients = ingredients, recipe = recipe_dict, cuisine = cuisine)
+
+
 @app.route('/api/cuisine/<int:cuisine_id>/recipes/', methods=['GET'])
 def getCuisineRecipes(cuisine_id):
 	session = Session()

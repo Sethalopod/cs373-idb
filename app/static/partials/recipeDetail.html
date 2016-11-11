@@ -14,7 +14,12 @@
 			
 			<h1>Ingredients</h1>
 			<div ng-repeat="ingredient in ingredients">
-				<a ng-href="/ingredients/{{ingredient.id}}"><span>{{ ingredient.title }}</span></a>
+				<div ng-if="ingredient.ingredient_id">
+					<a ng-href="/ingredients/{{ingredient.ingredient_id}}"><span>{{ ingredient.fullName }}</span></a>
+				</div>
+				<div ng-if="!ingredient.ingredient_id">
+					<span>{{ ingredient.fullName }}</span>
+				</div>
 			</div>
 		</div>
 	</div>
