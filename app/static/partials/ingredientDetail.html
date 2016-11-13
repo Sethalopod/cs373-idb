@@ -10,5 +10,11 @@
 			<div>Brand: {{ ingredient.brand }}</div>
 			<div>Category: {{ ingredient.category }}</div>
 		</div>
+		<div class="col-md-2">
+			<h1>Recipes used in:</h1>
+			<div ng-repeat="recipe in recipes">
+				<a ng-href="/recipes/{{recipe.id}}"><span>{{ recipe.name }}</span></a>
+			</div>
+		</div>
 	</div>
 </div>

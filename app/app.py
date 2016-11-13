@@ -2,7 +2,7 @@
 from flask import Flask, render_template, make_response, url_for, send_file, jsonify
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from models import Recipe, Ingredient, Cuisine
+from models import Recipe, Ingredient, Cuisine, IngredientInfo
 from config import db
 import os
 
@@ -77,13 +77,23 @@ def get_ingredient(ingredient_id):
     ingredient.pop('_sa_instance_state', None)
     return jsonify(ingredient)
 
-# @app.route('/api/ingredient/<int:ingredient_id>/recipes', methods=['GET'])
-# def get_ingredient(ingredient_id):
-#     session = Session()
-#     ingredient = session.query(Ingredient).filter(Ingredient.id == ingredient_id).one()
-#     ingredient = ingredient.__dict__.copy()
-#     ingredient.pop('_sa_instance_state', None)
-#     return jsonify(ingredient)
+@app.route('/api/ingredients/<int:ingredient_id>/recipes/', methods=['GET'])
+def get_recipes_for_ingredient(ingredient_id):
+    session = Session()
+
+    ingredient = session.query(Ingredient).filter(Ingredient.id == ingredient_id).one()
+    ingredient = ingredient.__dict__.copy()
+    ingredient.pop('_sa_instance_state', None)
+
+    ingredients = session.query(IngredientInfo).filter(IngredientInfo.ingredient_id == ingredient_id).all()
+    ings = []
+
+    for ing in ingredients:
+        recipeInfo = {}
+        recipeInfo["name"] = ing.recipe.title
+        recipeInfo["id"] = ing.recipe_id
+        ings.append(recipeInfo)
+    return jsonify(ingredient=ingredient, recipes = ings)
 
 @app.route('/api/recipe/<int:recipe_id>/ingredients/', methods=['GET'])
 def getRecipeIngredients(recipe_id):
@@ -106,6 +116,27 @@ def getRecipeIngredients(recipe_id):
 		ingredients.append(ingredient_dict) #add to list of dicts/jsons
 
 	return jsonify(ingredients = ingredients, recipe = recipe_dict, cuisine = cuisine)
+
+
+@app.route('/api/recipe/<int:recipe_id>/ingredientInfo/', methods=['GET'])
+def getRecipeIngredientsInfo(recipe_id):
+    session = Session()
+    recipe = session.query(Recipe).filter(Recipe.id == recipe_id).one()
+    recipe_dict = recipe.__dict__.copy()
+    recipe_dict.pop('_sa_instance_state', None)
+
+    cuisine = recipe.cuisine
+    cuisine = cuisine.__dict__.copy()
+    cuisine.pop('_sa_instance_state', None)
+
+    ingredients = []
+    for ingredientInfo in recipe.ingredientInfos:
+        ingredient_dict = ingredientInfo.__dict__.copy() # get dict
+        ingredient_dict.pop('_sa_instance_state', None) # remove unwanted column
+        ingredients.append(ingredient_dict) #add to list of dicts/jsons
+        
+    return jsonify(ingredients = ingredients, recipe = recipe_dict, cuisine = cuisine)
+
 
 @app.route('/api/cuisine/<int:cuisine_id>/recipes/', methods=['GET'])
 def getCuisineRecipes(cuisine_id):

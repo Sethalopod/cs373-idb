@@ -21,7 +21,7 @@ mainApp.factory('RecipeFetchFactory', function($http) {
       return $http.get('/api/recipes/' + x);
     },
     fetchIngredients: function (x) {
-      return $http.get('/api/recipe/' + x + '/ingredients/');
+      return $http.get('/api/recipe/' + x + '/ingredientInfo/');
     },
   };
 });
@@ -33,6 +33,9 @@ mainApp.factory('IngredientFetchFactory', function($http) {
     },
     fetchAt: function (x) {
       return $http.get('/api/ingredients/' + x);
+    },
+    fetchRecipes: function (x) {
+      return $http.get('/api/ingredients/' + x + '/recipes/');
     },
   };
 });
