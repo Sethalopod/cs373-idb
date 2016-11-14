@@ -1,7 +1,6 @@
-
 from flask import Flask, render_template, make_response, url_for, send_file, jsonify
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, func
 from models import Recipe, Ingredient, Cuisine, IngredientInfo
 from config import db
 import os
@@ -23,12 +22,48 @@ def index(path):
     rel_path = "templates/index.html"
     return make_response(open(os.path.join(script_dir, rel_path)).read())
 
+
+@app.route('/api/search/<string:search>', methods=['GET'])
+def search_database(search):
+    session = Session()
+    inclusiveSearch = '%' + search.lower() + '%'
+    results = []
+
+    cuisineQuery = session.query(Cuisine).filter(func.lower(Cuisine.title).like(inclusiveSearch)).limit(7).all()
+    recipeQuery = session.query(Recipe).filter(func.lower(Recipe.title).like(inclusiveSearch)).limit(7).all()
+    ingredientQuery = session.query(Ingredient).filter(func.lower(Ingredient.title).like(inclusiveSearch)).limit(7).all()
+
+    for cuisine in cuisineQuery:
+        result = {}
+        result["title"] = cuisine.title
+        result["image"] = cuisine.imageUrl
+        result["link"] = "/cuisines/" + str(cuisine.id)
+        results.append(result)
+
+    for recipe in recipeQuery:
+        result = {}
+        result["title"] = recipe.title
+        result["image"] = recipe.imageURL
+        result["link"] = "/recipes/" + str(recipe.id)
+        results.append(result)
+
+    for ingredient in ingredientQuery:
+        result = {}
+        result["title"] = ingredient.title
+        result["image"] = ingredient.imageURL
+        result["link"] = "/ingredients/" + str(ingredient.id)
+        results.append(result)
+
+    results = sorted(results, key=lambda k : len(k["title"]))[:7]
+    return jsonify(results = results)
+
+
 @app.route('/api/cuisines/', methods=['GET'])
 def get_cuisines():
     session = Session()
     cuisines = []    
     for cuisine in session.query(Cuisine).all():
-        cuisine_dict =cuisine.__dict__.copy() # get dict
+        cuisine_dict = cuisine.__dict__.copy() # get dict
         cuisine_dict.pop('_sa_instance_state', None) # remove unwanted column
         cuisines.append(cuisine_dict) #add to list of dicts
     return jsonify(cuisines = cuisines)
