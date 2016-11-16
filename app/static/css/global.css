@@ -13,6 +13,24 @@ body {
   margin: 0 auto;
 }
 
+/*Search CSS*/
+.search-item {
+  width: 100%;
+  height: 50px;
+  padding-top: 10px;
+}
+
+.search-item img{
+  height: 100%;
+  float: left;
+}
+
+.search-item span{
+  float: right;
+}
+
+/*END Search*/
+
 /*Bootstrap customization*/
 @media (min-width: 768px){
   .col-md-5 {
@@ -135,13 +153,13 @@ body {
   transition: opacity 0.5s;
 }
 .carousel .one {
-  background: url(../images/splash-1.jpeg);
+  background: url(../images/splash-1.jpg);
   background-position: center;  
   background-size: cover;
   -moz-background-size: cover;
 }
 .carousel .two {
-  background: url(../images/splash-2.jpeg);
+  background: url(../images/splash-2.jpg);
   background-position: center;  
   background-size: cover;
   -moz-background-size: cover;

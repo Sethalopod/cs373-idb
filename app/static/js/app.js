@@ -12,7 +12,7 @@ mainApp.config(['$routeProvider', '$locationProvider',
 		}).
 		when('/about', {
 			templateUrl: '../static/partials/about.html',
-		  controller: 'AboutCtrl'
+		  	controller: 'AboutCtrl'
 		}).
 		when('/cuisines', {
 			templateUrl: '../static/partials/cuisines.html',
