@@ -15,30 +15,26 @@
 </script>
 <!-- End Background Carousel -->
 
-<!-- Splash Jumbotron -->
+<script>
+  $(function(){
+    $(".element").typed({
+      strings: ["sweet.", "spicy.", "savory.", "delicious."],
+      typeSpeed: 45,
+      backSpeed: 45,
+      backDelay: 1250,
+      loop: false,
+    });
+  });
+</script>
+
 <div class="container">
   <div class="row">
     <div class="col-md-offset-2 col-md-8 col-xs-offset-0 col-xs-12">
       <div class="jumbotron splash-jumbotron">
-        <img class="img-responsive splash-logo" align="middle" src="../static/images/coloured.png">
-        <br>
-        <search placeholder="Search for..." wait=500 ></search>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-2 col-md-8 col-xs-offset-0 col-xs-12">
-      <div class="jumbotron splash-jumbotron">
-        <!-- Splash Buttons -->
-        <p class="splash-caption">Find new and tasteful recipes in cuisines found throughout the world!</p>
-        <p><a class="btn btn-primary btn-lg splash-btn" href="recipes" role="button">All Recipes</a></p>
-        <p><a class="btn btn-primary btn-lg splash-btn" href="ingredients" role="button">Recipes By Ingredients</a></p>
-        <p><a class="btn btn-primary btn-lg splash-btn" href="cuisines" role="button">Recipes By Cuisines</a></p>
-        <p class="splash-caption">Learn more about the Boilerpl8 team!</p>
-        <p><a class="btn btn-primary btn-lg splash-btn" href="about" role="button">Meet Us!</a></p>
-        <!-- End Splash Buttons -->
+        <h2 class="typed text-center">I am looking for something<br><span class="element"></span></h2>
+        <hr>
+        <search placeholder="Search..." wait=500 ></search>
       </div>
     </div>
   </div>
 </div>
-<!-- End Splash Jumbotron -->

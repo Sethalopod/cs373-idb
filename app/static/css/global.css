@@ -13,6 +13,15 @@ body {
   margin: 0 auto;
 }
 
+.typed {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 50px;
+}
+
+.brand {
+
+}
+
 /*Search CSS*/
 .search-item {
   width: 100%;
@@ -28,7 +37,6 @@ body {
 .search-item span{
   float: right;
 }
-
 /*END Search*/
 
 /*Bootstrap customization*/
@@ -82,7 +90,7 @@ body {
 }
 
 .navbar-brand img {
-  width: 60px;
+  width: 140px;
 }
 
 .navbar-right {
