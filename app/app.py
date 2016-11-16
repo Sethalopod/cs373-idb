@@ -48,7 +48,9 @@ def generate_pokemon_flavor():
 
     results = []
     for i in range(numToGenerate):
-        results.append(text_model.make_sentence())
+        sentence = text_model.make_sentence()
+        if sentence:
+            results.append(sentence)
 
     return jsonify(data=results)
 
@@ -75,7 +77,9 @@ def getAllMoveTexts():
 
     results = []
     for i in range(numToGenerate):
-        results.append(text_model.make_sentence())
+        sentence = text_model.make_sentence()
+        if sentence:
+            results.append(sentence)
 
     return jsonify(data=results)
 
