@@ -26,7 +26,6 @@ def index(path):
     return make_response(open(os.path.join(script_dir, rel_path)).read())
 
 
-<<<<<<< HEAD
 @app.route('/pokemon/', methods=['GET'])
 def generate_pokemon_flavor():
     numToGenerate = 5
