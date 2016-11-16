@@ -1,10 +1,12 @@
-
-from flask import Flask, render_template, make_response, url_for, send_file, jsonify
+from flask import Flask, render_template, make_response, url_for, send_file, jsonify, request
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from models import Recipe, Ingredient, Cuisine, IngredientInfo
 from config import db
 import os
+import requests
+import markovify
+
 
 app = Flask(__name__)
 
@@ -22,6 +24,109 @@ def index(path):
     script_dir = os.path.dirname(__file__)
     rel_path = "templates/index.html"
     return make_response(open(os.path.join(script_dir, rel_path)).read())
+
+
+@app.route('/pokemon/', methods=['GET'])
+def generate_pokemon_flavor():
+    numToGenerate = 5
+
+    if request.args.get('count') is not None:
+        numToGenerate = int(request.args.get('count'))
+
+    POKEMON_ENDPOINT = "http://www.pokemans.me/api/v1/pokemon?page="
+    call = POKEMON_ENDPOINT + "1"
+
+    result = requests.get(call)
+    resultJson = result.json()
+    pages = resultJson["total_pages"]
+
+    allTexts = ""
+    for page in range(1, pages + 1):
+        allTexts += getFlavorTextOnPage(POKEMON_ENDPOINT, page)
+
+    text_model = markovify.Text(allTexts)
+
+    results = []
+    for i in range(numToGenerate):
+        results.append(text_model.make_sentence())
+
+    return jsonify(data=results)
+
+
+@app.route('/pokemon/moves', methods=['GET'])
+def getAllMoveTexts():
+    numToGenerate = 5
+
+    if request.args.get('count') is not None:
+        numToGenerate = int(request.args.get('count'))
+
+    MOVES_ENDPOINT = "http://www.pokemans.me/api/v1/moves?page="
+    call = MOVES_ENDPOINT + "1"
+
+    result = requests.get(call)
+    resultJson = result.json()
+    pages = resultJson["total_pages"]
+
+    allTexts = ""
+    for page in range(1, pages + 1):
+        allTexts += getFlavorTextOnPage(MOVES_ENDPOINT,page)
+
+    text_model = markovify.Text(allTexts)
+
+    results = []
+    for i in range(numToGenerate):
+        results.append(text_model.make_sentence())
+
+    return jsonify(data=results)
+
+
+def getFlavorTextOnPage(endpoint, page):
+    allFlavorTexts = ""
+    call = endpoint + str(page)
+
+    result = requests.get(call)
+    resultJson = result.json()
+
+    for r in resultJson["data"]:
+        if r["flavor_text"]:
+            allFlavorTexts += r["flavor_text"].replace("\n", " ") + "\n"
+
+    return allFlavorTexts
+
+@app.route('/api/search/<string:search>', methods=['GET'])
+def search_database(search):
+    session = Session()
+    inclusiveSearch = '%' + search.lower() + '%'
+    results = []
+
+    cuisineQuery = session.query(Cuisine).filter(func.lower(Cuisine.title).like(inclusiveSearch)).limit(7).all()
+    recipeQuery = session.query(Recipe).filter(func.lower(Recipe.title).like(inclusiveSearch)).limit(7).all()
+    ingredientQuery = session.query(Ingredient).filter(func.lower(Ingredient.title).like(inclusiveSearch)).limit(7).all()
+
+    for cuisine in cuisineQuery:
+        result = {}
+        result["title"] = cuisine.title
+        result["image"] = cuisine.imageUrl
+        result["link"] = "/cuisines/" + str(cuisine.id)
+        results.append(result)
+
+    for recipe in recipeQuery:
+        result = {}
+        result["title"] = recipe.title
+        result["image"] = recipe.imageURL
+        result["link"] = "/recipes/" + str(recipe.id)
+        results.append(result)
+
+    for ingredient in ingredientQuery:
+        result = {}
+        result["title"] = ingredient.title
+        result["image"] = ingredient.imageURL
+        result["link"] = "/ingredients/" + str(ingredient.id)
+        results.append(result)
+
+    results = sorted(results, key=lambda k : len(k["title"]))[:7]
+    return jsonify(results = results)
+
 
 @app.route('/api/cuisines/', methods=['GET'])
 def get_cuisines():
