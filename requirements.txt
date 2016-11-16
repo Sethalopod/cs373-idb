@@ -3,7 +3,10 @@ Flask==0.11.1
 Flask-Script==2.0.5
 itsdangerous==0.24
 Jinja2==2.8
+markovify==0.4.3
 MarkupSafe==0.23
 psycopg2==2.6.2
+requests==2.12.1
 SQLAlchemy==1.1.2
+Unidecode==0.4.19
 Werkzeug==0.11.11

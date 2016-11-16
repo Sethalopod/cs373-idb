@@ -4,7 +4,7 @@
 	<div ng-show="searching">
 		Finding the best results...
 	</div>
-	<div ng-show="!result && results.length == 0">
+	<div ng-show="!result && results.length == 0 && !searching">
 		No results found
 	</div>
 	<div ng-repeat="result in results" ng-show="!searching">

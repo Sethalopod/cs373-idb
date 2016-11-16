@@ -3,7 +3,8 @@ mainApp.directive('search', function($http, $timeout) {
 		restrict: 'EA',
 		scope: {
 			"placeholder": "@placeholder",
-			"wait": "@wait"
+			"wait": "@wait",
+			"userLimit": "@limit"
 		},
 		templateUrl: '../static/partials/search.html',
 		link: function($scope, elem, attrs) {
@@ -11,9 +12,16 @@ mainApp.directive('search', function($http, $timeout) {
 			$scope.query = null;
 			$scope.searching = false;
 
-			base_url = "/api/search?limit=5&query=";
 			searchTimer = null;
 			lastQuery = null;
+			limit = 5;
+
+			if ($scope.userLimit) {
+                limit = $scope.userLimit;
+            }
+
+			base_url = "/api/search?limit=" + limit + "&query=";
+
 
 			newSearch = function(newQuery, oldQuery) {
 				return newQuery != oldQuery
@@ -23,8 +31,8 @@ mainApp.directive('search', function($http, $timeout) {
 				console.log("searching for " + str)
 				$http.get(base_url + str)
 				.success(function(data) {
-					$scope.searching = false;
 					$scope.results = data["results"];
+					$scope.searching = false;
 				})
 				.error(function() {
 					console.log("error");
@@ -36,10 +44,9 @@ mainApp.directive('search', function($http, $timeout) {
 					console.log("serach is empty")
 					$scope.results = null;
 					$scope.$apply();
-
 				}else if(newSearch($scope.query, lastQuery)){
 					lastQuery = $scope.query;
-					searching = true;
+					$scope.searching = true;
 					searchTimer = $timeout(function() {
 						searchTimerComplete($scope.query);
 					}, $scope.wait);
