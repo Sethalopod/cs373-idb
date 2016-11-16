@@ -104,14 +104,13 @@ def search_database():
     search = str(request.args.get('query'))
     count = int(request.args.get('limit'))
 
-
     session = Session()
-    inclusiveSearch = '%' + search.lower() + '%'
+    inclusiveSearch = search.lower().replace(" ","+") + ':*'
     results = []
 
-    cuisineQuery = session.query(Cuisine).filter(func.lower(Cuisine.title).like(inclusiveSearch)).limit(count).all()
-    recipeQuery = session.query(Recipe).filter(func.lower(Recipe.title).like(inclusiveSearch)).limit(count).all()
-    ingredientQuery = session.query(Ingredient).filter(func.lower(Ingredient.title).like(inclusiveSearch)).limit(count).all()
+    cuisineQuery = session.query(Cuisine).filter(func.to_tsvector(func.lower(Cuisine.title)).match(inclusiveSearch)).limit(count).all()
+    recipeQuery = session.query(Recipe).filter(func.to_tsvector(func.lower(Recipe.title)).match(inclusiveSearch)).limit(count).all()
+    ingredientQuery = session.query(Ingredient).filter(func.to_tsvector(func.lower(Ingredient.title)).match(inclusiveSearch)).limit(count).all()
 
     for cuisine in cuisineQuery:
         result = {}
