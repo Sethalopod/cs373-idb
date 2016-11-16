@@ -52,6 +52,56 @@ class TestModels (TestCase):
 		session.delete(cuisine)
 		session.commit()
 
+	def test_recipe_4(self):
+		session = self.sess()
+
+		cuisine = Cuisine(title="Jolly",
+							numberOfRecipes = 1,
+							averageNumberOfIngredientsPerRecipe = 1.0,
+							continent = "Jollyland",
+							averageCalories = 1)
+
+		recipe = Recipe(title = "Jolly Rancher",
+						servings = 10,
+						calories = 1,
+						steps = 1)
+
+		recipe.cuisine = cuisine
+		session.add(recipe)
+		session.add(cuisine)
+		session.commit()
+		
+		result = session.query(Recipe).first()
+		self.assertEqual(result.title, recipe.title)		
+		session.delete(recipe)
+		session.delete(cuisine)
+		session.commit()
+
+	def test_recipe_5(self):
+		session = self.sess()
+
+		cuisine = Cuisine(title="Saltese",
+							numberOfRecipes = 1,
+							averageNumberOfIngredientsPerRecipe = 10.0,
+							continent = "Reddit",
+							averageCalories = 5000)
+
+		recipe = Recipe(title = "losing",
+						servings = 10,
+						calories = 1,
+						steps = 1)
+
+		recipe.cuisine = cuisine
+		session.add(recipe)
+		session.add(cuisine)
+		session.commit()
+		
+		result = session.query(Recipe).first()
+		self.assertEqual(result.title, recipe.title)		
+		session.delete(recipe)
+		session.delete(cuisine)
+		session.commit()
+
 	def test_cuisine_1(self):
 		 
 		session = self.sess()
