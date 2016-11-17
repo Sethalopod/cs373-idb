@@ -117,6 +117,7 @@ def search_database():
         result["title"] = cuisine.title
         result["image"] = cuisine.imageUrl
         result["link"] = "/cuisines/" + str(cuisine.id)
+        result["type"] = "Cuisine"
         results.append(result)
 
     for recipe in recipeQuery:
@@ -124,6 +125,7 @@ def search_database():
         result["title"] = recipe.title
         result["image"] = recipe.imageURL
         result["link"] = "/recipes/" + str(recipe.id)
+        result["type"] = "Recipe"
         results.append(result)
 
     for ingredient in ingredientQuery:
@@ -131,6 +133,7 @@ def search_database():
         result["title"] = ingredient.title
         result["image"] = ingredient.imageURL
         result["link"] = "/ingredients/" + str(ingredient.id)
+        result["type"] = "Ingredient"
         results.append(result)
 
     results = sorted(results, key=lambda k : len(k["title"]))[:count]

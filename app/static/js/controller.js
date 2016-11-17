@@ -109,6 +109,7 @@ mainApp.controller('AboutCtrl',
         $scope.sites        = MetadataFetchFactory.fetchSite();
         $scope.github       = refineData;
         $scope.stats        = stats;
+        $scope.tests        = null;
 
         TestFetchFactory.success(function(data) {
             $scope.tests = data

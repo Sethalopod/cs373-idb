@@ -89,7 +89,7 @@ mainApp.factory('MetadataFetchFactory', function() {
     instagram_url: 'https://www.instagram.com/packagedwolf/',
     linkedin_url: 'https://linkedin.com/in/alanmaut',
     pintrest_url: 'https://www.pinterest.com/alanwolfie/',
-    tests: 0
+    tests: 6
   },
   {
     name:'Anthony Gallop', 
