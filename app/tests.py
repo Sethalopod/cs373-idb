@@ -151,6 +151,34 @@ class TestModels (TestCase):
 
         session.delete(recipe)
         session.commit()
+        
+    def test_recipe_8(self):
+        session = self.sess()
+
+        recipe = Recipe(title = "Powerpuff Girls", readyInMinutes = 1, servings = 3, calories = 0, numberOfSteps = 4, steps = "Add sugar, add spice, add everything nice, accidentally add an extra ingredient to the concotion -- Chemical X")
+        session.add(recipe)
+        session.commit()
+
+        result = session.query(Recipe).first()
+
+        self.assertEqual(result.title, "Powerpuff Girls")
+
+        session.delete(recipe)
+        session.commit()
+        
+    def test_recipe_9(self):
+        session = self.sess()
+
+        recipe = Recipe(title = "Rowdyruff Boys", readyInMinutes = 1, servings = 3, calories = 0, numberOfSteps = 4, steps = "Add snips, add snails, add puppy-dog tails, add Chemical X")
+        session.add(recipe)
+        session.commit()
+
+        result = session.query(Recipe).first()
+
+        self.assertEqual(result.title, "Rowdyruff Boys")
+
+        session.delete(recipe)
+        session.commit()
 
     def test_cuisine_1(self):
          
