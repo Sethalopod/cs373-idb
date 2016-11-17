@@ -6,28 +6,36 @@
 
 <div class="row" >
   <div class="col-md-4 col-md-offset-4 col-xs-12 col-xs-offset-0 antisocial roomy">
-    <h2 class="text-center" >Name your new companion!</h2> 
+    <h2 class="text-center" >Name that pokemon!</h2> 
     <input type="text" class="form-control" ng-model="name"
             required ng-trim="false">
     <div class ="row antisocial">
-      <h2 class="text-center" >Pick a trait for your companion!</h2> 
+      <h2 class="text-center" >What would the PokeDex display?</h2> 
       <button class="roomy" ng-class="{'unselected-button': selectedDesc != 0, 'selected-button': selectedDesc === 0 }" ng-click="selectedDesc = 0" >{{ pokemon[0] }}</button>
       <button class="roomy" ng-class="{'unselected-button': selectedDesc != 1, 'selected-button': selectedDesc === 1 }" ng-click="selectedDesc = 1" >{{ pokemon[1] }}</button>
       <button class="roomy" ng-class="{'unselected-button': selectedDesc != 2, 'selected-button': selectedDesc === 2 }" ng-click="selectedDesc = 2" >{{ pokemon[2] }}</button>
       <button class="roomy" ng-class="{'unselected-button': selectedDesc != 3, 'selected-button': selectedDesc === 3 }" ng-click="selectedDesc = 3" >{{ pokemon[3] }}</button>
       <button class="roomy" ng-class="{'unselected-button': selectedDesc != 4, 'selected-button': selectedDesc === 4 }" ng-click="selectedDesc = 4" >{{ pokemon[4] }}</button>
     </div>
+    <div class ="row antisocial">
+      <h2 class="text-center" >Pick what their moves do</h2> 
+      <button class="roomy" ng-class="{'unselected-button': selectedMoves[0] != 0 && selectedMoves[1] != 0, 'selected-button': selectedMoves[0] === 0 || selectedMoves[1] === 0 }" ng-click="selectMove(0)" >{{ moves[0] }}</button>
+      <button class="roomy" ng-class="{'unselected-button': selectedMoves[0] != 1 && selectedMoves[1] != 1, 'selected-button': selectedMoves[0] === 1 || selectedMoves[1] === 1 }" ng-click="selectMove(1)" >{{ moves[1] }}</button>
+      <button class="roomy" ng-class="{'unselected-button': selectedMoves[0] != 2 && selectedMoves[1] != 2, 'selected-button': selectedMoves[0] === 2 || selectedMoves[1] === 2 }" ng-click="selectMove(2)" >{{ moves[2] }}</button>
+      <button class="roomy" ng-class="{'unselected-button': selectedMoves[0] != 3 && selectedMoves[1] != 3, 'selected-button': selectedMoves[0] === 3 || selectedMoves[1] === 3 }" ng-click="selectMove(3)" >{{ moves[3] }}</button>
+      <button class="roomy" ng-class="{'unselected-button': selectedMoves[0] != 4 && selectedMoves[1] != 4, 'selected-button': selectedMoves[0] === 4 || selectedMoves[1] === 4 }" ng-click="selectMove(4)" >{{ moves[4] }}</button>
+    </div>
   </div>
 </div>
 <div class="row antisocial">
   <div class="col-md-offset-3 col-md-6 col-xs-12 roomy col-xs-offset-0">
-      <h3>Name: <span ng-bind="name"></h3>
-      <h3></h3>
-      <h3>Trait: {{ getDescription(selectedDesc) }}</h3>
+      <h2 class="text-center" >{{ getName() }}</h2> 
+      <h3>PokeDex Entry:</h3>
+      <h3>{{ getDescription(selectedDesc) }}</h3>
       <h3></h3>
       <h3>Moves:</h3>
-      <h3>1: nil</h3>
+      <h3>1: {{ getMove(selectedMoves[0]) }}</h3>
       <h3></h3>
-      <h3>2: nil</h3>
+      <h3>2: {{ getMove(selectedMoves[1]) }}</h3>
   </div>
 </div>

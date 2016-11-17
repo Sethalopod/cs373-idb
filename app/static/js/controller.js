@@ -118,27 +118,43 @@ mainApp.controller('AboutCtrl',
 mainApp.controller('PokemonCtrl',
     ['$scope', 'PokemonFetchFactory',
     function($scope, PokemonFetchFactory) {
-        console.log("pokemon controller here");
         $scope.pokemon = ['Loading...','Loading...', 'Loading...','Loading...','Loading...']
+        $scope.moves = ['Loading...','Loading...', 'Loading...','Loading...','Loading...']
       
-        PokemonFetchFactory.fetch().success(function(data) {
-            console.log(data);
-            $scope.pokemon = data['data'];
+        PokemonFetchFactory.fetch().success(function(result) {
+            $scope.pokemon = result['data'];
         });
 
-        PokemonFetchFactory.fetchMoves().success(function(data) {
-            $scope.pokemonMoves = data;
+        PokemonFetchFactory.fetchMoves().success(function(result) {
+            $scope.moves = result['data'];
         });
 
         $scope.name = '';
-        $scope.enabledMoveClick = [true, true, true, true. true]; 
         $scope.selectedMoves = [-1, -1];
         $scope.selectedDesc = -1;
 
-        $scope.getDescription = function(desc){
-          if(desc == -1)
-            return 'Please Select A Description'
-          return $scope.pokemon[desc];
+        $scope.getName = function(){
+          if($scope.name == '')
+            return 'Your Pokemon'
+          return $scope.name
+        }
+
+        $scope.getDescription = function(index){
+          if(index == -1)
+            return 'Please Select A PokeDex Entry Above'
+          return $scope.pokemon[index];
+        }
+
+        $scope.selectMove = function(index) {
+          if($scope.selectedMoves[0] != index && $scope.selectedMoves[1] != index){
+            $scope.selectedMoves[1] = $scope.selectedMoves[0];
+            $scope.selectedMoves[0] = index;
+          }
+        }
+        $scope.getMove = function(index) {
+          if(index === -1)
+            return 'Please Select A Move Above'
+          return $scope.moves[index];
         }
     }]);
 

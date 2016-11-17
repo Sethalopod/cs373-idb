@@ -46,7 +46,7 @@ mainApp.factory('PokemonFetchFactory', function($http) {
       return $http.get('/pokemon');
     },
     fetchMoves: function (x) {
-      return $http.get('/pokemon/moves/' + x);
+      return $http.get('/pokemon/moves');
     }
   };
 });
