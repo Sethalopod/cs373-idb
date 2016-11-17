@@ -131,14 +131,28 @@ def search_database():
     search = str(request.args.get('query'))
     count = int(request.args.get('limit'))
 
-    session = Session()
-    inclusiveSearch = search.lower().replace(" ","+") + ':*'
-    print (inclusiveSearch)
+    andSearch = search.lower().replace(" ","+") + ':*'
+    orSearch = search.lower().replace(" ","|") + ':*'
+    
+    andResults = get_search_results(andSearch, count, "and")
+    orResults = get_search_results(orSearch, count, "or")
+
+    results = andResults
+    links = [result["link"] for result in andResults]
+    for r in orResults:
+        if r["link"] not in links:
+            results.append(r)
+
+    return jsonify(results = results)
+
+
+def get_search_results(searchQuery, count, searchType):
     results = []
 
-    cuisineQuery = session.query(Cuisine).filter(func.to_tsvector(func.lower(Cuisine.title)).match(inclusiveSearch)).limit(count).all()
-    recipeQuery = session.query(Recipe).filter(func.to_tsvector(func.lower(Recipe.title)).match(inclusiveSearch)).limit(count).all()
-    ingredientQuery = session.query(Ingredient).filter(func.to_tsvector(func.lower(Ingredient.title)).match(inclusiveSearch)).limit(count).all()
+    session = Session()
+    cuisineQuery = session.query(Cuisine).filter(func.to_tsvector(func.lower(Cuisine.title)).match(searchQuery)).limit(count).all()
+    recipeQuery = session.query(Recipe).filter(func.to_tsvector(func.lower(Recipe.title)).match(searchQuery)).limit(count).all()
+    ingredientQuery = session.query(Ingredient).filter(func.to_tsvector(func.lower(Ingredient.title)).match(searchQuery)).limit(count).all()
 
     for cuisine in cuisineQuery:
         result = {}
@@ -146,6 +160,7 @@ def search_database():
         result["image"] = cuisine.imageUrl
         result["link"] = "/cuisines/" + str(cuisine.id)
         result["type"] = "Cuisine"
+        result["searchType"] = searchType
         results.append(result)
 
     for recipe in recipeQuery:
@@ -154,6 +169,7 @@ def search_database():
         result["image"] = recipe.imageURL
         result["link"] = "/recipes/" + str(recipe.id)
         result["type"] = "Recipe"
+        result["searchType"] = searchType
         results.append(result)
 
     for ingredient in ingredientQuery:
@@ -162,12 +178,12 @@ def search_database():
         result["image"] = ingredient.imageURL
         result["link"] = "/ingredients/" + str(ingredient.id)
         result["type"] = "Ingredient"
+        result["searchType"] = searchType
         results.append(result)
 
     results = sorted(results, key=lambda k : len(k["title"]))[:count]
 
-    return jsonify(results = results)
-
+    return results
 
 @app.route('/api/cuisines/', methods=['GET'])
 def get_cuisines():
