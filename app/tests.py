@@ -303,7 +303,7 @@ class TestModels (TestCase):
         session.delete(recipe)
         session.commit()
 
-    def test_cusiine_8(self):
+    def test_cuisine_8(self):
         session = self.sess()
 
         cuisine = Cuisine(title = "Pupper", numberOfRecipes = 67, averageNumberOfIngredientsPerRecipe = 1, continent = "doggo island", averageCalories = 50.6)
@@ -321,7 +321,7 @@ class TestModels (TestCase):
         session.delete(cuisine)
         session.commit()
 
-    def test_cusiine_9(self):
+    def test_cuisine_9(self):
         session = self.sess()
 
         cuisine = Cuisine(title = "Joe Biden", numberOfRecipes = 9001, averageNumberOfIngredientsPerRecipe = 42, continent = "Meme", averageCalories = 20.0)
@@ -336,7 +336,7 @@ class TestModels (TestCase):
         session.commit()
 
 
-    def test_cusiine_10(self):
+    def test_cuisine_10(self):
         session = self.sess()
 
         cuisine = Cuisine(title = "JavaScript", numberOfRecipes = 404, averageNumberOfIngredientsPerRecipe = 404, continent = "Google Chrome", averageCalories = 40.4)
