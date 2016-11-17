@@ -5,6 +5,7 @@ from models import Recipe, Ingredient, Cuisine, IngredientInfo
 from config import db
 import os
 import grequests
+import requests
 import markovify
 
 
@@ -52,15 +53,21 @@ def generate_pokemon_flavor():
     for result in requestResults:
         allTexts += getFlavorTextFromResult(result)
 
-    text_model = markovify.Text(allTexts)
-
-    results = []
-    for i in range(numToGenerate):
-        sentence = text_model.make_sentence()
-        if sentence:
-            results.append(sentence)
+    results = generate_sentences(allTexts, numToGenerate)
 
     return jsonify(data=results)
+
+
+def generate_sentences(text, count):
+    text_model = markovify.Text(text)
+
+    sentences = []
+    for i in range(count):
+        sentence = text_model.make_sentence()
+        if sentence:
+            sentences.append(sentence)
+
+    return sentences
 
 
 @app.route('/pokemon/moves', methods=['GET'])
@@ -89,13 +96,7 @@ def getAllMoveTexts():
     for result in requestResults:
         allTexts += getFlavorTextFromResult(result)
 
-    text_model = markovify.Text(allTexts)
-
-    results = []
-    for i in range(numToGenerate):
-        sentence = text_model.make_sentence()
-        if sentence:
-            results.append(sentence)
+    results = generate_sentences(allTexts, numToGenerate)
 
     return jsonify(data=results)
 
