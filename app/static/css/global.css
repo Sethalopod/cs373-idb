@@ -296,3 +296,18 @@ body {
   margin-bottom:5px;
 }
 
+/* Pokemon generator */
+.unselected-button {
+  color:#000000;
+  min-height: 50px;
+  width: 100%;
+}
+
+.selected-button {
+  background-color:#000000;
+  border-color:#000000;
+  color:#ffffff;
+  min-height: 50px;
+  width: 100%;
+}
+
