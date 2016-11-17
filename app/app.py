@@ -10,6 +10,11 @@ import grequests
 import requests
 import markovify
 
+from importlib import reload
+import socket
+
+reload(sub)
+reload(socket)
 
 app = Flask(__name__)
 

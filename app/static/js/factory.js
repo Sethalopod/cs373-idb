@@ -51,11 +51,6 @@ mainApp.factory('PokemonFetchFactory', function($http) {
   };
 });
 
-
-mainApp.factory('TestFetchFactory', function($http) { 
-  return $http.get('/test');
-});
-
 mainApp.factory('GithubFetchFactory', function($http) { 
   return $http.get('https://api.github.com/repos/Sethalopod/cs373-idb/stats/contributors');
 });

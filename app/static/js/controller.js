@@ -72,8 +72,8 @@ mainApp.controller('IngredientDetailCtrl',
     }]);
 
 mainApp.controller('AboutCtrl',
-    ['$scope', 'GithubFetchFactory', 'IssueFetchFactory', 'MetadataFetchFactory', 'TestFetchFactory',
-    function($scope, GithubFetchFactory, IssueFetchFactory, MetadataFetchFactory, TestFetchFactory) {
+    ['$scope', '$http', 'GithubFetchFactory', 'IssueFetchFactory', 'MetadataFetchFactory',
+    function($scope, $http, GithubFetchFactory, IssueFetchFactory, MetadataFetchFactory) {
         stats               = {issues:0, tests:0, commits:0};
         refineData          = {};
         totalCommit         = 0;
@@ -111,7 +111,7 @@ mainApp.controller('AboutCtrl',
         $scope.tests        = null;
 
         $scope.runUnittests = function () {
-            TestFetchFactory.success(function(data) {
+            $http.get('/test').success(function(data) {
                 $scope.tests = data
             });
         }
