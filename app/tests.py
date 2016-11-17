@@ -394,7 +394,34 @@ class TestModels (TestCase):
         session.delete(ingredient)
         session.commit()
 
+    def test_ingredient_7(self):
+        session = self.sess()
 
+        ingredient = Ingredient(title = "Dreams", serving_size = "one hour", total_weight = "20 memories", brand = "Sweet Dreams", category = "Grains")
+        session.add(ingredient)
+        session.commit()
+        
+        dream = session.query(Ingredient).filter(Ingredient.brand == "Sweet Dreams").one()
 
+        self.assertNotEqual(dream, None)
+
+        session.delete(ingredient)
+        session.commit()
+
+    def test_ingredient_8(self):
+        session = self.sess()
+
+        ingredient = Ingredient(title = "Dreams", serving_size = "one hour", total_weight = "20 memories", brand = "Sweet Dreams", category = "Grains")
+        session.add(ingredient)
+        session.commit()
+        
+        dream = session.query(Ingredient).filter(Ingredient.serving_size == "one hour").one()
+
+        self.assertNotEqual(dream, None)
+
+        session.delete(ingredient)
+        session.commit()
+
+        
 if __name__ == "__main__":  
     main()
