@@ -3,8 +3,10 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine, func
 from models import Recipe, Ingredient, Cuisine, IngredientInfo
 from config import db
+
+import subprocess as sub
 import os
-import grequests
+import grequests as brequests
 import requests
 import markovify
 
@@ -63,8 +65,8 @@ def makeRequests(pages, endpoint):
         requestEndpoint = endpoint + str(page)
         allRequests.append(requestEndpoint)
 
-    requestsT = (grequests.get(u) for u in allRequests)
-    requestResults = grequests.map(requestsT)
+    requestsT = (brequests.get(u) for u in allRequests)
+    requestResults = brequests.map(requestsT)
 
     return requestResults
 
@@ -292,16 +294,15 @@ def getCuisineRecipes(cuisine_id):
 
 	return jsonify(recipes = recipes, cuisine = cuisine_dict)
 
-@app.route('/test/')
+@app.route('/test')
 def test():
-    import subprocess
 
     script_dir = os.path.dirname(__file__)
     rel_path = "tests.py"
     try:
-    	process = subprocess.check_output(["python", os.path.join(script_dir, rel_path)],
-    		stderr=subprocess.STDOUT)
-    except subprocess.CalledProcessError as e:
+    	process = sub.check_output(["python", os.path.join(script_dir, rel_path)],
+    		stderr=sub.STDOUT)
+    except sub.CalledProcessError as e:
     	process = e.output
 
     return process.decode("utf-8") 

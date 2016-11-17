@@ -8,7 +8,6 @@ mainApp.config(['$routeProvider', '$locationProvider',
 		$routeProvider.
 		when('/', {
 			templateUrl: '../static/partials/landing.html',
-			// controller: 'HomeCtrl'
 		}).
 		when('/about', {
 			templateUrl: '../static/partials/about.html',

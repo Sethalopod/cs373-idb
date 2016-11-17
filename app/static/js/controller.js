@@ -28,7 +28,7 @@ mainApp.controller('RecipesCtrl',
         $scope.sortType     = 'title';
         $scope.sortReverse  = false; 
         $scope.currentPage  = 1; 
-        
+
         RecipeFetchFactory.fetch().success(function(data) {
             $scope.recipes = data["recipes"]
         });
@@ -53,7 +53,7 @@ mainApp.controller('IngredientsCtrl',
         $scope.sortType     = 'title';
         $scope.sortReverse  = false; 
         $scope.currentPage  = 1; 
-        
+
         IngredientFetchFactory.fetch().success(function(data) {
             $scope.ingredients = data["ingredients"]
         });
@@ -89,7 +89,6 @@ mainApp.controller('AboutCtrl',
                 stats.commits   += data[i].total;
             }
         });
-        // console.log(refineData)
 
         IssueFetchFactory.success(function(data) {
             for(var i = 0; i < data.length; i++) {
@@ -111,17 +110,19 @@ mainApp.controller('AboutCtrl',
         $scope.stats        = stats;
         $scope.tests        = null;
 
-        TestFetchFactory.success(function(data) {
-            $scope.tests = data
-        });
-
+        $scope.runUnittests = function () {
+            TestFetchFactory.success(function(data) {
+                $scope.tests = data
+            });
+        }
     }]);
+
 mainApp.controller('PokemonCtrl',
     ['$scope', 'PokemonFetchFactory',
     function($scope, PokemonFetchFactory) {
         $scope.pokemon = ['Loading...','Loading...', 'Loading...','Loading...','Loading...']
         $scope.moves = ['Loading...','Loading...', 'Loading...','Loading...','Loading...']
-      
+
         PokemonFetchFactory.fetch().success(function(result) {
             $scope.pokemon = result['data'];
         });
@@ -135,27 +136,31 @@ mainApp.controller('PokemonCtrl',
         $scope.selectedDesc = -1;
 
         $scope.getName = function(){
-          if($scope.name == '')
-            return 'Your Pokemon'
-          return $scope.name
+            if($scope.name == ''){
+                return 'Your Pokemon';
+            }
+            return $scope.name
         }
 
         $scope.getDescription = function(index){
-          if(index == -1)
-            return 'Please Select A PokeDex Entry Above'
-          return $scope.pokemon[index];
+            if(index == -1){
+
+                return 'Please Select A PokeDex Entry Above'
+            }
+            return $scope.pokemon[index];
         }
 
         $scope.selectMove = function(index) {
-          if($scope.selectedMoves[0] != index && $scope.selectedMoves[1] != index){
-            $scope.selectedMoves[1] = $scope.selectedMoves[0];
-            $scope.selectedMoves[0] = index;
-          }
+            if($scope.selectedMoves[0] != index && $scope.selectedMoves[1] != index){
+                $scope.selectedMoves[1] = $scope.selectedMoves[0];
+                $scope.selectedMoves[0] = index;
+            }
         }
+
         $scope.getMove = function(index) {
-          if(index === -1)
-            return 'Please Select A Move Above'
-          return $scope.moves[index];
+            if(index === -1)
+                return 'Please Select A Move Above'
+            return $scope.moves[index];
         }
     }]);
 
