@@ -40,6 +40,18 @@ mainApp.factory('IngredientFetchFactory', function($http) {
   };
 });
 
+mainApp.factory('PokemonFetchFactory', function($http) { 
+  return {
+    fetch: function () {
+      return $http.get('/pokemon');
+    },
+    fetchMoves: function (x) {
+      return $http.get('/pokemon/moves/' + x);
+    }
+  };
+});
+
+
 mainApp.factory('TestFetchFactory', function($http) { 
   return $http.get('/test');
 });

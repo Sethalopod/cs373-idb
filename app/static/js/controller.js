@@ -115,5 +115,22 @@ mainApp.controller('AboutCtrl',
         });
 
     }]);
+mainApp.controller('PokemonCtrl',
+    ['$scope', 'PokemonFetchFactory',
+    function($scope, PokemonFetchFactory) {
+        console.log("pokemon controller here");
+        PokemonFetchFactory.fetch().success(function(data) {
+            $scope.pokemon = data["pokemon"];
+        });
+
+        PokemonFetchFactory.fetchMoves().success(function(data) {
+            $scope.pokemonMoves = data;
+        });
+        $scope.name = '';
+        $scope.enabledMoveClick = [true, true, true, true. true]; 
+        $scope.selectedMoves = [-1, -1];
+        $scope.selectedDesc = -1;
+    }]);
+
 
 // Dependencies must be in the same order as the function paramters...

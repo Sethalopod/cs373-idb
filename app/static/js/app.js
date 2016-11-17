@@ -38,6 +38,10 @@ mainApp.config(['$routeProvider', '$locationProvider',
 			templateUrl: '../static/partials/ingredientDetail.html',
 			controller: 'IngredientDetailCtrl'
 		}).
+		when('/pokemongenerator', {
+			templateUrl: '../static/partials/pokemonGenerator.html',
+			controller: 'PokemonCtrl'
+		}).
 		otherwise({ redirectTo: '/' });
 
 		// http://stackoverflow.com/questions/14771091/removing-the-fragment-identifier-from-angularjs-urls-symbol
