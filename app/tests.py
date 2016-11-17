@@ -321,6 +321,36 @@ class TestModels (TestCase):
         session.delete(cuisine)
         session.commit()
 
+    def test_cusiine_9(self):
+        session = self.sess()
+
+        cuisine = Cuisine(title = "Joe Biden", numberOfRecipes = 9001, averageNumberOfIngredientsPerRecipe = 42, continent = "Meme", averageCalories = 20.0)
+        session.add(cuisine)
+        session.commit()
+
+        result = session.query(Cuisine).first()
+
+        self.assertEqual(result.title, "Joe Biden")
+
+        session.delete(cuisine)
+        session.commit()
+
+
+    def test_cusiine_10(self):
+        session = self.sess()
+
+        cuisine = Cuisine(title = "JavaScript", numberOfRecipes = 404, averageNumberOfIngredientsPerRecipe = 404, continent = "Google Chrome", averageCalories = 40.4)
+        session.add(cuisine)
+        session.commit()
+
+        result = session.query(Cuisine).first()
+
+        self.assertEqual(result.averageCalories, 40.4)
+
+        session.delete(cuisine)
+        session.commit()
+
+
     def test_ingredient_1(self):
          
         session = self.sess()
