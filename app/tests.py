@@ -10,6 +10,12 @@ class TestModels (TestCase):
 		self.engine = create_engine("postgresql://" + test_db['USER'] + ":" + test_db['PASSWORD'] + "@" + test_db['IP'] + "/" + test_db['DATABASE'])
 		self.sess = sessionmaker(bind=self.engine)
 
+		session = self.sess()
+		session.query(Recipe).delete()
+		session.query(Ingredient).delete()
+		session.query(Cuisine).delete()
+		session.commit()
+
 	def test_recipe_1(self):
 		session = self.sess()
 
@@ -41,6 +47,81 @@ class TestModels (TestCase):
 
 		cuisine = Cuisine(title="American", numberOfRecipes = 1, averageNumberOfIngredientsPerRecipe = 5.0, continent = "North America", averageCalories = 1000)
 		recipe = Recipe(title = "Chicken Sandwich", servings = 4, calories = 1000, steps = 5 )
+		recipe.cuisine = cuisine
+		session.add(recipe)
+		session.add(cuisine)
+		session.commit()
+		
+		result = session.query(Recipe).first()
+		self.assertEqual(result.title, recipe.title)		
+		session.delete(recipe)
+		session.delete(cuisine)
+		session.commit()
+
+	def test_recipe_4(self):
+		session = self.sess()
+
+		cuisine = Cuisine(title="Jolly",
+							numberOfRecipes = 1,
+							averageNumberOfIngredientsPerRecipe = 1.0,
+							continent = "Jollyland",
+							averageCalories = 1)
+
+		recipe = Recipe(title = "Jolly Rancher",
+						servings = 10,
+						calories = 1,
+						steps = 1)
+
+		recipe.cuisine = cuisine
+		session.add(recipe)
+		session.add(cuisine)
+		session.commit()
+		
+		result = session.query(Recipe).first()
+		self.assertEqual(result.title, recipe.title)		
+		session.delete(recipe)
+		session.delete(cuisine)
+		session.commit()
+
+	def test_recipe_5(self):
+		session = self.sess()
+
+		cuisine = Cuisine(title="Saltese",
+							numberOfRecipes = 1,
+							averageNumberOfIngredientsPerRecipe = 10.0,
+							continent = "Reddit",
+							averageCalories = 5000)
+
+		recipe = Recipe(title = "losing",
+						servings = 10,
+						calories = 1,
+						steps = 1)
+
+		recipe.cuisine = cuisine
+		session.add(recipe)
+		session.add(cuisine)
+		session.commit()
+		
+		result = session.query(Recipe).first()
+		self.assertEqual(result.title, recipe.title)		
+		session.delete(recipe)
+		session.delete(cuisine)
+		session.commit()
+
+	def test_recipe_6(self):
+		session = self.sess()
+
+		cuisine = Cuisine(title="Jamaican",
+							numberOfRecipes = 1,
+							averageNumberOfIngredientsPerRecipe = 10.0,
+							continent = "North America",
+							averageCalories = 5000)
+
+		recipe = Recipe(title = "jamacian masala",
+						servings = 10,
+						calories = 1,
+						steps = 1)
+
 		recipe.cuisine = cuisine
 		session.add(recipe)
 		session.add(cuisine)
@@ -93,6 +174,64 @@ class TestModels (TestCase):
 		result = session.query(Recipe).one()
 		self.assertEqual(result.cuisine.title, cuisine.title)
 		session.delete(recipe)
+		session.delete(cuisine)
+		session.commit()
+
+	def test_cuisine_4(self):
+		 
+		session = self.sess()
+
+		recipe = Recipe(title = "Chocolate Milk",
+						servings = 1,
+						calories = 800,
+						steps = 3 )
+		cuisine = Cuisine(title = "American",
+							numberOfRecipes = 2,
+							averageNumberOfIngredientsPerRecipe = 5,
+							continent = "North America",
+							averageCalories = 200)
+		recipe.cuisine = cuisine
+		session.add(recipe)
+		session.add(cuisine)
+		session.commit()
+
+		result = session.query(Recipe).one()
+		self.assertEqual(result.cuisine.title, cuisine.title)
+		session.delete(recipe)
+		session.delete(cuisine)
+		session.commit()
+
+	def test_cuisine_5(self):
+		 
+		session = self.sess()
+
+		cuisine = Cuisine(title = "American",
+							numberOfRecipes = 2,
+							averageNumberOfIngredientsPerRecipe = 5,
+							continent = "North America",
+							averageCalories = 200)
+		session.add(cuisine)
+		session.commit()
+
+		result = session.query(Cuisine).one()
+		self.assertEqual(result.title, cuisine.title)
+		session.delete(cuisine)
+		session.commit()
+
+	def test_cuisine_6(self):
+		 
+		session = self.sess()
+
+		cuisine = Cuisine(title = "Japanese",
+							numberOfRecipes = 2,
+							averageNumberOfIngredientsPerRecipe = 10,
+							continent = "Asia",
+							averageCalories = 200)
+		session.add(cuisine)
+		session.commit()
+
+		result = session.query(Cuisine).one()
+		self.assertEqual(result.continent, cuisine.continent)
 		session.delete(cuisine)
 		session.commit()
 

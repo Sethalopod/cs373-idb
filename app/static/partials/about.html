@@ -77,14 +77,30 @@
     </div>
   </div>
   <div class="row text-center">
-      <h2 class="text-center">Scraping the Data</h2>
-      <p>The data was obtained through FoodFacts's and Spoonacular's APIs. With GET requests we got data formatted in JSON which we recorded and placed in an Angular factory.</p> 
-    </div>
+    <h2 class="text-center">Scraping the Data</h2>
+    <p>The data was obtained through FoodFacts's and Spoonacular's APIs. With GET requests we got data formatted in JSON which we recorded and placed in an Angular factory.</p> 
   </div>
   <div>
     <div class="row text-center">
-      <h2 class="text-center">Test Output</h2>
-      <p>{{tests}}</p> 
+      <h2 class="text-center">Unittests</h2>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Run</button>
+      <div id="myModal" class="modal fade" role="dialog" style="color:black;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Tests</h4>
+            </div>
+            <div class="modal-body">
+              <p ng-show="!tests">Running unittests...</p>
+              <p>{{tests}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

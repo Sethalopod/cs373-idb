@@ -50,5 +50,8 @@ restart:
 
 error:
 	tail -100 /var/log/apache2/error.log 
+
+unittest:
+	python3 ./app/tests.py
 	
 test: html check

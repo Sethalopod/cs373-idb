@@ -104,20 +104,20 @@ def search_database():
     search = str(request.args.get('query'))
     count = int(request.args.get('limit'))
 
-
     session = Session()
-    inclusiveSearch = '%' + search.lower() + '%'
+    inclusiveSearch = search.lower().replace(" ","+") + ':*'
     results = []
 
-    cuisineQuery = session.query(Cuisine).filter(func.lower(Cuisine.title).like(inclusiveSearch)).limit(count).all()
-    recipeQuery = session.query(Recipe).filter(func.lower(Recipe.title).like(inclusiveSearch)).limit(count).all()
-    ingredientQuery = session.query(Ingredient).filter(func.lower(Ingredient.title).like(inclusiveSearch)).limit(count).all()
+    cuisineQuery = session.query(Cuisine).filter(func.to_tsvector(func.lower(Cuisine.title)).match(inclusiveSearch)).limit(count).all()
+    recipeQuery = session.query(Recipe).filter(func.to_tsvector(func.lower(Recipe.title)).match(inclusiveSearch)).limit(count).all()
+    ingredientQuery = session.query(Ingredient).filter(func.to_tsvector(func.lower(Ingredient.title)).match(inclusiveSearch)).limit(count).all()
 
     for cuisine in cuisineQuery:
         result = {}
         result["title"] = cuisine.title
         result["image"] = cuisine.imageUrl
         result["link"] = "/cuisines/" + str(cuisine.id)
+        result["type"] = "Cuisine"
         results.append(result)
 
     for recipe in recipeQuery:
@@ -125,6 +125,7 @@ def search_database():
         result["title"] = recipe.title
         result["image"] = recipe.imageURL
         result["link"] = "/recipes/" + str(recipe.id)
+        result["type"] = "Recipe"
         results.append(result)
 
     for ingredient in ingredientQuery:
@@ -132,6 +133,7 @@ def search_database():
         result["title"] = ingredient.title
         result["image"] = ingredient.imageURL
         result["link"] = "/ingredients/" + str(ingredient.id)
+        result["type"] = "Ingredient"
         results.append(result)
 
     results = sorted(results, key=lambda k : len(k["title"]))[:count]
