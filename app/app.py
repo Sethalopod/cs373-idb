@@ -4,6 +4,7 @@ from sqlalchemy import create_engine, func
 from models import Recipe, Ingredient, Cuisine, IngredientInfo
 from config import db
 import os
+import grequests
 import requests
 import markovify
 
@@ -26,6 +27,47 @@ def index(path):
     return make_response(open(os.path.join(script_dir, rel_path)).read())
 
 
+# Method to generate sentences from a text sample
+# Parameters:   text - string of text used to build markov chain model
+#               count - number of sentances to generate
+def generate_sentences(text, count):
+    text_model = markovify.Text(text)
+
+    sentences = []
+    for i in range(count):
+        sentence = text_model.make_sentence()
+        if sentence:
+            sentences.append(sentence)
+
+    return sentences
+
+
+# Method to return flavor text from a request response
+# Parameters:   result - result of the API request
+def getFlavorTextFromResult(result):
+    allFlavorTexts = ""
+    resultJson = result.json()
+
+    for r in resultJson["data"]:
+        if r["flavor_text"]:
+            allFlavorTexts += r["flavor_text"].replace("\n", " ") + "\n"
+
+    return allFlavorTexts
+
+# Method to make async requets for every page on endpoint
+# Parameters:   pages - number of pages to query
+#               endpoint - API endpoint to make requests against
+def makeRequests(pages, endpoint):
+    allRequests = []
+    for page in range(1, pages + 1):
+        requestEndpoint = endpoint + str(page)
+        allRequests.append(requestEndpoint)
+
+    requestsT = (grequests.get(u) for u in allRequests)
+    requestResults = grequests.map(requestsT)
+
+    return requestResults
+
 @app.route('/pokemon/', methods=['GET'])
 def generate_pokemon_flavor():
     numToGenerate = 5
@@ -40,17 +82,13 @@ def generate_pokemon_flavor():
     resultJson = result.json()
     pages = resultJson["total_pages"]
 
+    requestResults = makeRequests(pages, POKEMON_ENDPOINT)
+
     allTexts = ""
-    for page in range(1, pages + 1):
-        allTexts += getFlavorTextOnPage(POKEMON_ENDPOINT, page)
+    for result in requestResults:
+        allTexts += getFlavorTextFromResult(result)
 
-    text_model = markovify.Text(allTexts)
-
-    results = []
-    for i in range(numToGenerate):
-        sentence = text_model.make_sentence()
-        if sentence:
-            results.append(sentence)
+    results = generate_sentences(allTexts, numToGenerate)
 
     return jsonify(data=results)
 
@@ -69,33 +107,15 @@ def getAllMoveTexts():
     resultJson = result.json()
     pages = resultJson["total_pages"]
 
+    requestResults = makeRequests(pages, MOVES_ENDPOINT)
+
     allTexts = ""
-    for page in range(1, pages + 1):
-        allTexts += getFlavorTextOnPage(MOVES_ENDPOINT,page)
+    for result in requestResults:
+        allTexts += getFlavorTextFromResult(result)
 
-    text_model = markovify.Text(allTexts)
-
-    results = []
-    for i in range(numToGenerate):
-        sentence = text_model.make_sentence()
-        if sentence:
-            results.append(sentence)
+    results = generate_sentences(allTexts, numToGenerate)
 
     return jsonify(data=results)
-
-
-def getFlavorTextOnPage(endpoint, page):
-    allFlavorTexts = ""
-    call = endpoint + str(page)
-
-    result = requests.get(call)
-    resultJson = result.json()
-
-    for r in resultJson["data"]:
-        if r["flavor_text"]:
-            allFlavorTexts += r["flavor_text"].replace("\n", " ") + "\n"
-
-    return allFlavorTexts
 
 
 @app.route('/api/search', methods=['GET'])
@@ -106,6 +126,7 @@ def search_database():
 
     session = Session()
     inclusiveSearch = search.lower().replace(" ","+") + ':*'
+    print (inclusiveSearch)
     results = []
 
     cuisineQuery = session.query(Cuisine).filter(func.to_tsvector(func.lower(Cuisine.title)).match(inclusiveSearch)).limit(count).all()
