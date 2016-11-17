@@ -6,7 +6,7 @@ from config import db
 
 import subprocess as sub
 import os
-import grequests as brequests
+import grequests
 import requests
 import markovify
 
@@ -65,8 +65,8 @@ def makeRequests(pages, endpoint):
         requestEndpoint = endpoint + str(page)
         allRequests.append(requestEndpoint)
 
-    requestsT = (brequests.get(u) for u in allRequests)
-    requestResults = brequests.map(requestsT)
+    requestsT = (grequests.get(u) for u in allRequests)
+    requestResults = grequests.map(requestsT)
 
     return requestResults
 
