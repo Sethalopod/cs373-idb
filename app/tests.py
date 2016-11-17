@@ -180,6 +180,20 @@ class TestModels (TestCase):
         session.delete(recipe)
         session.commit()
 
+    def test_recipe_10(self):
+        session = self.sess()
+
+        recipe = Recipe(title = "Sadness", readyInMinutes = 0, servings = 1, calories = 0, numberOfSteps = 1, steps = "When you go to bed for dinner")
+        session.add(recipe)
+        session.commit()
+
+        result = session.query(Recipe).first()
+
+        self.assertEqual(result.readyInMinutes, 0)
+
+        session.delete(recipe)
+        session.commit()
+
     def test_cuisine_1(self):
          
         session = self.sess()
@@ -476,6 +490,34 @@ class TestModels (TestCase):
         dream = session.query(Ingredient).filter(Ingredient.serving_size == "one hour").one()
 
         self.assertNotEqual(dream, None)
+
+        session.delete(ingredient)
+        session.commit()
+
+    def test_ingredient_9(self):
+        session = self.sess()
+
+        ingredient = Ingredient(title = "Depression", serving_size = "lifetime", total_weight = "a body", brand = "Sweet Dreams", category = "meme")
+        session.add(ingredient)
+        session.commit()
+        
+        _ing = session.query(Ingredient).filter(Ingredient.serving_size == "lifetime").one()
+
+        self.assertEqual(_ing.title, "Depression")
+
+        session.delete(ingredient)
+        session.commit()
+
+    def test_ingredient_10(self):
+        session = self.sess()
+
+        ingredient = Ingredient(title = "Joe Biden", serving_size = "lifetime", total_weight = "One VP", brand = "Sweet Dreams", category = "meme")
+        session.add(ingredient)
+        session.commit()
+        
+        _ing = session.query(Ingredient).filter(Ingredient.serving_size == "lifetime").one()
+
+        self.assertEqual(_ing.category, "meme")
 
         session.delete(ingredient)
         session.commit()
