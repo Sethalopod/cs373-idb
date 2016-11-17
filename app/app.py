@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, func
 from models import Recipe, Ingredient, Cuisine, IngredientInfo
 from config import db
 import os
-import requests
+import grequests
 import markovify
 
 
@@ -40,9 +40,17 @@ def generate_pokemon_flavor():
     resultJson = result.json()
     pages = resultJson["total_pages"]
 
-    allTexts = ""
+    allRequests = []
     for page in range(1, pages + 1):
-        allTexts += getFlavorTextOnPage(POKEMON_ENDPOINT, page)
+        requestEndpoint = POKEMON_ENDPOINT + str(page)
+        allRequests.append(requestEndpoint)
+
+    requestsT = (grequests.get(u) for u in allRequests)
+    requestResults = grequests.map(requestsT)
+
+    allTexts = ""
+    for result in requestResults:
+        allTexts += getFlavorTextFromResult(result)
 
     text_model = markovify.Text(allTexts)
 
@@ -69,9 +77,17 @@ def getAllMoveTexts():
     resultJson = result.json()
     pages = resultJson["total_pages"]
 
-    allTexts = ""
+    allRequests = []
     for page in range(1, pages + 1):
-        allTexts += getFlavorTextOnPage(MOVES_ENDPOINT,page)
+        requestEndpoint = MOVES_ENDPOINT + str(page)
+        allRequests.append(requestEndpoint)
+
+    requestsT = (grequests.get(u) for u in allRequests)
+    requestResults = grequests.map(requestsT)
+
+    allTexts = ""
+    for result in requestResults:
+        allTexts += getFlavorTextFromResult(result)
 
     text_model = markovify.Text(allTexts)
 
@@ -84,11 +100,8 @@ def getAllMoveTexts():
     return jsonify(data=results)
 
 
-def getFlavorTextOnPage(endpoint, page):
+def getFlavorTextFromResult(result):
     allFlavorTexts = ""
-    call = endpoint + str(page)
-
-    result = requests.get(call)
     resultJson = result.json()
 
     for r in resultJson["data"]:
@@ -106,6 +119,7 @@ def search_database():
 
     session = Session()
     inclusiveSearch = search.lower().replace(" ","+") + ':*'
+    print (inclusiveSearch)
     results = []
 
     cuisineQuery = session.query(Cuisine).filter(func.to_tsvector(func.lower(Cuisine.title)).match(inclusiveSearch)).limit(count).all()
