@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, func
 from models import Recipe, Ingredient, Cuisine, IngredientInfo
 from config import db
 
-import subprocess as sub
+import subprocess
 import os
 import grequests
 import requests
@@ -13,7 +13,7 @@ import markovify
 from importlib import reload
 import socket
 
-reload(sub)
+reload(subprocess)
 reload(socket)
 
 app = Flask(__name__)
@@ -305,9 +305,9 @@ def test():
     script_dir = os.path.dirname(__file__)
     rel_path = "tests.py"
     try:
-    	process = sub.check_output(["python", os.path.join(script_dir, rel_path)],
-    		stderr=sub.STDOUT)
-    except sub.CalledProcessError as e:
+    	process = subprocess.check_output(["python", os.path.join(script_dir, rel_path)],
+    		stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as e:
     	process = e.output
 
     return process.decode("utf-8") 
