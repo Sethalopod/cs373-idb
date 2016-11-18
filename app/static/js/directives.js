@@ -39,18 +39,29 @@ mainApp.directive('search', function($http, $timeout) {
 				});
 			}
 
+			let timer;
+
 			$scope.keyPressed = function(event) {
-				if($scope.query == ""){
-					console.log("serach is empty")
+				clearTimeout(timer);
+				if ($scope.query != ""){
+					$scope.searching = true;
+					timer = setTimeout(doSearch, $scope.wait);
+				}
+				else{
+					console.log("search is empty");
 					$scope.results = null;
 					$scope.$apply();
-				}else if(newSearch($scope.query, lastQuery)){
+				}
+			}
+
+			doSearch = function() {
+				if(newSearch($scope.query, lastQuery)){
 					lastQuery = $scope.query;
-					$scope.searching = true;
 					searchTimer = $timeout(function() {
 						searchTimerComplete($scope.query);
-					}, $scope.wait);
+					});
 				}
+			
 			}
 
 			var inputField = elem.find('input');

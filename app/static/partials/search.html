@@ -10,6 +10,7 @@
 	<div ng-repeat="result in results" ng-show="!searching">
 		<a ng-href="{{result.link}}">
 			<div class="search-item">
+				<div class="search-type">{{result.searchType}}</div>
 				<div class="search-img">
 					<img ng-src="{{result.image}}" onerror="this.src='http://www.destenaire.com/noaccess/wp-content/uploads/2014/10/8-Oddest-Food-Items-Featured-Image1.png'"/>
 				</div>
