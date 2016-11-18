@@ -32,7 +32,7 @@ html:
 	python3 -m pydoc -w app/models.py
 
 log:
-	git log > IDB2.log
+	git log > IDB3.log
 
 freeze:
 	python3 -m pip freeze > requirements.txt

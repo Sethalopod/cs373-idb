@@ -1,3 +1,261 @@
+commit 894f72a106571c60348e1ffa847405c9c975765d
+Author: Seth Milligan <seth.milligan@gmail.com>
+Date:   Thu Nov 17 19:15:30 2016 -0600
+
+    Transferring API Description file from Apiary.io
+
+commit 0e61ded09bc0ea50bc40dec234c525d8e741b39a
+Merge: 3b0005e de1c97d
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Nov 17 19:10:42 2016 -0600
+
+    Merge branch 'dev' of https://github.com/Sethalopod/cs373-idb into dev
+
+commit 3b0005e2c4f41d9d78fcb862c39c44553a04fc79
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Nov 17 18:30:26 2016 -0600
+
+    edit the about page
+
+commit de1c97d3e24cc3f2167a9c08bc5181ea080163e7
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Thu Nov 17 18:13:26 2016 -0600
+
+    Fix searching
+
+commit c5197c969b4d454083d3b1d99fa30e5e4bc587cf
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Thu Nov 17 17:43:05 2016 -0600
+
+    Include 'or' results in search
+
+commit d3c2699be54125f412981631175f1ace01306c19
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Nov 17 16:47:01 2016 -0600
+
+    tests by Zach
+
+commit 6e9faaf85f8d93d3b76e69d7e52ef53251d5ae59
+Author: Zachary Gilkerson <zgilkerson@utexas.edu>
+Date:   Thu Nov 17 16:23:28 2016 -0600
+
+    spelling error
+
+commit c3942e3f602b23ea630925bdfe62edcc773a7cc5
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Thu Nov 17 16:17:04 2016 -0600
+
+    and another one. and another one.
+    '
+
+commit 7da01acb0f064d56aee9a16314c5d7db5d0d85ba
+Author: agallop <agallop@utexas.edu>
+Date:   Thu Nov 17 16:02:38 2016 -0600
+
+    ...and another one ....and another one
+
+commit 055097bddd06e931f1365f636ef3a3370f8a4296
+Author: agallop <agallop@utexas.edu>
+Date:   Thu Nov 17 15:49:47 2016 -0600
+
+    2 unit tests
+
+commit 07b5519fc6e26f2bfd07390ae5721cbf17f7efb5
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Nov 17 15:40:53 2016 -0600
+
+    add more test cases
+
+commit fe193e2d2b235fd6933bd2c211b57d425640f783
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 17 09:45:07 2016 -0600
+
+    fix small images on ingredients page
+
+commit 5bdc1a7d5066a734e8942cbe9674dee0f1ef9ea4
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 17 01:51:17 2016 -0600
+
+    patch grequests
+
+commit 88a3f0010bc9b66710fda02b37b499e074c95dcc
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 17 01:23:19 2016 -0600
+
+    fix 404s
+
+commit 7547483552893975af5a441611567f000cb2ff54
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Thu Nov 17 00:48:36 2016 -0600
+
+    fix unittest
+
+commit 8da265d9eb63bdc4c44c95da947546322f0ab845
+Merge: 4d28a4f 39fcf5b
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Nov 16 22:53:25 2016 -0600
+
+    Merge branch 'feature/fasterPokemon' into dev
+
+commit 39fcf5b149939c558eb9ff80b18b8735d922e5cb
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Nov 16 22:49:37 2016 -0600
+
+    Refactor Pokemon API use
+
+commit 4d28a4f943a9bf9409eb6f06fce6c347d79f6d9a
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Nov 16 22:35:44 2016 -0600
+
+    Added a container to a thingy
+
+commit ceb1dc17052193b0041324582e467d0a1eb7ee19
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Nov 16 22:31:45 2016 -0600
+
+    Refactor code
+
+commit b5680ee4f489373d3d5d5f7aea7462c17be1e56f
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Nov 16 22:20:15 2016 -0600
+
+    Use async requests for API calls
+
+commit ed37231352e1417eb0837efda945bb249ccbb710
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Nov 16 22:19:22 2016 -0600
+
+    Update requirements to include grequests
+
+commit af5adf7cc3f7bf975e47adf21941947368d4b2fb
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Wed Nov 16 21:46:28 2016 -0600
+
+    Add link to pokemon generator
+
+commit 9c32e06273632aa774e0a3f1e929f6958b9508e2
+Merge: 10c377c 8c20768
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Wed Nov 16 21:12:53 2016 -0600
+
+    Merge with pokemon generator
+
+commit 10c377ce32dd5bc8989891dd685fe30cc3baf530
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Wed Nov 16 21:06:25 2016 -0600
+
+    Pokemon Generator page done. closes #51, closes #48, closes #47, closes #40
+
+commit 8c20768dc5de41bdf376a120a2a8a3fc0c032d96
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Nov 16 20:48:36 2016 -0600
+
+    contexualize~
+
+commit 3f25552840b32f7e80218ed1d5e77bcf4c988d67
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Wed Nov 16 19:56:22 2016 -0600
+
+    Added descption choices. closes #50
+
+commit 3e9530882904cc04f496723021ea093305f30b39
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Wed Nov 16 18:42:02 2016 -0600
+
+    Added ability to name pokemon and see summary. closes #49, closes #52
+
+commit 854f60f2187da315db6f41141cbaa04aaef7b76f
+Author: Anthony Gallop <agallop@cs.utexas.edu>
+Date:   Wed Nov 16 18:40:07 2016 -0600
+
+    Added ability to name pokemon and see summary. closes 49, closes 52
+
+commit f6a6a19d8d3ba127319691449b09f5cd9011eebf
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Nov 16 17:58:08 2016 -0600
+
+    Improve searching
+
+commit 1802e8b8b8f4eac7b1a390d9bbf2a1515f435a5b
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Nov 16 17:55:03 2016 -0600
+
+    better search
+
+commit 6c0b047c76d60d31918b1b551abdd2bd91720518
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Nov 16 17:15:36 2016 -0600
+
+    variable count for search
+
+commit 0e6a272fd6d157f36f96b03dc308a4eff4e9b7fd
+Author: Seth Milligan <Sethalopod@users.noreply.github.com>
+Date:   Wed Nov 16 16:45:51 2016 -0600
+
+    Fix merge conflict
+
+commit 46c3bae9c9ff654174fdb881f716ac1d6651356a
+Merge: 3d81dc4 5e5d37f
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Nov 16 16:36:35 2016 -0600
+
+    fix merge conflicts
+
+commit 3d81dc4988b036aa29b43ca04c9064bc559a3ad3
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Nov 16 16:34:57 2016 -0600
+
+    Fix markovify returning None issue
+
+commit 19597bb6c5c7d6950e0519b67ec38a7b35238417
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Wed Nov 16 16:24:38 2016 -0600
+
+    Add calls to get random flavor texts
+
+commit 5e5d37f61f71d7624741424ab2f44e512efe63a9
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Nov 16 15:19:40 2016 -0600
+
+    improve landing page
+
+commit aab6ce880e79bb4581aa2189590d2cc4f2d21836
+Author: Alan Ma <alanma0907@utexas.edu>
+Date:   Wed Nov 16 14:11:11 2016 -0600
+
+    search functionality added
+
+commit 8f00ed6c233572234f6c0c98ea92746a28cd49f5
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Mon Nov 14 17:37:52 2016 -0600
+
+    Add api call to search database
+
+commit 5171eb0b629b73c10457be81ef6a6b9bf3d05f56
+Merge: 5d08547 a1f3d16
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Sun Nov 13 17:36:40 2016 -0600
+
+    Merge branch 'dev'
+
+commit a1f3d16c9f1f8597870e10d3ab9119572fbc8269
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Fri Nov 11 13:08:07 2016 -0600
+
+    Link ingredients to recipes
+
+commit 94772dba1cd1bf54925e489a25472819d0ee046f
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Fri Nov 11 12:02:17 2016 -0600
+
+    Make ingredientInfo show up for recipes
+
+commit 5d085476e02590460dd9fcb25589e55935e1ee18
+Author: Jessica Lindee <jlindee@cs.utexas.edu>
+Date:   Thu Nov 3 21:47:14 2016 -0500
+
+    add html and log
+
 commit bdbc573579155e57ab3c35a9fdd2237c16e0d34b
 Author: Alan Ma <alanma0907@utexas.edu>
 Date:   Thu Nov 3 21:45:04 2016 -0500
