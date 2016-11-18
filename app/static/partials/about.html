@@ -48,28 +48,31 @@
   </div>
   <div class="horizontal-divider"></div>
   <div class="row">
-    <div class="col-md-3 text-center">
+    <div class="col-md-5 text-center">
       <h2>Statistics</h2>
       <p><strong>Total Commit Count:</strong> {{stats.commits}}</p>
-      <p><strong>Toal Issue Count:</strong> {{stats.issues}}</p>
+      <p><strong>Total Issue Count:</strong> {{stats.issues}}</p>
       <p><strong>Total Unit Tests:</strong> {{stats.tests}}</p>
-      <div ng-repeat="source in projects">
-        <a ng-href="{{source.link}}"><p>{{source.name}}</p></a>
-      </div>
     </div>
-    <div class="col-md-3 text-center">
+    <div class="col-md-5 text-center">
       <h2>Tools</h2>
       <div ng-repeat="tool in tools">
         <a ng-href="{{tool.link}}"><p>{{tool.name}}</p></a>
       </div>
     </div>
-    <div class="col-md-3 text-center">
+    <div class="col-md-5 text-center">
+      <h2>Project Links</h2>
+      <div ng-repeat="info in information">
+        <a ng-href="{{info.link}}"><p>{{info.name}}</p><a>
+      </div>
+    </div>
+    <div class="col-md-5 text-center">
       <h2>Data</h2>
       <div ng-repeat="data in dataUsed">
         <a ng-href="{{data.link}}"><p>{{data.name}}</p></a>
       </div>
     </div>
-    <div class="col-md-3 text-center">
+    <div class="col-md-5 text-center">
       <h2>Other Databases</h2>
       <div ng-repeat="site in sites">
         <a ng-href="{{site.link}}"><p>{{site.name}}</p></a>
@@ -82,8 +85,8 @@
   </div>
   <div>
     <div class="row text-center">
-      <h2 class="text-center">Unittests</h2>
-      <button  ng-click="runUnittests()" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Run</button>
+      <h2 class="text-center">Unit Tests</h2>
+      <button  ng-click="runUnittests()" type="button" class="btn btn-info btn-lg antisocial" data-toggle="modal" data-target="#myModal">Run</button>
       <div id="myModal" class="modal fade" role="dialog" style="color:black;">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -92,7 +95,7 @@
               <h4 class="modal-title">Tests</h4>
             </div>
             <div class="modal-body">
-              <p ng-show="!tests">Running unittests...</p>
+              <p ng-show="!tests">Running unit tests...</p>
               <p>{{tests}}</p>
             </div>
             <div class="modal-footer">

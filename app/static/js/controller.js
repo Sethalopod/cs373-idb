@@ -104,7 +104,7 @@ mainApp.controller('AboutCtrl',
 
         $scope.tools        = MetadataFetchFactory.fetchTool();
         $scope.dataUsed     = MetadataFetchFactory.fetchAPI();
-        $scope.projects     = MetadataFetchFactory.fetchProject();
+        $scope.information  = MetadataFetchFactory.fetchInformation();
         $scope.sites        = MetadataFetchFactory.fetchSite();
         $scope.github       = refineData;
         $scope.stats        = stats;

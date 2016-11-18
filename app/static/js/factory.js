@@ -75,11 +75,12 @@ mainApp.factory('MetadataFetchFactory', function() {
     { name: 'Repository',           link: 'https://github.com/Sethalopod/cs373-idb'},
     { name: 'Wiki',                 link: 'https://github.com/Sethalopod/cs373-idb/wiki'}
   ];
-  var projectCache = [
+  var informationCache = [
     { name: 'Apiary',               link: 'http://docs.boilerpl8.apiary.io/'},
     { name: 'Github Issue Tracker', link: 'https://github.com/Sethalopod/cs373-idb/issues'},
     { name: 'Github Repository',    link: 'https://github.com/Sethalopod/cs373-idb'},
     { name: 'Github Wiki',          link: 'https://github.com/Sethalopod/cs373-idb/wiki'},
+    { name: 'Presentation',         link: 'https://speakerdeck.com/jesslindee/boilerpl8-presentation'}
   ];
   var toolCache = [
     { name: 'AngularJS',   link: 'https://angularjs.org/'},
@@ -104,14 +105,14 @@ mainApp.factory('MetadataFetchFactory', function() {
     login: 'agallop',
     description: 'My name is Anthony Gallop (That\'s -op, not -up. I\'m suing the Gallup Poll for pain and suffering). My hobbies include playing video games and making bad chat bots. ',
     responsibilities: 'Frontend', 
-    tests: 0
+    tests: 6
   },
   {
     name: 'Jessica Lindee', 
     login: 'jesslindee', 
     description: 'Howdy! I\’m in my fourth year of college and my second year of studying computer science at the University of Texas at Austin. It took me a while to find the computer science path, but I\’m glad that I did! I like to sleep, play board games, watch Netflix, and camp out in the computer lab.',
     responsibilities:'Frontend', 
-    tests: 0
+    tests: 6
   },
   {
     name:'Seth Milligan',
@@ -125,7 +126,7 @@ mainApp.factory('MetadataFetchFactory', function() {
     login: 'zgilkerson',
     description: 'I am currently a senior CS student that is also pursuing a minor in business. My hobby is being on top of the bell curve.',
     responsibilities: 'Full Stack', 
-    tests: 0
+    tests: 3
   },
   ];
   return {
@@ -135,8 +136,8 @@ mainApp.factory('MetadataFetchFactory', function() {
     fetchSite: function () {
       return siteCache;
     },
-    fetchProject: function () {
-      return projectCache;
+    fetchInformation: function () {
+      return informationCache;
     },
     fetchTool: function () {
       return toolCache;
