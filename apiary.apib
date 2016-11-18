@@ -5,6 +5,51 @@ HOST: http://boilerpl8.me/
 
 Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and learn about the ingredients in your food.
 
+## Search Collection [/api/search{?query,limit}]
+
+### Search Database [GET]
+
++ Parameters
+    + query - query string 
+    + limit - number of items returned 
+
++ Response 200 (application/json)
+
+        {
+            "results": [
+                {
+                    "image": "http://cdn.foodfacts.com/images/products/", 
+                    "link": "/ingredients/129056", 
+                    "title": "Aloha Vinegar, Apple Cider", 
+                    "type": "Ingredient"
+                }, 
+                {
+                    "image": "https://spoonacular.com/recipeImages/turkey-apple-swedish-meatballs-286238.jpeg", 
+                    "link": "/recipes/282", 
+                    "title": "Turkey-Apple Swedish Meatballs", 
+                    "type": "Recipe"
+                }, 
+                {
+                    "image": "https://spoonacular.com/recipeImages/spanish-pork-with-apple-citrus-salsa-82349.jpg", 
+                    "link": "/recipes/1561", 
+                    "title": "Spanish Pork with Apple-Citrus Salsa", 
+                    "type": "Recipe"
+                }, 
+                {
+                    "image": "https://spoonacular.com/recipeImages/spanish-pork-with-apple-citrus-salsa-708221.jpg", 
+                    "link": "/recipes/1562", 
+                    "title": "Spanish Pork with Apple-Citrus Salsa", 
+                    "type": "Recipe"
+                }, 
+                {
+                    "image": "https://spoonacular.com/recipeImages/Curry-Turkey-Salad-with-Apples---Celery-539204.jpg", 
+                    "link": "/recipes/1310", 
+                    "title": "Curry Turkey Salad with Apples & Celery", 
+                    "type": "Recipe"
+                }
+            ]
+        }
+
 ## Cuisines Collection [/api/cuisines/]
 
 ### List Cuisines [GET]
@@ -172,6 +217,67 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
                     
                 }
         }
+   
+## Recipe with Ingredient Info and Cuisine Collection [/api/recipe/{recipe_id}/ingredientInfo/]
+### Get information for a recipe, including a list of ingredients information and type of cuisine [GET]
+
++ Parameters
+    + recipe_id (number) - ID of the recipe
+    
++ Response 200 (application/json)
+
+        {
+            "cuisine": {
+            "averageCalories": 133.355555555556, 
+            "averageNumberOfIngredientsPerRecipe": 9.33333333333333, 
+            "continent": "Europe", 
+            "id": 59, 
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/537px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png", 
+            "numberOfRecipes": 45, 
+            "title": "Italian"
+          }, 
+          "ingredients": [
+            {
+              "fullName": "4 egg whites", 
+              "id": 15429, 
+              "ingredient_id": 204785, 
+              "name": "egg whites", 
+              "recipe_id": 1494
+            }, 
+            {
+              "fullName": "1 Large Eggplant, peeled and sliced into 1/4\" rounds", 
+              "id": 15430, 
+              "ingredient_id": 21572, 
+              "name": "eggplant", 
+              "recipe_id": 1494
+            }, 
+            {
+              "fullName": "Fat Free Parmesan Cheese", 
+              "id": 15431, 
+              "ingredient_id": null, 
+              "name": "fat free parmesan cheese", 
+              "recipe_id": 1494
+            }, 
+            {
+              "fullName": "2 C favorite tomato sauce (please make your own, it's so easy and so much yummier)", 
+              "id": 15432, 
+              "ingredient_id": 185246, 
+              "name": "tomato sauce", 
+              "recipe_id": 1494
+            }
+          ], 
+          "recipe": {
+            "calories": 151, 
+            "cuisine_id": 59, 
+            "id": 1494, 
+            "imageURL": "https://spoonacular.com/recipeImages/17-Day-Diet-Eggplant-Parmesan-563407.jpg", 
+            "numberOfSteps": 6, 
+            "readyInMinutes": 120, 
+            "servings": 2, 
+            "steps": "Pre-heat oven to 400\u00b0F Mix Fat Free (shaker) Parmesan Cheese with a couple dashes, paprika and fresh ground parmesan cheese.Peel the eggplant and slice into 1/4\" thick rounds Whisk the egg whites until frothy Dip the eggplant slices into the egg whites until coated - lightly dip each side into the parmesan cheese mixture and lay on a vented broiler sheet Put in 400\u00b0F oven for 20 minutes, flip and bake another 10 minutes Serve topped with your homemade tomato sauce", 
+            "title": "17 Day Diet Eggplant Parmesan"
+          }
+        }
         
 ## Ingredient Collection [/api/ingredients/]
 ### List Ingredients [GET]
@@ -201,9 +307,44 @@ Boilerpl8 has a simple API to discover new recipes in your favorite cuisines and
             ]
         }
 
-        
+## Ingredient to Recipes Collection [/api/ingredients/{ingredient_id}/recipes/]
+### Get recipes an ingredient is in [GET]        
 
++ Parameters
+    + ingredient_id (number) - ID of the ingredient 
         
++ Response 200 (application/json)
+
+        {
+            "ingredient": {
+            "brand": "Eggplant",
+            "category": "Fruits / Nuts / Vegetables",
+            "id": 21572,
+            "imageURL": "http://cdn.foodfacts.com/images/products/21572.jpg",
+            "serving_size": "1 Avg Eggplant",
+            "title": "Eggplant",
+            "total_weight": "1 Avg"
+        },
+        "recipes": [
+            {
+            "id": 198,
+            "name": "West African Peanut Stew"
+            },
+            {
+            "id": 1451,
+            "name": "Eggplant Turkey Lasagna"
+            },
+            {
+            "id": 1455,
+            "name": "Eggplant Parmesan"
+            },
+            {
+            "id": 1494,
+            "name": "17 Day Diet Eggplant Parmesan"
+            }
+        ]
+        }
+
 ## Ingredient Information Collection [/api/ingredients/{ingredient_id}/]
 ### Get information for an ingredient [GET]
 
