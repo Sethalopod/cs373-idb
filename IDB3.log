@@ -1,3 +1,15 @@
+commit fadc4cafaf7dace76dbf54640284ecf50dc31cd6
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Fri Nov 18 10:34:38 2016 -0600
+
+    Fix travis
+
+commit 127e54b45f2bcffe844a1929b9f9b0eb29a00b22
+Author: Seth Milligan <milligan@cs.utexas.edu>
+Date:   Fri Nov 18 10:31:49 2016 -0600
+
+    Add missing log file :(((((
+
 commit 894f72a106571c60348e1ffa847405c9c975765d
 Author: Seth Milligan <seth.milligan@gmail.com>
 Date:   Thu Nov 17 19:15:30 2016 -0600
